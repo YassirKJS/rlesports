@@ -73,4 +73,18 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
     -for now I'll set the value prop of the input to always be equal to the state passed in from App *one way flow*
     
     ProductTable
-    -receive State as props then use it to filter the table    
+    -receive State as props then use it to filter the table
+    
+#Part4: FLOW THE OTHER WAY      
+ --------------------------
+Since components (App) should only update its own state, App will pass callbacks to SearchBox, those callbacks will fire whenever the State should be updated (onChange). The callbacks will call setState().
+ 
+     App
+     -add event handlers, bind them
+     -pass the callbacks to SearchBox as props
+     
+     SearchBox
+     -add constructor
+     -receive callbacks props
+     -use received props to add event handlers, bind them
+     -add onChange triggers

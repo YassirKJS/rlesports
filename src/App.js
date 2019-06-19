@@ -7,8 +7,14 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchText: 'batmo'
+            searchText: ''
         };
+
+        this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
+    }
+
+    handleSearchTextChange(newSearchText) {
+        this.setState({searchText: newSearchText});
     }
 
     render() {
@@ -17,7 +23,8 @@ class App extends Component {
         return (
             <div className="tc">
                 <h1 className="f2 gold">Rocket Powered Battle Cars</h1>
-                <SearchBox searchText={this.state.searchText} />
+                <SearchBox searchText={this.state.searchText}
+                           onSearchTextChange={this.handleSearchTextChange} />
                 <CardList cars={cars}
                           searchText={this.state.searchText} />
             </div>
