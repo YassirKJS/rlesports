@@ -60,4 +60,17 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
         None
         
     Q4-If you can’t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
-        App     makes sense for P2 to live in            
+        App     makes sense for P2 to live in        
+        
+#Part3: DYNAMIC VERSION      
+------------------------
+    App
+    -I add a constructor with the state
+    -I pass the state as props to A11(CardList) and A12(SearchBox)
+    
+    SearchBox
+    -receive State as props then give it to input
+    -for now I'll set the value prop of the input to always be equal to the state passed in from App *one way flow*
+    
+    ProductTable
+    -receive State as props then use it to filter the table    
