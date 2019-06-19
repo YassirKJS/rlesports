@@ -24,4 +24,40 @@ I'll want to build components that reuse other components and pass data using pr
     index
     -made array of cars and passed it as props to <App>
       (It’s easy to see how the UI is updated and where to make changes since there’s only this source of data => React’s one-way data flow keeps everything modular and fast.)
-            
+
+#Part2: ADD STATE
+-----------------
+Second I ll add interactivity (*more thinking*) using STATE for the data that changes over time
+
+1-let's make a minimal state. The projected pieces of data I have so far:
+        
+    P1: the original array of cars
+    P2: the SearchBox input
+    P3: the filtered list of cars
+        
+2-The power of yes. Now let's ask 3 questions for each piece of data:
+
+    Q1- is it passed from a parent via props?                                   yes => not a state
+    Q2- Does it remain unchanged over time?                                     yes => not a state
+    Q3- Can I compute it based on any other state or props in my components?    yes => not a state
+    
+| P | Q1 | Q2 | Q3 | STATE? |
+|---|----|----|----|----|
+| P1 | yes |  |  | no |
+| P2 | no | no | no | *yes* |
+| P3 | no | no | yes | no |      
+ 
+3-Who owns this state?
+ 
+    Q1-identify every component that renders something based on that state.
+        A11: CardList
+        A12: SearchBox
+        
+    Q2-Find a common owner component (a single component above all the components that need the state in the hierarchy)
+        App
+        
+    Q3-Either the common owner or another component higher up in the hierarchy should own the state
+        None
+        
+    Q4-If you can’t find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+        App     makes sense for P2 to live in            
