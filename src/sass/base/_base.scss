@@ -1,0 +1,97 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-light: #FF3366;
+  --color-primary-dark: #BA265D;
+
+  --color-beige-light: #FFDEDA;
+  --color-beige-dark: #FF9C91;
+  --color-beige-darker: #ff6f74;
+
+  --color-purple-light: #F7DBFF;
+  --color-purple-dark: #734780;
+
+  --color-cyan-light: #39D1CF;
+  --color-cyan-dark: #40807E;
+
+  --color-brown-light: #FFA7A6;
+  --color-brown-dark: #85403F;
+
+  --color-pink-light: #FFC7D9;
+  --color-pink-dark: #D1889F;
+
+  --color-green-light: #7ed56f;
+  --color-green-dark: #28b485;
+
+  --color-orange-light: #ffb900;
+  --color-orange-dark: #ff7730;
+
+  --color-blue-light: #2998ff;
+  --color-blue-dark: #5643fa;
+
+  --color-gray-dark: #999;
+  --color-gray-dark-2: #777;
+  --color-gray-dark-3: #333;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-gray-light-1: #faf9f9;
+  --color-gray-light-2: #f4f2f2;
+  --color-gray-light-3: #f0eeee;
+  --color-gray-light-4: #ccc;
+
+
+  // FONT
+  --default-font-size: 1.6rem;
+
+  // GRID
+  --grid_width: 114rem;
+  --gutter-vertical: 8rem;
+  --gutter-vertical-small: 6rem;
+  --gutter-horizontal: 6rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  //width<1200?
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  //width<900?
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  background-image: url('resources/bg4.jpg');//linear-gradient(to right bottom, var(--color-purple-light), var(--color-purple-dark));
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
+}
