@@ -1,3 +1,5 @@
+#MY THOUGHTS
+
 #Part0: HIERARCHY
 -----------------
     App
@@ -14,7 +16,7 @@ I'll want to build components that reuse other components and pass data using pr
     -I need to take external data ("cars" ) passed as prop from App
     -I ll loop in the "cars" prop and get each product which I will give to <Card> as prop
     -I ll put the cars in an array so I can display them in the render
-
+    
     Card
     -will display the attributes of 1 car after receiving it as prop
     
@@ -88,3 +90,7 @@ Since components (App) should only update its own state, App will pass callbacks
      -receive callbacks props
      -use received props to add event handlers, bind them
      -add onChange triggers
+     
+#resources
+----------
+fontAwesome: https://github.com/FortAwesome/react-fontawesome

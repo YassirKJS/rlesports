@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import '../sass/main.scss';
 
 class CardList extends Component {
     render() {
@@ -9,7 +10,7 @@ class CardList extends Component {
         });
 
         return (
-            <div>
+            <div className="cardlist">
                 {
                     filteredCars.map((car) => {  //(car, i)
                         return ( <Card key={car.id} car={car} /> );

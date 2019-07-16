@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardList from './components/CardList';
 import SearchBox from './components/SearchBox';
 import './App.css';
+import './sass/main.scss';
 
 class App extends Component {
     constructor(props) {
@@ -21,12 +22,14 @@ class App extends Component {
         const cars = this.props.cars;
 
         return (
-            <div className="tc">
-                <h1 className="f2 gold">Rocket Powered Battle Cars</h1>
-                <SearchBox searchText={this.state.searchText}
-                           onSearchTextChange={this.handleSearchTextChange} />
-                <CardList cars={cars}
-                          searchText={this.state.searchText} />
+            <div className="container">
+                <div className="tc">
+                    <h1 className="f2 gold">Rocket Powered Battle Cars</h1>
+                    <SearchBox searchText={this.state.searchText}
+                               onSearchTextChange={this.handleSearchTextChange} />
+                    <CardList cars={cars}
+                              searchText={this.state.searchText} />
+                </div>
             </div>
         );
     }

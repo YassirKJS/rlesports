@@ -70,4 +70,5 @@ export const cars = [
     {id: 69, name: 'Mario NSR', hitbox: 'Octane', released: '2017-11-14', attributes:'exclusive Nintendo Switch'},
     {id: 70, name: 'Samus\' Gunship', hitbox: 'Octane', released: '2017-11-14', attributes:'exclusive Nintendo Switch'},
     {id: 71, name: 'Sweet Tooth', hitbox: 'Octane', released: '2015-07-07', attributes:'exclusive PS4'},
+    {id: 72, name: 'Fennec', hitbox: 'Octane', released: '2019-07-01', attributes:'Import'},
 ];
