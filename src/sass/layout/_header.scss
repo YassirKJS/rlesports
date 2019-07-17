@@ -29,6 +29,8 @@
     outline: none;
     //push them to mid
     margin-right: 30rem;
+    //to cancel the vertical movement when hovered (bottom border added)
+    box-sizing: border-box;
 
     & > * {
       padding: 2.5rem 3rem;
