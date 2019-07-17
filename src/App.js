@@ -3,6 +3,7 @@ import CardList from './components/CardList';
 import SearchBox from './components/SearchBox';
 import './App.css';
 import './sass/main.scss';
+import Header from "./components/Header";
 
 class App extends Component {
     constructor(props) {
@@ -24,15 +25,12 @@ class App extends Component {
         return (
             <div>
                 <div className="tc">
-                    {/* <h1 className="f2 gold">Rocket League Esports</h1> */}
-                    <header>
-                        Header goes here
-                    </header>
+                    <Header />
 
-                    <header className="header__search">
+                    <div className="header__search">
                         <SearchBox searchText={this.state.searchText}
                                    onSearchTextChange={this.handleSearchTextChange} />
-                    </header>
+                    </div>
 
                     <CardList cars={cars}
                               searchText={this.state.searchText} />
@@ -43,3 +41,6 @@ class App extends Component {
 }
 
 export default App;
+
+
+/* <h1 className="f2 gold">Rocket League Esports</h1> */
