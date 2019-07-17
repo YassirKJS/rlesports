@@ -22,11 +22,18 @@ class App extends Component {
         const cars = this.props.cars;
 
         return (
-            <div className="container">
+            <div>
                 <div className="tc">
-                    <h1 className="f2 gold">Rocket Powered Battle Cars</h1>
-                    <SearchBox searchText={this.state.searchText}
-                               onSearchTextChange={this.handleSearchTextChange} />
+                    {/* <h1 className="f2 gold">Rocket League Esports</h1> */}
+                    <header>
+                        Header goes here
+                    </header>
+
+                    <header className="header__search">
+                        <SearchBox searchText={this.state.searchText}
+                                   onSearchTextChange={this.handleSearchTextChange} />
+                    </header>
+
                     <CardList cars={cars}
                               searchText={this.state.searchText} />
                 </div>

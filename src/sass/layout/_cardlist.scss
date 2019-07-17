@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 27rem); //repeat(auto-fit, minmax(27rem, 1fr))
   grid-gap: 2rem;
+  justify-content: center;
 }
 
 .card {
@@ -70,7 +71,7 @@
 
   &__heading {
     margin-bottom: 2.5rem;
-    //margin-right: 2rem;
+    margin-left: 3rem;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
     justify-self: end;
