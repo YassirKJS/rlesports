@@ -21,7 +21,7 @@ class Card extends Component {
                     <img alt="cars" src={icons} height="250" width="250" className="card__img"/>
                 </div>
                 <div className="card__heading">
-                    {name}
+                    <span className="card__heading-span">{name}</span>
                 </div>
                 <div className="card__hitbox white">
                     <FontAwesomeIcon icon={faCar} className="card__hitbox-img gold" />

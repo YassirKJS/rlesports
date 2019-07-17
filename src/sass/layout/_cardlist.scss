@@ -15,10 +15,17 @@
 
   position: relative;
 
-  /*&:hover {
+  &:hover {
     transform: scale(1.05);
     box-shadow: 0 1rem 1rem rgba(black, .5);
-  }*/
+  }
+
+  //HEADING SPAN CHANGE ON CARD HOVER
+  &:hover &__heading-span {
+    background-image: linear-gradient(to right, var(--color-blue-light), var(--color-blue-dark));
+    padding-right: 6rem;
+    font-weight: 900;
+  }
 
   &__img-container {
     grid-row: 1 / 2;
@@ -61,10 +68,6 @@
     }
   }
 
-  &__name {
-
-  }
-
   &__heading {
     margin-bottom: 2.5rem;
     //margin-right: 2rem;
@@ -75,20 +78,27 @@
     z-index: 3;
 
     font-size: 2.1rem;
-    font-weight: 300;
+    font-weight: 700;
     text-transform: uppercase;
     text-align: right;
     color: white;
     position: absolute;
     //top: 12rem;
-    //right: 2rem;
-    width: 70%;
+    right: .1rem;
+    //width: 70%;
     //outline: none;
 
-    background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark));
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+    &-span {
+      background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark));
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+
+      padding-right: 1rem;
+      padding-left: 1rem;
+
+      position: relative;
+
+      transition: all 1s;
+    }
   }
-
-
 }
