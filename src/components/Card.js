@@ -20,19 +20,21 @@ class Card extends Component {
                 <div className="card__img-container">
                     <img alt="cars" src={icons} height="250" width="250" className="card__img"/>
                 </div>
+                <div className="card__heading">
+                    {name}
+                </div>
                 <div className="card__hitbox white">
-                    <FontAwesomeIcon icon={faCar} className="card__hitbox-img" />
+                    <FontAwesomeIcon icon={faCar} className="card__hitbox-img gold" />
                     <p>{hitbox}</p>
                 </div>
                 <div className="card__attributes white">
-                    <FontAwesomeIcon icon={faStar} className="card__attributes-img" />
+                    <FontAwesomeIcon icon={faStar} className="card__attributes-img gold" />
                     <p>{attributes}</p>
                 </div>
                 <div className="card__released white">
-                    <FontAwesomeIcon icon={faClock} className="card__released-img" />
+                    <FontAwesomeIcon icon={faClock} className="card__released-img gold" />
                     <p>{released}</p>
                 </div>
-                <h2 className="card__name gold">{name}</h2>
             </div>
         );
     }
