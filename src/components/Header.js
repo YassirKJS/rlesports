@@ -29,6 +29,10 @@ class Header extends Component {
         this.setState({ activeIndex: index })
     }
 
+    componentWillMount() {
+        this.setState({ activeIndex: 0 });
+    }
+
     render() {
         const logo = require('../resources/imgs/logo-white.png');
 
