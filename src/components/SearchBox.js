@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 /* material ui */
-import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import SearchIcon from '@material-ui/icons/Search';
 import Grid from '@material-ui/core/Grid';
