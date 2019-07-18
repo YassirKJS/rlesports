@@ -6,7 +6,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-class FilterBox extends Component {
+class FilterHitbox extends Component {
     constructor(props) {
         super(props);
         this.handleHitboxChange = this.handleHitboxChange.bind(this);
@@ -27,8 +27,9 @@ class FilterBox extends Component {
                         displayEmpty
                     >
                         <MenuItem value="" disabled>
-                            Hitbox
+                            All
                         </MenuItem>
+                        <MenuItem value="All">All</MenuItem>
                         <MenuItem value="Octane">Octane</MenuItem>
                         <MenuItem value="Dominus">Dominus</MenuItem>
                         <MenuItem value="Plank">Plank</MenuItem>
@@ -42,6 +43,6 @@ class FilterBox extends Component {
     }
 }
 
-export default FilterBox;
+export default FilterHitbox;
 
 

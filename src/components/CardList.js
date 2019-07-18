@@ -6,7 +6,12 @@ class CardList extends Component {
     render() {
         const cars = this.props.cars;
 
-        const filteredCardByHitbox = cars.filter(car => {
+        const filteredCardByAttribute = cars.filter(car => {
+            if (this.props.selectedAttribute === 'All') return cars;
+            return car.attributes.includes(this.props.selectedAttribute)
+        });
+        const filteredCardByHitbox = filteredCardByAttribute.filter(car => {
+            if (this.props.selectedHitbox === 'All') return cars;
             return car.hitbox.toLowerCase().includes(this.props.selectedHitbox.toLowerCase())
         });
         const filteredCarsByName = filteredCardByHitbox.filter(car => {
