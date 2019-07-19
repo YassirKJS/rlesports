@@ -12,7 +12,7 @@ class Card extends Component {
         const name = car.name;
         const hitbox = car.hitbox;
         const released = car.released;
-        const attributes = car.attributes;
+        const attribute = car.attribute;
         const icons = require('../resources/imgs/cars/' + name + '_body_icon.webp');
 
         return (
@@ -29,7 +29,7 @@ class Card extends Component {
                 </div>
                 <div className="card__attributes white">
                     <FontAwesomeIcon icon={faStar} className="card__attributes-img gold" />
-                    <p>{attributes}</p>
+                    <p>{attribute}</p>
                 </div>
                 <div className="card__released white">
                     <FontAwesomeIcon icon={faClock} className="card__released-img gold" />

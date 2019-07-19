@@ -23,13 +23,13 @@ class Sorter extends Component {
                     <Select
                         value={this.props.selectedSort}
                         onChange={this.handleSortChange}
-                        name="age"
+                        name="sortSelector"
                         displayEmpty
                     >
                         <MenuItem value="Name">Name</MenuItem>
                         <MenuItem value="Hitbox">Hitbox</MenuItem>
                         <MenuItem value="Attribute">Attribute</MenuItem>
-                        <MenuItem value="Release Date">Release Date</MenuItem>
+                        <MenuItem value="Release">Release Date</MenuItem>
                     </Select>
                     <FormHelperText>Sort By</FormHelperText>
                 </FormControl>
