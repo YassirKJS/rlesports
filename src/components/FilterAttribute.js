@@ -23,12 +23,9 @@ class FilterAttribute extends Component {
                     <Select
                         value={this.props.selectedAttribute}
                         onChange={this.handleAttributeChange}
-                        name="age"
+                        name="attributeSelector"
                         displayEmpty
                     >
-                        <MenuItem value="" disabled>
-                            All
-                        </MenuItem>
                         <MenuItem value="All">All</MenuItem>
                         <MenuItem value="Common">Common</MenuItem>
                         <MenuItem value="Crate Import">Crate Import</MenuItem>

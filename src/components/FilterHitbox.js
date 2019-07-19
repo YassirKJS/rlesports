@@ -23,12 +23,9 @@ class FilterHitbox extends Component {
                     <Select
                         value={this.props.selectedHitbox}
                         onChange={this.handleHitboxChange}
-                        name="age"
+                        name="hitboxSelector"
                         displayEmpty
                     >
-                        <MenuItem value="" disabled>
-                            All
-                        </MenuItem>
                         <MenuItem value="All">All</MenuItem>
                         <MenuItem value="Octane">Octane</MenuItem>
                         <MenuItem value="Dominus">Dominus</MenuItem>

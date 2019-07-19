@@ -27,8 +27,6 @@ class SearchBox extends Component {
                             id="standard-search"
                             label="Search Car"
                             type="search"
-                            className="search"
-                            margin="normal"
                             value={this.props.searchText}
                             onChange={this.handleSearchTextChange}
                         />
