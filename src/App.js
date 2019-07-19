@@ -20,7 +20,7 @@ class App extends Component {
             searchText: '',
             selectedHitbox: 'All',
             selectedAttribute: 'All',
-            selectedSort: 'Name',
+            selectedSort: 'name',
             selectedOrder: 'Ascending'
         };
 
@@ -70,7 +70,7 @@ class App extends Component {
 
 
                     <CardList cars={cars}
-                              searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute}/>
+                              searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
                 </div>
             </div>
         );

@@ -26,10 +26,10 @@ class Sorter extends Component {
                         name="sortSelector"
                         displayEmpty
                     >
-                        <MenuItem value="Name">Name</MenuItem>
-                        <MenuItem value="Hitbox">Hitbox</MenuItem>
-                        <MenuItem value="Attribute">Attribute</MenuItem>
-                        <MenuItem value="Release">Release Date</MenuItem>
+                        <MenuItem value="name">Name</MenuItem>
+                        <MenuItem value="hitbox">Hitbox</MenuItem>
+                        <MenuItem value="attribute">Attribute</MenuItem>
+                        <MenuItem value="release">Release Date</MenuItem>
                     </Select>
                     <FormHelperText>Sort By</FormHelperText>
                 </FormControl>
