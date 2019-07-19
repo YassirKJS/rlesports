@@ -20,7 +20,7 @@ class App extends Component {
             searchText: '',
             selectedHitbox: 'All',
             selectedAttribute: 'All',
-            selectedSort: 'name',
+            selectedSort: 'hitbox',
             selectedOrder: 'Ascending'
         };
 
@@ -68,9 +68,7 @@ class App extends Component {
                         <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />
                     </div>
 
-
-                    <CardList cars={cars}
-                              searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
+                    <CardList cars={cars} searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
                 </div>
             </div>
         );

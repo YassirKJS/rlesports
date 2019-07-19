@@ -20,7 +20,7 @@ class CardList extends Component {
             return car.name.toLowerCase().includes(this.props.searchText.toLowerCase())
         });
 
-
+        //SORTING
         const selectedSort = this.props.selectedSort;
         if (selectedSort === 'name') {
             //SORT BY NAME
@@ -115,15 +115,79 @@ class CardList extends Component {
         }
 
         return (
-            <div className="cardlist">
-                {
-                    filteredCarsByName.map((car) => {  //(car, i)
-                        return ( <Card key={car.id} car={car} /> );
-                    })
-                }
+            <div>
+                <div className="cardlist">
+                    {
+                        filteredCarsByName.map((car) => {  //(car, i)
+                            return ( <Card key={car.id} car={car} /> );
+                        })
+                    }
+                </div>
             </div>
         );
     }
 }
 
 export default CardList;
+
+
+
+
+
+
+
+
+/*
+        const hitboxes = ['Octane', 'Dominus', 'Hybrid', 'Breakout', 'Plank'];
+        const breakoutHitbox = [];
+        const dominusHitbox = [];
+        const hybridHitbox = [];
+        const octaneHitbox = [];
+        const plankHitbox = [];
+
+        filteredCarsByName.map(car => {
+            switch(car.hitbox) {
+                case 'Breakout':
+                    return breakoutHitbox.push(car);
+                case 'Dominus':
+                    return dominusHitbox.push(car);
+                case 'Hybrid':
+                    return hybridHitbox.push(car);
+                case 'Octane':
+                    return octaneHitbox.push(car);
+                case 'Plank':
+                    return plankHitbox.push(car);
+                default:
+                    return 0;
+            }
+        });
+
+        const Dict_hitbox_cars = {
+            Breakout: breakoutHitbox,
+            Dominus: dominusHitbox,
+            Hybrid: hybridHitbox,
+            Octane: octaneHitbox,
+            Plank: plankHitbox
+        };
+ */
+
+/*<div>
+    {
+        hitboxes.map(hitbox => {
+            return (
+                <div>
+                    {hitbox}
+                    <div className="cardlist">
+                        {
+                            Dict_hitbox_cars[hitbox].map((car) => {
+                                return (
+                                    <Card key={car.id} car={car}/>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+            );
+        })
+    }
+</div>*/
