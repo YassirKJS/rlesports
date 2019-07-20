@@ -25,8 +25,9 @@ class FilterHitbox extends Component {
                         onChange={this.handleHitboxChange}
                         name="hitboxSelector"
                         displayEmpty
+
                     >
-                        <MenuItem value="All">All</MenuItem>
+                        <MenuItem value="All" >All</MenuItem>
                         <MenuItem value="Octane">Octane</MenuItem>
                         <MenuItem value="Dominus">Dominus</MenuItem>
                         <MenuItem value="Plank">Plank</MenuItem>

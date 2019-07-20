@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {useState} from 'react';
+import '../sass/main.scss';
 
 /* material ui */
 import MenuItem from '@material-ui/core/MenuItem';
@@ -18,22 +20,20 @@ class Sorter extends Component {
 
     render() {
         return (
-            <div>
-                <FormControl>
-                    <Select
-                        value={this.props.selectedSort}
-                        onChange={this.handleSortChange}
-                        name="sortSelector"
-                        displayEmpty
-                    >
-                        <MenuItem value="name">Name</MenuItem>
-                        <MenuItem value="hitbox">Hitbox</MenuItem>
-                        <MenuItem value="attribute">Attribute</MenuItem>
-                        <MenuItem value="release">Release Date</MenuItem>
-                    </Select>
-                    <FormHelperText>Sort By</FormHelperText>
-                </FormControl>
-            </div>
+            <FormControl className="formcontrol" autoWidth>
+                <Select
+                    value={this.props.selectedSort}
+                    onChange={this.handleSortChange}
+                    name="sortSelector"
+                    displayEmpty
+                >
+                    <MenuItem value="name">Name</MenuItem>
+                    <MenuItem value="hitbox">Hitbox</MenuItem>
+                    <MenuItem value="attribute">Attribute</MenuItem>
+                    <MenuItem value="release">Release Date</MenuItem>
+                </Select>
+                <FormHelperText>Sort By</FormHelperText>
+            </FormControl>
         );
     }
 }

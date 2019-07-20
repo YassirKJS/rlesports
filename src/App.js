@@ -12,6 +12,7 @@ import FilterHitbox from './components/FilterHitbox';
 import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
+import IntegrationReactSelect from "./components/TestComponent";
 
 class App extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class App extends Component {
             searchText: '',
             selectedHitbox: 'All',
             selectedAttribute: 'All',
-            selectedSort: 'hitbox',
+            selectedSort: 'name',
             selectedOrder: 'Ascending'
         };
 
@@ -29,7 +30,6 @@ class App extends Component {
         this.handleSelectedAttributeChange = this.handleSelectedAttributeChange.bind(this);
         this.handleSelectedSortChange = this.handleSelectedSortChange.bind(this);
         this.handleSelectedOrderChange = this.handleSelectedOrderChange.bind(this);
-
     }
 
     handleSearchTextChange(newSearchText) {
@@ -61,6 +61,7 @@ class App extends Component {
                     <Header />
 
                     <div className="filter">
+                        <IntegrationReactSelect />
                         <SearchBox searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                         <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
                         <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
