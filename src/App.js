@@ -13,6 +13,7 @@ import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
 import IntegrationReactSelect from "./components/TestComponent";
+import TestComponentv2 from "./components/TestComponentv2";
 
 class App extends Component {
     constructor(props) {
@@ -61,7 +62,7 @@ class App extends Component {
                     <Header />
 
                     <div className="filter">
-                        <IntegrationReactSelect />
+                        <TestComponentv2 />
                         <SearchBox searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                         <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
                         <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Select from 'react-select';
+
+/* material ui */
 import { emphasize, makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import NoSsr from '@material-ui/core/NoSsr';
@@ -32,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     },
     input: {
         display: 'flex',
-        padding: 0,
+        padding: 1,
         height: 'auto',
     },
     valueContainer: {
@@ -165,7 +167,7 @@ function Option(props) {
             selected={props.isFocused}
             component="div"
             style={{
-                fontWeight: props.isSelected ? 500 : 400,
+                fontWeight: props.isSelected ? 700 : 400,
             }}
             {...props.innerProps}
         >

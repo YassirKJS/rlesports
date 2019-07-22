@@ -44,7 +44,7 @@ class CardList extends Component {
                 });
             }
         }
-        else if (selectedSort === 'hitbox') {
+        if (selectedSort === 'hitbox') {
             //SORT BY HITBOX
             if (this.props.selectedOrder === 'Ascending') {
                 filteredCarsByName.sort(function(a, b){
@@ -67,7 +67,7 @@ class CardList extends Component {
                 });
             }
         }
-        else if (selectedSort === 'attribute') {
+        if (selectedSort === 'attribute') {
             //SORT BY ATTRIBUTE
             if (this.props.selectedOrder === 'Ascending') {
                 filteredCarsByName.sort(function(a, b){
@@ -90,7 +90,7 @@ class CardList extends Component {
                 });
             }
         }
-        else if (selectedSort === 'release') {
+        if (selectedSort === 'release') {
             //SORT BY RELEASE
             if (this.props.selectedOrder === 'Ascending') {
                 filteredCarsByName.sort(function(a, b){
