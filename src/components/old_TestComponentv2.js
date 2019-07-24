@@ -1,12 +1,12 @@
 import React from "react";
 
-import Autocomplete from "./Autocomplete";
+import Old_Autocomplete from "./old_Autocomplete";
 
-export default function TestComponentv2() {
+export default function Old_TestComponentv2() {
     return (
         <div>
             <h2>hitbox autocomplete</h2>
-            <Autocomplete
+            <Old_Autocomplete
                 suggestions={[
                     "All",
                     "Octane",

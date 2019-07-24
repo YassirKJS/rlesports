@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import Select from 'react-select';
 
-class Autocomplete extends Component {
+class Old_Autocomplete extends Component {
     static propTypes = {
         suggestions: PropTypes.instanceOf(Array)
     };
@@ -151,4 +151,4 @@ class Autocomplete extends Component {
     }
 }
 
-export default Autocomplete;
+export default Old_Autocomplete;
