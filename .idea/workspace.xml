@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/layout/_filter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_filter.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/layout/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilterHitboxFunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterHitboxFunc.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,8 +67,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/FilterHitboxFunc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="240">
+              <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
                 <element signature="e#154#204#0" expanded="true" />
@@ -86,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/TestComponent.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="530">
-              <caret line="77" column="4" lean-forward="true" selection-start-line="28" selection-end-line="77" selection-end-column="4" />
+            <state relative-caret-position="3048">
+              <caret line="175" column="6" lean-forward="true" selection-start-line="175" selection-start-column="6" selection-end-line="175" selection-end-column="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#155#230#0" expanded="true" />
@@ -147,6 +142,7 @@
       <find>Premium</find>
       <find>attributes</find>
       <find>defaultProps</find>
+      <find>!!!</find>
     </findStrings>
     <replaceStrings>
       <replace>attribute</replace>
@@ -188,9 +184,9 @@
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/src/sass/layout/_filter.scss" />
         <option value="$PROJECT_DIR$/src/components/Autocomplete.js" />
-        <option value="$PROJECT_DIR$/src/components/TestComponent.js" />
         <option value="$PROJECT_DIR$/src/components/FilterHitbox_func.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/TestComponent.js" />
         <option value="$PROJECT_DIR$/src/components/FilterHitboxFunc.js" />
       </list>
     </option>
@@ -340,12 +336,12 @@
       <workItem from="1563525869424" duration="36630000" />
       <workItem from="1563707512666" duration="5859000" />
       <workItem from="1563728074095" duration="960000" />
-      <workItem from="1563788275332" duration="23359000" />
+      <workItem from="1563788275332" duration="29760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159284000" />
+    <option name="totallyTimeSpent" value="165685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -969,17 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
-          <folding>
-            <element signature="e#57#76#0" expanded="true" />
-            <element signature="e#128#173#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Autocomplete.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1027,6 +1012,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="77" column="18" lean-forward="true" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
+          <folding>
+            <element signature="e#57#76#0" expanded="true" />
+            <element signature="e#128#173#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
@@ -1039,8 +1035,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TestComponent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="77" column="4" lean-forward="true" selection-start-line="28" selection-end-line="77" selection-end-column="4" />
+        <state relative-caret-position="3048">
+          <caret line="175" column="6" lean-forward="true" selection-start-line="175" selection-start-column="6" selection-end-line="175" selection-end-column="6" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#155#230#0" expanded="true" />
@@ -1050,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterHitboxFunc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="240">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <element signature="e#154#204#0" expanded="true" />
