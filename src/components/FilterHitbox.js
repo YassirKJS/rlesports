@@ -170,7 +170,7 @@ function FilterHitbox ({ selectedHitbox, onSelectedHitboxChange }) {
     }
     /**** end  ****/
 
-    /**** start Control (for the attribute label) ****/
+    /**** start Control (for the hitbox label) ****/
     function Control(props) {
         const {
             children,

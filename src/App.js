@@ -8,19 +8,18 @@ import './sass/main.scss';
 import CardList from './components/CardList';
 import SearchBox from './components/SearchBox';
 import Header from "./components/Header";
+import FilterHitbox from './components/FilterHitbox';
 import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
-import FilterHitbox from './components/FilterHitbox';
-
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             searchText: '',
-            selectedHitbox: [],
-            selectedAttribute: 'All',
+            selectedHitbox: [{value: 'All', label: 'All'}],
+            selectedAttribute: [{value: 'All', label: 'All'}],
             selectedSort: 'name',
             selectedOrder: 'Ascending'
         };
@@ -38,7 +37,6 @@ class App extends Component {
 
     handleSelectedHitboxChange(newSelectedHitbox) {
         this.setState({selectedHitbox: newSelectedHitbox});
-        //console.log(newSelectedHitbox[0].value);
     }
 
     handleSelectedAttributeChange(newSelectedAttribute) {
@@ -62,10 +60,8 @@ class App extends Component {
                     <Header />
 
                     <div className="filter">
-                        {/*<IntegrationReactSelect selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />*/}
                         <SearchBox searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                         <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
-                        {/*<FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} /> */}
                         <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
                         <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />
                         <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />

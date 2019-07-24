@@ -18,19 +18,41 @@ class CardList extends Component {
             if (this.props.selectedAttribute === 'All') return cars;
             return car.attribute.includes(this.props.selectedAttribute)
         });*/
-
-        let filteredCarsByHitbox = [];
-        let someArray = this.props.selectedHitbox;
+        console.log(this.props.selectedAttribute);
+        let filteredCarsByAttribute = [];
+        let someArray = this.props.selectedAttribute;
         let values = [];
         for(let i = 0; i < someArray.length; i++) {
             if (someArray[i].value === 'All') {
-                filteredCarsByHitbox = cars;
+                filteredCarsByAttribute = cars;
             }
             else {
                 values.push(someArray[i].value);
                 for(let j = 0; j < values.length; j++) {
                     cars.forEach(function(car) {
-                        if (car.hitbox === values[j]) {
+                        if (car.attribute === values[j]) {
+                            //check that the pushed value is unique
+                            if (!filteredCarsByAttribute.includes(car)) {
+                                filteredCarsByAttribute.push(car)
+                            }
+                        }
+                    });
+                }
+            }
+        }
+
+        let filteredCarsByHitbox = [];
+        let selectedHitboxes = this.props.selectedHitbox;
+        let hitboxValues = [];
+        for(let i = 0; i < selectedHitboxes.length; i++) {
+            if (selectedHitboxes[i].value === 'All') {
+                filteredCarsByHitbox = filteredCarsByAttribute;
+            }
+            else {
+                hitboxValues.push(selectedHitboxes[i].value);
+                for(let j = 0; j < hitboxValues.length; j++) {
+                    filteredCarsByAttribute.forEach(function(car) {
+                        if (car.hitbox === hitboxValues[j]) {
                             //check that the pushed value is unique
                             if (!filteredCarsByHitbox.includes(car)) {
                                 filteredCarsByHitbox.push(car)
@@ -38,7 +60,6 @@ class CardList extends Component {
                         }
                     });
                 }
-
             }
         }
         /*const filteredCarsByHitbox = cars.filter(car => {
