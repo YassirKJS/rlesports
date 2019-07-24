@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
+import Select from 'react-select';
 
 class Autocomplete extends Component {
     static propTypes = {
@@ -106,7 +107,7 @@ class Autocomplete extends Component {
         if (showSuggestions && userInput) {
             if (filteredSuggestions.length) {
                 suggestionsListComponent = (
-                    <ul class="suggestions">
+                    <ul className="suggestions">
                         {filteredSuggestions.map((suggestion, index) => {
                             let className;
 
@@ -129,15 +130,15 @@ class Autocomplete extends Component {
                 );
             } else {
                 suggestionsListComponent = (
-                    <div class="no-suggestions">
-                        <em>No suggestions, you're on your own!</em>
+                    <div className="no-suggestions">
+                        <em>No options.</em>
                     </div>
                 );
             }
         }
 
         return (
-            <Fragment>
+            <div>
                 <input
                     type="text"
                     onChange={onChange}
@@ -145,7 +146,7 @@ class Autocomplete extends Component {
                     value={userInput}
                 />
                 {suggestionsListComponent}
-            </Fragment>
+            </div>
         );
     }
 }

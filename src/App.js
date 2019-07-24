@@ -14,6 +14,8 @@ import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
 import IntegrationReactSelect from "./components/TestComponent";
 import TestComponentv2 from "./components/TestComponentv2";
+import FilterHitboxFunc from './components/FilterHitboxFunc';
+
 
 class App extends Component {
     constructor(props) {
@@ -62,9 +64,10 @@ class App extends Component {
                     <Header />
 
                     <div className="filter">
-                        <TestComponentv2 />
+                        {/*<IntegrationReactSelect selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />*/}
                         <SearchBox searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
-                        <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
+                        <FilterHitboxFunc selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
+                        {/*<FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} /> */}
                         <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
                         <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />
                         <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />

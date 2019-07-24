@@ -23,7 +23,7 @@
 
   //HEADING SPAN CHANGE ON CARD HOVER
   &:hover &__heading-span {
-    background-image: linear-gradient(to right, var(--color-blue-light), var(--color-blue-dark));
+    background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark));
     padding-right: 6rem;
     font-weight: 900;
   }
@@ -90,7 +90,7 @@
     //outline: none;
 
     &-span {
-      background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark));
+      background-image: linear-gradient(to right, var(--color-blue-light), var(--color-blue-dark));
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
 
