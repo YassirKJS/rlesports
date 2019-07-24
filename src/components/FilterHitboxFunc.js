@@ -17,7 +17,8 @@ import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
 
-//https://github.com/JedWatson/react-select
+// https://github.com/JedWatson/react-select
+// https://react-select.com/props
 
 const suggestions = [
     { label: 'All' },
@@ -217,10 +218,6 @@ function FilterHitboxFunc ({ selectedHitbox, onSelectedHitboxChange }) {
     }
     /**** end MultiValue ****/
 
-    /**** start  ****/
-
-    /**** end  ****/
-
     /**** start Menu ****/
     function Menu(props) {
         return (
@@ -245,6 +242,21 @@ function FilterHitboxFunc ({ selectedHitbox, onSelectedHitboxChange }) {
     };
     /**** end Components ****/
 
+    /**** start Single/Multi ****/
+    const [single, setSingle] = React.useState(null);
+    const [multi, setMulti] = React.useState(null);
+
+    function handleChangeSingle(value) {
+        setSingle(value);
+    }
+
+    function handleChangeMulti(value) {
+        setMulti(value);
+        //console.log(value[0].value);
+        onSelectedHitboxChange(value);
+    }
+    /**** end Single/Multi ****/
+
     return (
         <div>
                 <Select
@@ -261,9 +273,9 @@ function FilterHitboxFunc ({ selectedHitbox, onSelectedHitboxChange }) {
                     placeholder="Select Hitbox(s)"
                     options={suggestions}
                     components={components}
-                    value={selectedOption }
-                    onChange={handleHitboxChange}
-
+                    value={multi }
+                    onChange={handleChangeMulti}
+                    isMulti
                 />
         </div>
     );

@@ -22,7 +22,7 @@ class App extends Component {
         super(props);
         this.state = {
             searchText: '',
-            selectedHitbox: 'All',
+            selectedHitbox: [],
             selectedAttribute: 'All',
             selectedSort: 'name',
             selectedOrder: 'Ascending'
@@ -41,6 +41,7 @@ class App extends Component {
 
     handleSelectedHitboxChange(newSelectedHitbox) {
         this.setState({selectedHitbox: newSelectedHitbox});
+        //console.log(newSelectedHitbox[0].value);
     }
 
     handleSelectedAttributeChange(newSelectedAttribute) {
@@ -72,7 +73,6 @@ class App extends Component {
                         <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />
                         <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />
                     </div>
-
                     <CardList cars={cars} searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
                 </div>
             </div>
