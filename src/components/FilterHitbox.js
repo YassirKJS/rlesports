@@ -197,6 +197,10 @@ function FilterHitbox ({ selectedHitbox, onSelectedHitboxChange }) {
     }
     /**** end Control ****/
 
+    /*const handleDelete = (props) => {
+        return props.removeProps.onClick;
+    };*/
+
     /**** start MultiValue (for multiple selects) ****/
     function MultiValue(props) {
         return (

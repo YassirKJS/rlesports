@@ -6,46 +6,31 @@ class CardList extends Component {
 
     render() {
         const cars = this.props.cars;
+        /*console.log('cardlist start');
+        this.props.selectedHitbox.map(hitbox => {
+            return (console.log(hitbox.value));
+        });
+        console.log('cardlist end');
+         */
 
-        // Filter by Name
-        let filteredCarsByName = [];
-        let selectedCars = this.props.searchText;
-        let nameValues = [];
-        for(let i = 0; i < selectedCars.length; i++) {
-            if (selectedCars[i].value === 'All') {
-                filteredCarsByName = cars;
-            }
-            else {
-                nameValues.push(selectedCars[i].value);
-                for(let j = 0; j < nameValues.length; j++) {
-                    cars.forEach(function(car) {
-                        if (car.name === nameValues[j]) {
-                            //check that the pushed value is unique
-                            if (!filteredCarsByName.includes(car)) {
-                                filteredCarsByName.push(car)
-                            }
-                        }
-                    });
-                }
-            }
-        }
+        //FILTER
+        /*const filteredCarsByAttribute = cars.filter(car => {
+            if (this.props.selectedAttribute === 'All') return cars;
+            return car.attribute.includes(this.props.selectedAttribute)
+        });*/
 
-        // no name selected condition
-        if(filteredCarsByName.length === 0) filteredCarsByName = cars;
-
-        // Filter by Attribute
         let filteredCarsByAttribute = [];
-        let selectedAttributes = this.props.selectedAttribute;
-        let attributeValues = [];
-        for(let i = 0; i < selectedAttributes.length; i++) {
-            if (selectedAttributes[i].value === 'All') {
-                filteredCarsByAttribute = filteredCarsByName;
+        let someArray = this.props.selectedAttribute;
+        let values = [];
+        for(let i = 0; i < someArray.length; i++) {
+            if (someArray[i].value === 'All') {
+                filteredCarsByAttribute = cars;
             }
             else {
-                attributeValues.push(selectedAttributes[i].value);
-                for(let j = 0; j < attributeValues.length; j++) {
-                    filteredCarsByName.forEach(function(car) {
-                        if (car.attribute === attributeValues[j]) {
+                values.push(someArray[i].value);
+                for(let j = 0; j < values.length; j++) {
+                    cars.forEach(function(car) {
+                        if (car.attribute === values[j]) {
                             //check that the pushed value is unique
                             if (!filteredCarsByAttribute.includes(car)) {
                                 filteredCarsByAttribute.push(car)
@@ -56,25 +41,17 @@ class CardList extends Component {
             }
         }
 
-        // no attribute selected condition
-        if(filteredCarsByAttribute.length === 0) filteredCarsByAttribute = filteredCarsByName;
-
-        // Filter by Hitbox
         let filteredCarsByHitbox = [];
         let selectedHitboxes = this.props.selectedHitbox;
         let hitboxValues = [];
         for(let i = 0; i < selectedHitboxes.length; i++) {
-            if (selectedHitboxes[i].value === 'All' || selectedHitboxes.length === 0) {
-                filteredCarsByHitbox = cars;
-                console.log('All condition');
-                console.log(selectedHitboxes);
+            if (selectedHitboxes[i].value === 'All') {
+                filteredCarsByHitbox = filteredCarsByAttribute;
             }
             else {
-                console.log('Else condition');
-                console.log(selectedHitboxes);
                 hitboxValues.push(selectedHitboxes[i].value);
                 for(let j = 0; j < hitboxValues.length; j++) {
-                    cars.forEach(function(car) {
+                    filteredCarsByAttribute.forEach(function(car) {
                         if (car.hitbox === hitboxValues[j]) {
                             //check that the pushed value is unique
                             if (!filteredCarsByHitbox.includes(car)) {
@@ -85,9 +62,18 @@ class CardList extends Component {
                 }
             }
         }
+        /*const filteredCarsByHitbox = cars.filter(car => {
+            if (someArray[0].value === 'All') return cars;
+            return car.hitbox.includes(someArray[0].value)
+        });*/
 
-        // no hitbox selected condition
-        if (filteredCarsByHitbox.length === 0) filteredCarsByHitbox = filteredCarsByAttribute;
+        /*const filteredCarsByName = cars.filter(car => {
+            if (this.props.selectedHitbox[0].value === 'All') return cars;
+            return car.hitbox.toLowerCase().includes(this.props.selectedHitbox[0].value.toLowerCase())
+        });*/
+        /*const filteredCarsByName = filteredCarsByHitbox.filter(car => {
+            return car.name.toLowerCase().includes(this.props.searchText.toLowerCase())
+        });*/
 
         //SORTING
         const selectedSort = this.props.selectedSort;

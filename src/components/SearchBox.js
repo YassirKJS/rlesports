@@ -81,6 +81,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
     });
 
     let suggestions = [];
+    suggestions.push({ value: 'All', label: 'All'});
     cars.forEach(function(car) {
         suggestions.push({ value: car.name, label: car.name});
     });

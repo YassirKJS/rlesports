@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilterHitbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterHitbox.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_Autocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_Autocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_FilterAttribute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_FilterAttribute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_FilterHitbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_FilterHitbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_SearchBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_TestComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_TestComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/old_TestComponentv2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/old/old_TestComponentv2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/replacer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/replacer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1086">
-              <caret line="62" column="100" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="100" />
+            <state relative-caret-position="696">
+              <caret line="68" column="75" selection-start-line="68" selection-start-column="65" selection-end-line="68" selection-end-column="75" />
               <folding>
                 <element signature="e#57#76#0" expanded="true" />
                 <element signature="e#128#173#0" expanded="true" />
@@ -37,38 +32,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/SearchBox.js">
+        <entry file="file://$PROJECT_DIR$/src/components/CardList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
+            <state relative-caret-position="-1008">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#118#168#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/old/old_SearchBox.js">
+        <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="56" />
-              <folding>
-                <element signature="e#61#113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FilterAttribute.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="226" column="32" lean-forward="true" selection-start-line="226" selection-start-column="32" selection-end-line="226" selection-end-column="32" />
+            <state relative-caret-position="266">
+              <caret line="202" selection-start-line="202" selection-end-line="202" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#118#168#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,15 +149,16 @@
         <option value="$PROJECT_DIR$/src/components/old_TestComponentv2.js" />
         <option value="$PROJECT_DIR$/src/components/old_FilterAttribute.js" />
         <option value="$PROJECT_DIR$/src/components/ddzd.js" />
-        <option value="$PROJECT_DIR$/src/components/replacer.js" />
-        <option value="$PROJECT_DIR$/src/components/FilterHitbox.js" />
         <option value="$PROJECT_DIR$/src/resources/data/cars.js" />
         <option value="$PROJECT_DIR$/src/components/old_SearchBox.js" />
         <option value="$PROJECT_DIR$/src/components/Searchbox.js" />
         <option value="$PROJECT_DIR$/src/components/FilterAttribute.js" />
-        <option value="$PROJECT_DIR$/src/components/CardList.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/old/old_CardList.js" />
+        <option value="$PROJECT_DIR$/src/components/replacer.js" />
         <option value="$PROJECT_DIR$/src/components/SearchBox.js" />
+        <option value="$PROJECT_DIR$/src/components/FilterHitbox.js" />
+        <option value="$PROJECT_DIR$/src/components/CardList.js" />
       </list>
     </option>
   </component>
@@ -327,12 +309,12 @@
       <workItem from="1563707512666" duration="5859000" />
       <workItem from="1563728074095" duration="960000" />
       <workItem from="1563788275332" duration="52149000" />
-      <workItem from="1564055751228" duration="3470000" />
+      <workItem from="1564055751228" duration="6312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191544000" />
+    <option name="totallyTimeSpent" value="194386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -968,19 +950,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ddzd.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/replacer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="172" column="39" selection-start-line="172" selection-start-column="39" selection-end-line="172" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Orderer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -1029,16 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CardList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="81" column="59" lean-forward="true" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/old/old_SearchBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
@@ -1049,10 +1008,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/old_CardList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="247" column="8" selection-start-line="247" selection-start-column="8" selection-end-line="247" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/replacer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1272">
+          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#118#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="202" selection-start-line="202" selection-end-line="202" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1086">
-          <caret line="62" column="100" selection-start-line="62" selection-start-column="82" selection-end-line="62" selection-end-column="100" />
+        <state relative-caret-position="696">
+          <caret line="68" column="75" selection-start-line="68" selection-start-column="65" selection-end-line="68" selection-end-column="75" />
           <folding>
             <element signature="e#57#76#0" expanded="true" />
             <element signature="e#128#173#0" expanded="true" />
@@ -1060,13 +1057,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchBox.js">
+    <entry file="file://$PROJECT_DIR$/src/components/CardList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="262" column="32" selection-start-line="262" selection-start-column="32" selection-end-line="262" selection-end-column="32" />
+        <state relative-caret-position="-1008">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#118#168#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
