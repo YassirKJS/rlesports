@@ -17,8 +17,8 @@ import CancelIcon from '@material-ui/icons/Cancel';
 // https://jedwatson.github.io/react-select/
 
 const suggestions = [
-    { label: 'Ascending Order', value: 'Ascending'},
-    { label: 'Descending Order', value: 'Descending'},
+    { label: 'Ascending', value: 'Ascending'},
+    { label: 'Descending', value: 'Descending'},
 ];
 
 /**** start styling ****/
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     input: {
         display: 'flex',
         padding: 1,
-        width: '25rem', //WIDTH
+        //width: '20rem', //WIDTH
         height: 'auto',
     },
     valueContainer: {
@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
         flex: 1,
         alignItems: 'center',
         overflow: 'hidden',
+        fontSize: '1.6rem',
     },
     chip: {
         margin: theme.spacing(0.5, 0.25),
@@ -108,6 +109,7 @@ function Orderer ({ selectedOrder, onSelectedOrderChange }) {
                 component="div"
                 style={{
                     fontWeight: props.isSelected ? 700 : 400,
+                    fontSize: '1.2rem',
                 }}
                 {...props.innerProps}
             >

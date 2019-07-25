@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     input: {
         display: 'flex',
         padding: 1,
-        width: '25rem', //WIDTH
+        //width: '25rem', //WIDTH
         height: 'auto',
     },
     valueContainer: {
@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
         flex: 1,
         alignItems: 'center',
         overflow: 'hidden',
+        fontSize: '1.6rem',
     },
     chip: {
         margin: theme.spacing(0.5, 0.25),
@@ -47,9 +48,10 @@ const useStyles = makeStyles(theme => ({
     },
     noOptionsMessage: {
         padding: theme.spacing(1, 2),
+        fontSize: '1.3rem',
     },
     singleValue: {
-        fontSize: 16,
+        fontSize: '1.6rem',
         color: '#2C2F39'
     },
     placeholder: {
@@ -124,6 +126,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
                 component="div"
                 style={{
                     fontWeight: props.isSelected ? 700 : 400,
+                    fontSize: '1.2rem',
                 }}
                 {...props.innerProps}
             >
