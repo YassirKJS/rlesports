@@ -60,7 +60,7 @@ class App extends Component {
                     <Header />
 
                     <div className="filter">
-                        <SearchBox searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
+                        <SearchBox cars={cars} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                         <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
                         <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
                         <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />

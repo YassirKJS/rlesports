@@ -89,7 +89,6 @@ function FilterAttribute ({ selectedAttribute, onSelectedAttributeChange }) {
     const handleAttributeChange = selectedOption   => {
         setSelectedOption(selectedOption);
         onSelectedAttributeChange(selectedOption.value);
-        console.log(selectedOption.value);
     };
 
     /**** start styling ****/

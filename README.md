@@ -3,7 +3,7 @@
 #Part0: HIERARCHY
 -----------------
     App
-        SearchBox     
+        Old_SearchBox     
         CardList    
             Card 
             
@@ -34,7 +34,7 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
 1-let's make a minimal state. The projected pieces of data I have so far:
         
     P1: the original array of cars
-    P2: the SearchBox input
+    P2: the Old_SearchBox input
     P3: the filtered list of cars
         
 2-The power of yes. Now let's ask 3 questions for each piece of data:
@@ -53,7 +53,7 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
  
     Q1-identify every component that renders something based on that state.
         A11: CardList
-        A12: SearchBox
+        A12: Old_SearchBox
         
     Q2-Find a common owner component (a single component above all the components that need the state in the hierarchy)
         App
@@ -68,9 +68,9 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
 ------------------------
     App
     -I add a constructor with the state
-    -I pass the state as props to A11(CardList) and A12(SearchBox)
+    -I pass the state as props to A11(CardList) and A12(Old_SearchBox)
     
-    SearchBox
+    Old_SearchBox
     -receive State as props then give it to input
     -for now I'll set the value prop of the input to always be equal to the state passed in from App *one way flow*
     
@@ -79,13 +79,13 @@ Second I ll add interactivity (*more thinking*) using STATE for the data that ch
     
 #Part4: FLOW THE OTHER WAY      
  --------------------------
-Since components (App) should only update its own state, App will pass callbacks to SearchBox, those callbacks will fire whenever the State should be updated (onChange). The callbacks will call setState().
+Since components (App) should only update its own state, App will pass callbacks to Old_SearchBox, those callbacks will fire whenever the State should be updated (onChange). The callbacks will call setState().
  
      App
      -add event handlers, bind them
-     -pass the callbacks to SearchBox as props
+     -pass the callbacks to Old_SearchBox as props
      
-     SearchBox
+     Old_SearchBox
      -add constructor
      -receive callbacks props
      -use received props to add event handlers, bind them

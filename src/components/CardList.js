@@ -18,7 +18,7 @@ class CardList extends Component {
             if (this.props.selectedAttribute === 'All') return cars;
             return car.attribute.includes(this.props.selectedAttribute)
         });*/
-        console.log(this.props.selectedAttribute);
+
         let filteredCarsByAttribute = [];
         let someArray = this.props.selectedAttribute;
         let values = [];
