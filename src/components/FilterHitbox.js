@@ -14,6 +14,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props
+// https://jedwatson.github.io/react-select/
 
 const suggestions = [
     { label: 'All' },

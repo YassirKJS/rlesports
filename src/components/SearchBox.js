@@ -14,6 +14,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props
+// https://jedwatson.github.io/react-select/
 
 /**** start styling ****/
 const useStyles = makeStyles(theme => ({
@@ -41,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     chipFocused: {
         backgroundColor: emphasize(
             theme.palette.type === 'light' ? theme.palette.grey[300] : theme.palette.grey[700],
-            0.08,
+            0.95,
         ),
     },
     noOptionsMessage: {
@@ -49,12 +50,14 @@ const useStyles = makeStyles(theme => ({
     },
     singleValue: {
         fontSize: 16,
+        color: '#2C2F39'
     },
     placeholder: {
         position: 'absolute',
         left: 2,
         bottom: 6,
         fontSize: 16,
+        //color: 'white'
     },
     paper: {
         position: 'absolute',
@@ -62,10 +65,14 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         left: 0,
         right: 0,
+        //color: 'white'
     },
     divider: {
         height: theme.spacing(2),
     },
+    multilineColor:{
+        color:'red'
+    }
 }));
 /**** end styling ****/
 
@@ -261,13 +268,13 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
                 styles={selectStyles}
                 inputId="react-select-multiple"
                 TextFieldProps={{
-                    label: 'Cars',
+                    label: 'Car',
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
                     },
                 }}
-                placeholder="Search for Cars"
+                placeholder="Search for Car(s)"
                 options={suggestions}
                 components={components}
                 value={multi }

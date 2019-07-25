@@ -14,20 +14,18 @@ import CancelIcon from '@material-ui/icons/Cancel';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props
+// https://jedwatson.github.io/react-select/
 
 const suggestions = [
-    { label: 'All' },
-    { label: 'Common' },
-    { label: 'Crate Import' },
-    { label: 'Premium DLC' },
-    { label: 'Rocket Pass' },
-    { label: 'PS4 exclusive' },
-    { label: 'Xbox exclusive' },
-    { label: 'Nintendo exclusive' },
-].map(suggestion => ({
-    value: suggestion.label,
-    label: suggestion.label,
-}));
+    { label: 'All', value: 'All' },
+    { label: 'Common', value: 'Common' },
+    { label: 'Crate Import', value: 'Crate Import' },
+    { label: 'Premium DLC', value: 'Premium DLC' },
+    { label: 'Rocket Pass', value: 'Limited' },
+    { label: 'PS4 exclusive', value: 'PS4 exclusive' },
+    { label: 'Xbox exclusive', value: 'Xbox exclusive' },
+    { label: 'Nintendo exclusive', value: 'Nintendo exclusive' },
+];
 
 /**** start styling ****/
 const useStyles = makeStyles(theme => ({

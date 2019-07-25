@@ -20,8 +20,8 @@ class App extends Component {
             searchText: [{value: 'All', label: 'All'}],
             selectedHitbox: [{value: 'All', label: 'All'}],
             selectedAttribute: [{value: 'All', label: 'All'}],
-            selectedSort: 'name',
-            selectedOrder: 'Ascending'
+            selectedSort: {label: 'Name', value: 'name'}, //'name',
+            selectedOrder: {label: 'Ascending Order', value: 'Ascending'}, //'Ascending'
         };
 
         this.handleSearchTextChange = this.handleSearchTextChange.bind(this);

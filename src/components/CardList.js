@@ -45,7 +45,7 @@ class CardList extends Component {
                 attributeValues.push(selectedAttributes[i].value);
                 for(let j = 0; j < attributeValues.length; j++) {
                     filteredCarsByName.forEach(function(car) {
-                        if (car.attribute === attributeValues[j]) {
+                        if (car.attribute.includes(attributeValues[j])) {
                             //check that the pushed value is unique
                             if (!filteredCarsByAttribute.includes(car)) {
                                 filteredCarsByAttribute.push(car)
@@ -64,8 +64,8 @@ class CardList extends Component {
         let selectedHitboxes = this.props.selectedHitbox;
         let hitboxValues = [];
         for(let i = 0; i < selectedHitboxes.length; i++) {
-            if (selectedHitboxes[i].value === 'All' || selectedHitboxes.length === 0) {
-                filteredCarsByHitbox = cars;
+            if (selectedHitboxes[i].value === 'All') {
+                filteredCarsByHitbox = filteredCarsByAttribute;
                 console.log('All condition');
                 console.log(selectedHitboxes);
             }
@@ -74,7 +74,7 @@ class CardList extends Component {
                 console.log(selectedHitboxes);
                 hitboxValues.push(selectedHitboxes[i].value);
                 for(let j = 0; j < hitboxValues.length; j++) {
-                    cars.forEach(function(car) {
+                    filteredCarsByAttribute.forEach(function(car) {
                         if (car.hitbox === hitboxValues[j]) {
                             //check that the pushed value is unique
                             if (!filteredCarsByHitbox.includes(car)) {
@@ -89,11 +89,20 @@ class CardList extends Component {
         // no hitbox selected condition
         if (filteredCarsByHitbox.length === 0) filteredCarsByHitbox = filteredCarsByAttribute;
 
-        //SORTING
+        // SORTING & ORDERING
+        console.log('selected sort:');
+        console.log(this.props.selectedSort);
+        console.log('selected order:');
+        console.log(this.props.selectedOrder);
+        console.log('filteredCarsByHitbox:');
+        console.log(filteredCarsByHitbox);
+
         const selectedSort = this.props.selectedSort;
-        if (selectedSort === 'name') {
+        const selectedOrder = this.props.selectedOrder;
+
+        if (selectedSort.value === 'name') {
             //SORT BY NAME
-            if (this.props.selectedOrder === 'Ascending') {
+            if (selectedOrder.value === 'Ascending') {
                 filteredCarsByHitbox.sort(function (a, b) {
                     const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
                     if (nameA < nameB) //sort string ascending
@@ -113,9 +122,10 @@ class CardList extends Component {
                 });
             }
         }
-        if (selectedSort === 'hitbox') {
+
+        if (selectedSort.value === 'hitbox') {
             //SORT BY HITBOX
-            if (this.props.selectedOrder === 'Ascending') {
+            if (selectedOrder.value === 'Ascending') {
                 filteredCarsByHitbox.sort(function(a, b){
                     const hitboxA = a.hitbox.toLowerCase(), hitboxB = b.hitbox.toLowerCase();
                     if (hitboxA < hitboxB) //sort string ascending
@@ -136,9 +146,9 @@ class CardList extends Component {
                 });
             }
         }
-        if (selectedSort === 'attribute') {
+        if (selectedSort.value === 'attribute') {
             //SORT BY ATTRIBUTE
-            if (this.props.selectedOrder === 'Ascending') {
+            if (selectedOrder.value === 'Ascending') {
                 filteredCarsByHitbox.sort(function(a, b){
                     const attributeA = a.attribute.toLowerCase(), attributeB = b.attribute.toLowerCase();
                     if (attributeA < attributeB) //sort string ascending
@@ -159,9 +169,9 @@ class CardList extends Component {
                 });
             }
         }
-        if (selectedSort === 'release') {
+        if (selectedSort.value === 'release') {
             //SORT BY RELEASE
-            if (this.props.selectedOrder === 'Ascending') {
+            if (selectedOrder.value === 'Ascending') {
                 filteredCarsByHitbox.sort(function(a, b){
                     const releaseA = a.released, releaseB = b.released;
                     if (releaseA < releaseB) //sort string ascending
@@ -183,6 +193,7 @@ class CardList extends Component {
             }
         }
 
+
         return (
             <div>
                 <div className="cardlist">
@@ -198,65 +209,3 @@ class CardList extends Component {
 }
 
 export default CardList;
-
-
-
-
-
-
-
-
-/*
-        const hitboxes = ['Octane', 'Dominus', 'Hybrid', 'Breakout', 'Plank'];
-        const breakoutHitbox = [];
-        const dominusHitbox = [];
-        const hybridHitbox = [];
-        const octaneHitbox = [];
-        const plankHitbox = [];
-
-        filteredCarsByName.map(car => {
-            switch(car.hitbox) {
-                case 'Breakout':
-                    return breakoutHitbox.push(car);
-                case 'Dominus':
-                    return dominusHitbox.push(car);
-                case 'Hybrid':
-                    return hybridHitbox.push(car);
-                case 'Octane':
-                    return octaneHitbox.push(car);
-                case 'Plank':
-                    return plankHitbox.push(car);
-                default:
-                    return 0;
-            }
-        });
-
-        const Dict_hitbox_cars = {
-            Breakout: breakoutHitbox,
-            Dominus: dominusHitbox,
-            Hybrid: hybridHitbox,
-            Octane: octaneHitbox,
-            Plank: plankHitbox
-        };
- */
-
-/*<div>
-    {
-        hitboxes.map(hitbox => {
-            return (
-                <div>
-                    {hitbox}
-                    <div className="cardlist">
-                        {
-                            Dict_hitbox_cars[hitbox].map((car) => {
-                                return (
-                                    <Card key={car.id} car={car}/>
-                                );
-                            })
-                        }
-                    </div>
-                </div>
-            );
-        })
-    }
-</div>*/
