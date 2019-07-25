@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/CardList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilterHitbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilterHitbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/replacer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/replacer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/CardList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1008">
+            <state relative-caret-position="-1224">
               <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -46,11 +43,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="202" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="197">
+              <caret line="34" column="20" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="20" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sass/layout/_cardlist.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -103,6 +109,7 @@
       <find>attrib</find>
       <find>hitbo</find>
       <find>forea</find>
+      <find>index</find>
     </findStrings>
     <replaceStrings>
       <replace>attribute</replace>
@@ -142,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/components/Autocomplete.js" />
         <option value="$PROJECT_DIR$/src/components/FilterHitbox_func.js" />
         <option value="$PROJECT_DIR$/src/components/TestComponent.js" />
-        <option value="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" />
         <option value="$PROJECT_DIR$/src/components/old_FilterHitbox.js" />
         <option value="$PROJECT_DIR$/src/components/FilterHitboxFunc.js" />
         <option value="$PROJECT_DIR$/src/components/old_Autocomplete.js" />
@@ -157,8 +163,9 @@
         <option value="$PROJECT_DIR$/src/old/old_CardList.js" />
         <option value="$PROJECT_DIR$/src/components/replacer.js" />
         <option value="$PROJECT_DIR$/src/components/SearchBox.js" />
-        <option value="$PROJECT_DIR$/src/components/FilterHitbox.js" />
         <option value="$PROJECT_DIR$/src/components/CardList.js" />
+        <option value="$PROJECT_DIR$/src/components/FilterHitbox.js" />
+        <option value="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" />
       </list>
     </option>
   </component>
@@ -309,12 +316,12 @@
       <workItem from="1563707512666" duration="5859000" />
       <workItem from="1563728074095" duration="960000" />
       <workItem from="1563788275332" duration="52149000" />
-      <workItem from="1564055751228" duration="6312000" />
+      <workItem from="1564055751228" duration="6593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194386000" />
+    <option name="totallyTimeSpent" value="194667000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -880,13 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/layout/_cardlist.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/old/old_FilterHitbox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -1036,16 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
@@ -1059,11 +1049,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/CardList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1008">
+        <state relative-caret-position="-1224">
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FilterHitbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/layout/_cardlist.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
         </state>
       </provider>
     </entry>

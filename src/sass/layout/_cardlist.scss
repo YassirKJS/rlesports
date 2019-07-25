@@ -37,7 +37,7 @@
     height: 80%;
     width: 80%;
 
-    z-index: 1;
+    z-index: -10;
   }
 
   &__hitbox {
@@ -76,7 +76,7 @@
     grid-column: 1 / -1;
     justify-self: end;
     align-self: end;
-    z-index: 1;
+    z-index: 0;
 
     font-size: 2.1rem;
     font-weight: 700;
