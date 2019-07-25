@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import clsx from 'clsx/clsx';
 import Select from 'react-select';
 
 /* material ui */
-import { emphasize, makeStyles, useTheme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import NoSsr from '@material-ui/core/NoSsr';
-import TextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
-import Chip from '@material-ui/core/Chip';
-import MenuItem from '@material-ui/core/MenuItem';
+import { emphasize, makeStyles, useTheme } from '@material-ui/core/styles/index';
+import Typography from '@material-ui/core/Typography/index';
+import NoSsr from '@material-ui/core/NoSsr/index';
+import TextField from '@material-ui/core/TextField/index';
+import Paper from '@material-ui/core/Paper/index';
+import Chip from '@material-ui/core/Chip/index';
+import MenuItem from '@material-ui/core/MenuItem/index';
 import CancelIcon from '@material-ui/icons/Cancel';
 
 const suggestions = [

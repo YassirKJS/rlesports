@@ -69,7 +69,8 @@ const useStyles = makeStyles(theme => ({
 }));
 /**** end styling ****/
 
-function SearchBox ({ cars, selectedAttribute, onSelectedAttributeChange }) {
+function SearchBox ({ cars, searchText, onSearchTextChange }) {
+    //Creating suggestions array from cars prop
     cars.sort(function (a, b) {
         const nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
         if (nameA < nameB) //sort string ascending
@@ -84,25 +85,11 @@ function SearchBox ({ cars, selectedAttribute, onSelectedAttributeChange }) {
         suggestions.push({ value: car.name, label: car.name});
     });
 
-    const temp_suggestions = [
-        { label: 'All' },
-        { label: 'Common' },
-        { label: 'Crate Import' },
-        { label: 'Premium DLC' },
-        { label: 'Rocket Pass' },
-        { label: 'PS4 exclusive' },
-        { label: 'Xbox exclusive' },
-        { label: 'Nintendo exclusive' },
-    ].map(suggestion => ({
-        value: suggestion.label,
-        label: suggestion.label,
-    }));
-
     const [selectedOption , setSelectedOption ] = useState(null);
 
-    const handleAttributeChange = selectedOption   => {
+    const handleTextChange = selectedOption   => {
         setSelectedOption(selectedOption);
-        onSelectedAttributeChange(selectedOption.value);
+        onSearchTextChange(selectedOption.value);
     };
 
     /**** start styling ****/
@@ -262,8 +249,7 @@ function SearchBox ({ cars, selectedAttribute, onSelectedAttributeChange }) {
 
     function handleChangeMulti(value) {
         setMulti(value);
-        //console.log(value[0].value);
-        onSelectedAttributeChange(value);
+        onSearchTextChange(value);
     }
     /**** end Single/Multi ****/
 
@@ -274,13 +260,13 @@ function SearchBox ({ cars, selectedAttribute, onSelectedAttributeChange }) {
                 styles={selectStyles}
                 inputId="react-select-multiple"
                 TextFieldProps={{
-                    label: 'Attribute',
+                    label: 'Cars',
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
                     },
                 }}
-                placeholder="Select Attribute(s)"
+                placeholder="Search for Cars"
                 options={suggestions}
                 components={components}
                 value={multi }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 /* material ui */
-import TextField from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField/index';
 import SearchIcon from '@material-ui/icons/Search';
-import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid/index';
 
 class Old_SearchBox extends Component {
     constructor(props) {

@@ -17,7 +17,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchText: '',
+            searchText: [{value: 'All', label: 'All'}],
             selectedHitbox: [{value: 'All', label: 'All'}],
             selectedAttribute: [{value: 'All', label: 'All'}],
             selectedSort: 'name',
