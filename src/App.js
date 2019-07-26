@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { cars } from './resources/data/cars';
 
 /* styling */
 import './App.css';
@@ -52,8 +53,6 @@ class App extends Component {
     }
 
     render() {
-        const cars = this.props.cars;
-
         return (
             <div>
                 <div className="tc">

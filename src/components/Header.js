@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import '../sass/main.scss';
 import MyClickable from './MyClickable';
 
-/* fontAwesome */
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faStar, faClock } from '@fortawesome/free-solid-svg-icons';
-
 class Header extends Component {
     constructor(props) {
         super(props);

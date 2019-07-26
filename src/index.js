@@ -1,9 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
-import { cars } from './resources/data/cars';
-import App from './App';
 import 'tachyons';
 import './sass/main.scss';
 
-ReactDOM.render(<App cars={cars} />, document.getElementById('root'));
+// routing
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import App from './App';
+import Livestreams from './components/Livestreams';
+
+const routing = (
+    <Router>
+        <div>
+            <Route exact path="/" component={App} />
+            <Route path="/Livestreams" component={Livestreams} />
+        </div>
+    </Router>
+);
+
+ReactDOM.render(routing, document.getElementById('root'));
+
+//ReactDOM.render(<App cars={cars} />, document.getElementById('root'));
