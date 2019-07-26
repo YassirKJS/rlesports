@@ -274,7 +274,7 @@ function FilterHitbox ({ selectedHitbox, onSelectedHitboxChange }) {
                         InputLabelProps: {
                             htmlFor: 'react-select-multiple',
                             shrink: true,
-                            style: { color: '#fff' },
+                            style: { color: 'greenyellow' },
                         },
                     }}
                     placeholder="Select Hitbox(s)"

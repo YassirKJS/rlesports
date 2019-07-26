@@ -270,7 +270,7 @@ function Sorter ({ selectedSort, onSelectedSortChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
-                        style: { color: '#fff' },
+                        style: { color: 'greenyellow' },
                     },
                 }}
                 placeholder="Select Sort"

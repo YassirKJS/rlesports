@@ -39,15 +39,39 @@
       align-items: center;
     }
 
-    //& > *:hover {
-      //text-shadow: 0 .2rem .5rem var(--color-gray-light-3);
+    & > *:hover {
+      //text-shadow: 0 .2rem .2rem rgba(greenyellow, .5);//var(--color-gray-light-3);
+      //color: greenyellow;
       //border-bottom: 2px solid var(--color-gray-light-3);
       //padding-bottom: 2.3rem;
-    //}
+    }
+  }
+
+  &__item {
+    //color: ghostwhite;
+  }
+
+  &__item--active {
+    color: greenyellow;
+    //text-transform: uppercase;
   }
 }
 
 .link {
   color: ghostwhite;
 }
+
+.link:hover {
+  text-shadow: 0 .2rem .2rem rgba(greenyellow, .5);
+  color: greenyellow;
+}
+
+
+.link:focus {
+  outline: none;
+}
+
+
+
+
 

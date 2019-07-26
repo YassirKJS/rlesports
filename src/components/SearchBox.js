@@ -289,7 +289,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
-                        style: { color: '#fff' },
+                        style: { color: 'greenyellow' },
                     },
                 }}
                 placeholder="Search for Car(s)"

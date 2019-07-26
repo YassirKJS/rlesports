@@ -66,12 +66,8 @@ class CardList extends Component {
         for(let i = 0; i < selectedHitboxes.length; i++) {
             if (selectedHitboxes[i].value === 'All') {
                 filteredCarsByHitbox = filteredCarsByAttribute;
-                console.log('All condition');
-                console.log(selectedHitboxes);
             }
             else {
-                console.log('Else condition');
-                console.log(selectedHitboxes);
                 hitboxValues.push(selectedHitboxes[i].value);
                 for(let j = 0; j < hitboxValues.length; j++) {
                     filteredCarsByAttribute.forEach(function(car) {
@@ -90,13 +86,6 @@ class CardList extends Component {
         if (filteredCarsByHitbox.length === 0) filteredCarsByHitbox = filteredCarsByAttribute;
 
         // SORTING & ORDERING
-        console.log('selected sort:');
-        console.log(this.props.selectedSort);
-        console.log('selected order:');
-        console.log(this.props.selectedOrder);
-        console.log('filteredCarsByHitbox:');
-        console.log(filteredCarsByHitbox);
-
         const selectedSort = this.props.selectedSort;
         const selectedOrder = this.props.selectedOrder;
 

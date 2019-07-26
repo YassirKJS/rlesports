@@ -269,7 +269,7 @@ function Orderer ({ selectedOrder, onSelectedOrderChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
-                        style: { color: '#fff' },
+                        style: { color: 'greenyellow' },
                     },
                 }}
                 placeholder="Select Order"
