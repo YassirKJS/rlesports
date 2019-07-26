@@ -8,12 +8,14 @@ import './sass/main.scss';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import App from './App';
 import Livestreams from './components/Livestreams';
+import Notfound from './components/notfound';
 
 const routing = (
     <Router>
         <div>
             <Route exact path="/" component={App} />
             <Route path="/Livestreams" component={Livestreams} />
+            <Route component={Notfound} />
         </div>
     </Router>
 );
