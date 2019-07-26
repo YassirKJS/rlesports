@@ -17,3 +17,10 @@ class MyClickable extends React.Component {
 }
 
 export default MyClickable;
+
+/*
+* in css:
+  &__item--active {
+    border-bottom: 2px solid var(--color-gray-light-3);
+  }
+ */

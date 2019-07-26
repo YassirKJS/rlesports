@@ -5,16 +5,19 @@ import Select from 'react-select';
 /* material ui */
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { emphasize, makeStyles, useTheme } from '@material-ui/core/styles';
+import { emphasize, makeStyles, useTheme, withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
+import Input from '@material-ui/core/Input';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props
 // https://jedwatson.github.io/react-select/
+// https://codesandbox.io/s/material-demo-uq9th
+// https://codesandbox.io/s/owv305w96
 
 /**** start styling ****/
 const useStyles = makeStyles(theme => ({
@@ -22,12 +25,14 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         height: 'auto',
         zIndex: '100',
+        //backgroundColor:'#e8e8e8',
     },
     input: {
         display: 'flex',
         padding: 1,
         //width: '25rem', //WIDTH
         height: 'auto',
+        color: '#e8e8e8',
     },
     valueContainer: {
         display: 'flex',
@@ -49,17 +54,18 @@ const useStyles = makeStyles(theme => ({
     noOptionsMessage: {
         padding: theme.spacing(1, 2),
         fontSize: '1.3rem',
+        color: '#e8e8e8',
     },
     singleValue: {
         fontSize: '1.6rem',
-        color: '#2C2F39'
+        color: '#e81319'
     },
     placeholder: {
         position: 'absolute',
         left: 2,
         bottom: 6,
         fontSize: 16,
-        //color: 'white'
+        color: '#e8e8e8',
     },
     paper: {
         position: 'absolute',
@@ -67,13 +73,20 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         left: 0,
         right: 0,
-        //color: 'white'
+        color: 'white', //the suggestions
     },
     divider: {
         height: theme.spacing(2),
     },
     multilineColor:{
         color:'red'
+    },
+    underline: {
+        borderBottom: '2px solid white',
+        '&:after': {
+            // The source seems to use this but it doesn't work
+            borderBottom: '2px solid white',
+        },
     }
 }));
 /**** end styling ****/
@@ -109,7 +122,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
     const selectStyles = {
         input: base => ({
             ...base,
-            color: theme.palette.text.primary,
+            color: 'white', //theme.palette.text.white,
             '& input': {
                 font: 'inherit',
             },
@@ -179,7 +192,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
 
     /**** start  ****/
     function inputComponent({ inputRef, ...props }) {
-        return <div ref={inputRef} {...props} />;
+        return <div ref={inputRef} {...props}/>;
     }
     /**** end  ****/
 
@@ -194,6 +207,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
 
         return (
             <TextField
+                Style='color: white'
                 fullWidth
                 InputProps={{
                     inputComponent,
@@ -226,10 +240,10 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
     }
     /**** end MultiValue ****/
 
-    /**** start Menu ****/
+    /**** start Menu (dropdown)****/
     function Menu(props) {
         return (
-            <Paper square className={props.selectProps.classes.paper} {...props.innerProps}>
+            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: #252525'>
                 {props.children}
             </Paper>
         );
@@ -275,6 +289,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
+                        style: { color: '#fff' },
                     },
                 }}
                 placeholder="Search for Car(s)"

@@ -4,19 +4,19 @@ import ReactDOM from 'react-dom';
 import 'tachyons';
 import './sass/main.scss';
 
-// routing
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+// routing : https://codeburst.io/getting-started-with-react-router-5c978f70df91
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import App from './App';
 import Livestreams from './components/Livestreams';
 import Notfound from './components/notfound';
 
 const routing = (
     <Router>
-        <div>
+        <Switch>
             <Route exact path="/" component={App} />
-            <Route path="/Livestreams" component={Livestreams} />
+            <Route exact path="/Livestreams" component={Livestreams} />
             <Route component={Notfound} />
-        </div>
+        </Switch>
     </Router>
 );
 

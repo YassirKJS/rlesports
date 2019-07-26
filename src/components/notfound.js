@@ -1,5 +1,18 @@
 import React from 'react';
 
-const Notfound = () => <h1>Not found</h1>;
+/* styling */
+import '../sass/main.scss';
+
+/* react components */
+import Header from "./Header";
+
+const Notfound = () => {
+    return (
+        <div>
+            <Header />
+            <h1>NOT FOUND</h1>
+        </div>
+    );
+};
 
 export default Notfound

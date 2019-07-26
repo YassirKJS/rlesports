@@ -55,15 +55,19 @@ const useStyles = makeStyles(theme => ({
     },
     noOptionsMessage: {
         padding: theme.spacing(1, 2),
+        fontSize: '1.3rem',
+        color: '#e8e8e8',
     },
     singleValue: {
         fontSize: 16,
+        color: 'white'
     },
     placeholder: {
         position: 'absolute',
         left: 2,
         bottom: 6,
         fontSize: 16,
+        color: '#e8e8e8'
     },
     paper: {
         position: 'absolute',
@@ -71,6 +75,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         left: 0,
         right: 0,
+        color: 'white',
     },
     divider: {
         height: theme.spacing(2),
@@ -94,7 +99,7 @@ function Sorter ({ selectedSort, onSelectedSortChange }) {
     const selectStyles = {
         input: base => ({
             ...base,
-            color: theme.palette.text.primary,
+            color: 'white', //theme.palette.text.white,
             '& input': {
                 font: 'inherit',
             },
@@ -218,7 +223,7 @@ function Sorter ({ selectedSort, onSelectedSortChange }) {
     /**** start Menu ****/
     function Menu(props) {
         return (
-            <Paper square className={props.selectProps.classes.paper} {...props.innerProps}>
+            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: #252525'>
                 {props.children}
             </Paper>
         );
@@ -265,6 +270,7 @@ function Sorter ({ selectedSort, onSelectedSortChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
+                        style: { color: '#fff' },
                     },
                 }}
                 placeholder="Select Sort"
