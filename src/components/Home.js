@@ -14,7 +14,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeIndex : this.props.activeIndex, //change (redux)
+            activeIndex : 0, //change (redux)
         };
 
         this.handleItemClick = this.handleItemClick.bind(this);
@@ -25,19 +25,15 @@ class Home extends Component {
     }
 
     render() {
-        const {updateActiveIndex} = this.props;
-        console.log('rendering..activeIndex:');
-        console.log(this.props.activeIndex);
-
         const header =
             <div>
                 <header className="header">
                     <nav className="header__navbar">
-                        <MyClickable  name="Cars" className='header__item' index={0} isActive={ this.props.activeIndex===0 } onClick={updateActiveIndex} />
-                        <MyClickable  name="Players" className='header__item' index={1} isActive={ this.props.activeIndex===1 } onClick={updateActiveIndex} />
-                        <MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.props.activeIndex===2 } onClick={updateActiveIndex} />
-                        <MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.props.activeIndex===3 } onClick={updateActiveIndex} />
-                        <MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.props.activeIndex===4 } onClick={updateActiveIndex} />
+                        <MyClickable  name="Cars" className='header__item' index={0} isActive={ this.state.activeIndex===0 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Players" className='header__item' index={1} isActive={ this.state.activeIndex===1 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={this.handleItemClick} />
                     </nav>
                 </header>
             </div>;
@@ -45,16 +41,16 @@ class Home extends Component {
         return (
             <div>
                 {header}
-                {(this.props.activeIndex===0 || this.props.activeIndex===null)? (
+                {(this.state.activeIndex===0 || this.state.activeIndex===null)? (
                     <App />
                 ) : (
-                    (this.props.activeIndex===1)? (
+                    (this.state.activeIndex===1)? (
                         <Players />
                     ) : (
-                        (this.props.activeIndex===2)? (
+                        (this.state.activeIndex===2)? (
                             <Calendar />
                         ) : (
-                            (this.props.activeIndex===3)? (
+                            (this.state.activeIndex===3)? (
                                 <Reddit />
                             ) : (
                                 <Livestreams />
@@ -67,11 +63,12 @@ class Home extends Component {
     }
 }
 
-//export default Home;
+export default Home;
 
 
 
 
+/*
 const mapDispatchToProps = (dispatch) => {
     return {
         updateActiveIndex: (index) => dispatch(updateActiveIndex(index)),
@@ -84,3 +81,6 @@ const mapStateToProps = state => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
+ */
+
+//Q: how to keep state after refresh?
