@@ -12,11 +12,16 @@ import Players from './components/Players';
 import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
 import Notfound from './components/notfound';
+import Home from './components/Home';
+
+import { Provider } from 'react-redux';
+import store from './store';
 
 const routing = (
     <Router>
         <Switch>
-            <Route exact path="/" component={App} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Cars" component={App} />
             <Route exact path="/Livestreams" component={Livestreams} />
             <Route exact path="/Players" component={Players} />
             <Route exact path="/Calendar" component={Calendar} />
@@ -26,6 +31,6 @@ const routing = (
     </Router>
 );
 
-ReactDOM.render(routing, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}>{routing}</Provider>, document.getElementById('root'));
 
 //ReactDOM.render(<App cars={cars} />, document.getElementById('root'));

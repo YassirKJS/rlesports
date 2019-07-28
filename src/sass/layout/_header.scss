@@ -61,15 +61,17 @@
   color: ghostwhite;
 }
 
+.link:focus, .link:active{
+  outline: none;
+}
+
 .link:hover {
   text-shadow: 0 .2rem .2rem rgba(greenyellow, .5);
   color: greenyellow;
 }
 
 
-.link:focus {
-  outline: none;
-}
+
 
 
 

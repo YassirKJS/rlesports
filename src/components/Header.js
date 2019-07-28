@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import '../sass/main.scss';
 import MyClickable from './MyClickable';
+import { updateActiveIndex } from '../actions';
+import { connect } from 'react-redux';
 
 // routing
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router, NavLink  } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -17,26 +19,20 @@ class Header extends Component {
 
     handleItemClick(index) {
         this.setState({ activeIndex: index });
-        console.log('handleItemClick');
-    }
-
-    componentWillMount() {
-        this.setState({ activeIndex: null });
-        console.log('componentWillMount');
     }
 
     render() {
+        const {updateActiveIndex} = this.props;
+
         return (
             <div>
                 <header className="header">
-                    {/*<img alt="logo" src={logo} className="header__logo"
-                         onMouseEnter={Header.handleMouseHover} onMouseLeave={Header.handleMouseUnhover} />*/}
                     <nav className="header__navbar">
-                        <Link to="/" className='link'><MyClickable  name="Cars" className='header__item' index={0} isActive={ this.state.activeIndex===0 } onClick={this.handleItemClick} /></Link>
-                        <Link to="/Players" className='link'><MyClickable  name="Players" className='header__item' index={1} isActive={ this.state.activeIndex===1 } onClick={this.handleItemClick} /></Link>
-                        <Link to="/Calendar" className='link'><MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={this.handleItemClick} /></Link>
-                        <Link to="/Reddit" className='link'><MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={this.handleItemClick} /></Link>
-                        <Link to="/Livestreams" className='link'><MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={this.handleItemClick} /></Link>
+                        <NavLink  to="/Cars" className='link'><MyClickable  name="Cars" className='header__item' index={0} isActive={ this.state.activeIndex===0 } onClick={updateActiveIndex} /></NavLink >
+                        <NavLink  to="/Players" className='link'><MyClickable  name="Players" className='header__item' index={1} isActive={ this.state.activeIndex===1 } onClick={updateActiveIndex} /></NavLink >
+                        <NavLink  to="/Calendar" className='link'><MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={updateActiveIndex} /></NavLink >
+                        <NavLink  to="/Reddit" className='link'><MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={updateActiveIndex} /></NavLink >
+                        <NavLink  to="/Livestreams" className='link'><MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={updateActiveIndex} /></NavLink >
                     </nav>
                 </header>
             </div>
@@ -44,4 +40,16 @@ class Header extends Component {
     }
 }
 
-export default Header;
+//export default Header;
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updateActiveIndex: (index) => dispatch(updateActiveIndex(index)),
+    }
+};
+
+const mapStateToProps = state => ({
+    activeIndex:state.activeIndex
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

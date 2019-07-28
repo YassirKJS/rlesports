@@ -19,7 +19,12 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-select": "^2.0.0-beta.7",
-    "tachyons": "^4.11.1"
+    "tachyons": "^4.11.1",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "cross-fetch": "^3.0.4"
   },
   "scripts": {
     "liveserver": "live-server",
