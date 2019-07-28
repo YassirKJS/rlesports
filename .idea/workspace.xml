@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Livestreams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Livestreams.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Players.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Players.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Reddit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Reddit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="70" column="2" lean-forward="true" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
+            <state relative-caret-position="480">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -358,12 +351,12 @@
       <workItem from="1564055751228" duration="21813000" />
       <workItem from="1564096440718" duration="32319000" />
       <workItem from="1564228978426" duration="10855000" />
-      <workItem from="1564315362575" duration="6447000" />
+      <workItem from="1564315362575" duration="6561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259508000" />
+    <option name="totallyTimeSpent" value="259622000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="70" column="2" lean-forward="true" selection-start-line="70" selection-start-column="2" selection-end-line="70" selection-end-column="2" />
+        <state relative-caret-position="480">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
