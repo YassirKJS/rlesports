@@ -56,7 +56,7 @@ class App extends Component {
         return (
             <div>
                 <div className="tc">
-                    <Header />
+                    {/* <Header />*/}
 
                     <div className="filter">
                         <SearchBox cars={cars} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />

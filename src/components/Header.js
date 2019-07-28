@@ -49,7 +49,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = state => ({
-    activeIndex:state.activeIndex
+    activeIndex: state.activeIndex
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

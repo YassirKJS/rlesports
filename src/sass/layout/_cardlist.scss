@@ -23,20 +23,21 @@
 
   //HEADING SPAN CHANGE ON CARD HOVER
   &:hover &__heading-span {
-    background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark));
+    background-image: linear-gradient(to right, #CB52FF, #7700B8);
+    //background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark)); // #7700B8 #CB52FF
     padding-right: 6rem;
     font-weight: 900;
     color: var(--color-gray-light-2);
   }
 
   &:hover &__hitbox-img {
-    color : var(--color-orange-light);
+    color : #CB52FF; //var(--color-orange-light);
   }
   &:hover &__released-img {
-    color : var(--color-orange-light);
+    color : #CB52FF; //var(--color-orange-light);
   }
   &:hover &__attributes-img {
-    color : var(--color-orange-light);
+    color : #CB52FF; //var(--color-orange-light);
   }
 
   &__img-container {

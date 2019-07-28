@@ -20,7 +20,6 @@ class Livestreams extends Component {
         return (
             <div>
                 <div className="tc">
-                    <Header />
                     <span>Livestreams here</span>
                 </div>
             </div>

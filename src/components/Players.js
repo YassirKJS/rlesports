@@ -20,7 +20,6 @@ class Players extends Component {
         return (
             <div>
                 <div className="tc">
-                    <Header />
                     <span>Players here</span>
                 </div>
             </div>

@@ -20,7 +20,6 @@ class Calendar extends Component {
         return (
             <div>
                 <div className="tc">
-                    <Header />
                     <span>Calendar here</span>
                 </div>
             </div>
