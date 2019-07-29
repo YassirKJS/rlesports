@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTwitchEmbedVideo from "react-twitch-embed-video"
 
 /* styling */
 import '../sass/main.scss';
@@ -12,7 +13,6 @@ class Livestreams extends Component {
         this.state = {
 
         };
-
     }
 
     render() {
@@ -21,6 +21,8 @@ class Livestreams extends Component {
             <div>
                 <div className="tc">
                     <span>Livestreams here</span>
+                    <ReactTwitchEmbedVideo channel="talk2megooseman" layout="video" width="420" height="240" theme="dark" muted={true} autoplay={true}/>
+                    <ReactTwitchEmbedVideo channel="rivalesports" layout="video" width="420" height="240" theme="dark" muted={true} autoplay={false}/>
                 </div>
             </div>
         );
