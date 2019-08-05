@@ -18,7 +18,7 @@ class Livestreams extends Component {
                     return ( <ReactPlayer
                         key={channel.id}
                         url={'https://www.twitch.tv/' + channel.twitch}
-                        width="30rem"
+                        width="35rem"
                         height="20rem"
                         controls={false}
                         playing
