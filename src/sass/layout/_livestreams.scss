@@ -1,0 +1,21 @@
+.livestream {
+  width: 420px;
+  height: 240px;
+}
+
+.livestreams {
+  margin: 5rem 2rem 5rem 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,  minmax(27rem, 1fr)); //repeat(auto-fit, minmax(27rem, 1fr))
+  grid-gap: 5rem;
+  justify-content: center;
+}
+
+.stretched-link {
+
+}
+
+.link-unstyled {
+  text-decoration: none !important;
+}

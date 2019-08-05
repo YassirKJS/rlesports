@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import ReactTwitchEmbedVideo from "react-twitch-embed-video"
-
-/* styling */
 import '../sass/main.scss';
-
-/* react components */
-import Header from "./Header";
+import { channels } from '../resources/data/channels';
+import ReactPlayer from 'react-player';
 
 class Livestreams extends Component {
     constructor(props) {
@@ -16,15 +12,29 @@ class Livestreams extends Component {
     }
 
     render() {
-
         return (
-            <div>
-                <div className="tc">
-                    <span>Livestreams here</span>
-                    <ReactTwitchEmbedVideo channel="talk2megooseman" layout="video" width="420" height="240" theme="dark" muted={true} autoplay={true}/>
-                    <ReactTwitchEmbedVideo channel="rivalesports" layout="video" width="420" height="240" theme="dark" muted={true} autoplay={false}/>
-                </div>
+            <div className='livestreams'>
+                {channels.map((channel) => {
+                    return ( <ReactPlayer
+                        key={channel.id}
+                        url={'https://www.twitch.tv/' + channel.twitch}
+                        width="30rem"
+                        height="20rem"
+                        controls={false}
+                        playing
+                        playsinline
+                        light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + channel.twitch + "-640x360.jpg"}
+                        //onReady={console.log(channel.id + ': ' + channel.twitch + ' onReady')}
+                        //onPlay={console.log(channel.id + ': ' + channel.twitch + ' onPlay')}
+                        onPause={console.log(channel.id + ': ' + channel.twitch + ' onPause')}
+                        //onBuffer={console.log(channel.id + ': ' + channel.twitch + ' onBuffer')}
+                        //onBufferEnd={console.log(channel.id + ': ' + channel.twitch + ' onBufferEnd')}
+                        //onEnded={console.log(channel.id + ': ' + channel.twitch + ' onEnded')}
+                        //onError={console.log(channel.id + ': ' + channel.twitch + ' onError')}
+                    />);
+                })}
             </div>
+
         );
     }
 }

@@ -1,4 +1,4 @@
-/*
+
 import React  from 'react';
 
 const EMBED_URL = 'https://embed.twitch.tv/embed/v1.js';
@@ -41,4 +41,3 @@ ReactDOM.render(
 );
 
 
- */
