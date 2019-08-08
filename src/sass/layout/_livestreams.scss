@@ -12,10 +12,13 @@
   justify-content: center;
 }
 
-.stretched-link {
+.livestream-card {
+  background-color: black;
+  border-radius: 10px;
+  transition: all .7s;
 
-}
-
-.link-unstyled {
-  text-decoration: none !important;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 1rem rgba(black, .9);
+  }
 }
