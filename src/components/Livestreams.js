@@ -68,7 +68,8 @@ class Livestreams extends Component {
                     '&user_login=' + channels[44].twitch +
                     '&user_login=' + channels[45].twitch +
                     '&user_login=' + channels[46].twitch +
-                    '&user_login=' + channels[47].twitch,
+                    '&user_login=' + channels[47].twitch +
+                    '&user_login=' + channels[48].twitch,
                     {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
                     .then(response => response.json())
                     .then(data => {resolve(data.data) ; console.log(data.data)});
@@ -115,27 +116,43 @@ class Livestreams extends Component {
             return <h2>Loading...</h2>;
         }
 
+        this.state.data.forEach(function(object) {
+            console.log(object.user_name);
+            return (<div>{object.user_name}</div>)
+        });
+
         console.log('This happens 8th - after I get data.');
         return (
             <div>
                 <p>Got some data!</p>
+                <p>There are {this.state.data.length} player(s) live!</p>
                 {/*<p>{this.state.data[0].user_name}</p>
                 <p>{this.state.data[0].title}</p>*/}
+
+
 
                 <div className='livestreams'>
                     {channels.map((channel) => {
                         return (
-                            <div className='livestream-card'>
-                                <ReactPlayer
-                                    key={channel.id}
-                                    url={'https://www.twitch.tv/' + channel.twitch}
-                                    width="32rem"
-                                    height="20rem"
-                                    controls={true}
-                                    playing
-                                    playsinline
-                                    light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + channel.twitch + "-640x360.jpg"}
-                                />
+                            <div>
+                                <div className='livestream-card'>
+                                    <ReactPlayer
+                                        className="livestream-player"
+                                        key={channel.id}
+                                        url={'https://www.twitch.tv/' + channel.twitch}
+                                        width="30rem"
+                                        height="20rem"
+                                        controls={true}
+                                        playing
+                                        playsinline
+                                        light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + channel.twitch + "-640x360.jpg"}
+                                    />
+                                    <div className="channel">
+                                        <img alt="cars" src={require('../resources/imgs/players/' + channel.ign + '.png')} height="250" width="250" className="channel__img"/>
+                                        <span className="channel__title">{this.state.data[0].title}</span><br />
+                                        <span className="channel__name">{channel.ign}</span>
+                                    </div>
+                                </div>
                             </div>
                         );
                     })}
