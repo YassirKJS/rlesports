@@ -140,8 +140,8 @@ class Livestreams extends Component {
                                         className="livestream-player"
                                         key={channel.id}
                                         url={'https://www.twitch.tv/' + channel.twitch}
-                                        width="30rem"
-                                        height="20rem"
+                                        width="100%"
+                                        height="22rem"
                                         controls={true}
                                         playing
                                         playsinline
@@ -149,7 +149,7 @@ class Livestreams extends Component {
                                     />
                                     <div className="channel">
                                         <img alt="cars" src={require('../resources/imgs/players/' + channel.ign + '.png')} height="250" width="250" className="channel__img"/>
-                                        <span className="channel__title">{this.state.data[0].title}</span><br />
+                                        <span className="channel__title">{this.state.data[2].title}</span><br />
                                         <span className="channel__name">{channel.ign}</span>
                                     </div>
                                 </div>
@@ -163,3 +163,7 @@ class Livestreams extends Component {
 }
 
 export default Livestreams;
+
+/*
+
+ */
