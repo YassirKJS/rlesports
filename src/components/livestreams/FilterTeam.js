@@ -88,12 +88,13 @@ const useStyles = makeStyles(theme => ({
 /**** end styling ****/
 
 function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
-    let suggestions = [];
+    // Filling the suggestions
+    let suggestions;
     let tempArr = [];
     channels.forEach(function(channel) {
         // make sure the object value is unique
         if (!tempArr.some(item => item.value === channel.team)) {
-            tempArr.push({ value: channel.team, label: channel.team});
+            tempArr.push({ value: channel.team, label: channel.team, icon: <img alt="avatar" src={require('../../resources/imgs/players/Rizzo.png')} height="150" width="150"/>});
         }
     });
 
@@ -145,7 +146,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
                 }}
                 {...props.innerProps}
             >
-                {props.children}
+                <img alt="avatar" src={require('../../resources/imgs/players/Rizzo.png')} height="150" width="150"/> {props.children}
             </MenuItem>
         );
     }
