@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Livestreams.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Livestreams.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/data/channels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/data/channels.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sass/layout/_filter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_filter.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,11 +32,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Livestreams.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="149" selection-start-line="149" selection-end-line="149" />
+            <state relative-caret-position="-240">
+              <caret line="70" column="58" lean-forward="true" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="n#!!block;n#loadData#0;n#Livestreams#0" />
                 <element signature="n#!!block;n#componentDidMount#0;n#Livestreams#0" />
               </folding>
             </state>
@@ -69,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/livestreams/FilterTeam.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="151" column="114" selection-start-line="151" selection-start-column="114" selection-end-line="151" selection-end-column="114" />
+            <state relative-caret-position="506">
+              <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
                 <element signature="e#118#168#0" expanded="true" />
@@ -113,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/resources/data/channels.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="49" column="223" selection-start-line="49" selection-start-column="223" selection-end-line="49" selection-end-column="223" />
+            <state relative-caret-position="528">
+              <caret line="31" column="219" selection-start-line="31" selection-start-column="219" selection-end-line="31" selection-end-column="219" />
             </state>
           </provider>
         </entry>
@@ -240,11 +237,11 @@
         <option value="$PROJECT_DIR$/src/sass/layout/_livestreams.scss" />
         <option value="$PROJECT_DIR$/src/components/livestreams/LivestreamCard.js" />
         <option value="$PROJECT_DIR$/src/components/livestreams/LivestreamsList.js" />
-        <option value="$PROJECT_DIR$/src/components/Livestreams.js" />
         <option value="$PROJECT_DIR$/src/sass/layout/_filter.scss" />
         <option value="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" />
-        <option value="$PROJECT_DIR$/src/resources/data/channels.js" />
         <option value="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" />
+        <option value="$PROJECT_DIR$/src/components/Livestreams.js" />
+        <option value="$PROJECT_DIR$/src/resources/data/channels.js" />
       </list>
     </option>
   </component>
@@ -463,12 +460,12 @@
       <workItem from="1565339767022" duration="8793000" />
       <workItem from="1565448185852" duration="11674000" />
       <workItem from="1565525849699" duration="1591000" />
-      <workItem from="1565613210374" duration="17705000" />
+      <workItem from="1565613210374" duration="19457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399776000" />
+    <option name="totallyTimeSpent" value="401528000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -851,18 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Livestreams.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#loadData#0;n#Livestreams#0" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Livestreams#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/livestreams/LivestreamCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -877,13 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/data/channels.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="49" column="223" selection-start-line="49" selection-start-column="223" selection-end-line="49" selection-end-column="223" />
         </state>
       </provider>
     </entry>
@@ -906,13 +884,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/livestreams/FilterTeam.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="151" column="114" selection-start-line="151" selection-start-column="114" selection-end-line="151" selection-end-column="114" />
+        <state relative-caret-position="506">
+          <caret line="148" column="45" selection-start-line="148" selection-start-column="45" selection-end-line="148" selection-end-column="45" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <element signature="e#118#168#0" expanded="true" />
             <element signature="e#943#2118#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Livestreams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-240">
+          <caret line="70" column="58" lean-forward="true" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Livestreams#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/data/channels.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="31" column="219" selection-start-line="31" selection-start-column="219" selection-end-line="31" selection-end-column="219" />
         </state>
       </provider>
     </entry>

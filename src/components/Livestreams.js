@@ -76,7 +76,9 @@ class Livestreams extends Component {
                     '&user_login=' + channels[45].twitch +
                     '&user_login=' + channels[46].twitch +
                     '&user_login=' + channels[47].twitch +
-                    '&user_login=' + channels[48].twitch,
+                    '&user_login=' + channels[48].twitch +
+                    '&user_login=' + channels[49].twitch +
+                    '&user_login=' + channels[50].twitch,
                     {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
                     .then(response => response.json())
                     .then(data => {resolve(data.data) ; console.log(data.data)});
