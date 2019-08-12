@@ -147,7 +147,7 @@ function SearchBox ({ channels, searchText, onSearchTextChange }) {
                     props.children
                     : <div>
                         <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/players/' + props.children + '.png')} height="16" width="16"/>
-                        {' ' + props.children}
+                        {'  ' + props.children}
                     </div>
                 }
             </MenuItem>

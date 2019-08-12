@@ -146,7 +146,13 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
                 }}
                 {...props.innerProps}
             >
-                <img alt="avatar" src={require('../../resources/imgs/players/Rizzo.png')} height="150" width="150"/> {props.children}
+                {(props.children === 'All') ?
+                    props.children
+                    : <div>
+                        <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '.png')} height="16" width="16"/>
+                        {'  ' + props.children}
+                    </div>
+                }
             </MenuItem>
         );
     }
