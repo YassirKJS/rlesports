@@ -22,14 +22,16 @@ class LivestreamCard extends Component {
                     key={id}
                     url={'https://www.twitch.tv/' + twitch}
                     width="100%"
-                    height="22rem"
+                    height="23rem"
                     controls={true}
                     playing
                     playsinline
                     light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
                 />
                 <div className="channel">
-                    <img alt="avatar" src={avatar} height="250" width="250" className="channel__img"/>
+                    <a className="channel__img-link" href={'https://www.twitch.tv/' + twitch} target="_blank">
+                        <img alt="avatar" src={avatar} height="250" width="250" className="channel__img"/>
+                    </a>
                     <span className="channel__title">{data[0].title}</span><br />
                     <span className="channel__name">{ign}</span>
                     <span>status: {data === null? 'OFFLINE' : 'LIVE'}</span>
