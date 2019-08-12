@@ -3,6 +3,7 @@ import '../sass/main.scss';
 import { channels } from '../resources/data/channels';
 import SearchBox from "./livestreams/SearchBox";
 import LivestreamsList from "./livestreams/LivestreamsList";
+import FilterTeam from "./livestreams/FilterTeam";
 
 class Livestreams extends Component {
     constructor(props) {
@@ -14,9 +15,11 @@ class Livestreams extends Component {
             loading: 'initial',
             data: [],
             searchText: [{value: 'All', label: 'All'}],
+            selectedTeam: [{value: 'All', label: 'All'}],
         };
 
         this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
+        this.handleSelectedTeamChange = this.handleSelectedTeamChange.bind(this);
     }
 
     loadData() {
@@ -122,6 +125,10 @@ class Livestreams extends Component {
         this.setState({searchText: newSearchText});
     }
 
+    handleSelectedTeamChange(newSelectedTeam) {
+        this.setState({selectedTeam: newSelectedTeam});
+    }
+
 
     render() {
         if (this.state.loading === 'initial') {
@@ -140,17 +147,19 @@ class Livestreams extends Component {
         });
 
         console.log('This happens 8th - after I get data.');
+
         return (
             <div>
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
+                    <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
                 {/*<p>Got some data!</p>
                 <p>There are {this.state.data.length} player(s) live!</p><br />*/}
                 {/*<p>{this.state.data[0].user_name}</p>
                 <p>{this.state.data[0].title}</p>*/}
 
-                <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} />
+                <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
             </div>
         );
     }
