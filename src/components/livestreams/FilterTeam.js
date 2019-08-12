@@ -241,7 +241,19 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
         return (
             <Chip
                 tabIndex={-1}
-                label={props.children}
+                //label={props.children}
+                label={(props.children === 'All') ?
+                    props.children
+                    :
+                    (props.children === 'TSM' || props.children === 'Cloud9' || props.children === 'G2 Esports' || props.children === 'NRG') ?
+                        <div>
+                            <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '_B.png')} height="16" width="16"/>
+                        </div>
+                        :
+                        <div>
+                            <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '.png')} height="16" width="16"/>
+                        </div>
+                }
                 className={clsx(props.selectProps.classes.chip, {
                     [props.selectProps.classes.chipFocused]: props.isFocused,
                 })}
