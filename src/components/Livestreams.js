@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../sass/main.scss';
 import { channels } from '../resources/data/channels';
-import ReactPlayer from 'react-player';
+import SearchBox from "./livestreams/SearchBox";
+import LivestreamsList from "./livestreams/LivestreamsList";
 
 class Livestreams extends Component {
     constructor(props) {
@@ -11,8 +12,11 @@ class Livestreams extends Component {
 
         this.state = {
             loading: 'initial',
-            data: []
+            data: [],
+            searchText: [{value: 'All', label: 'All'}],
         };
+
+        this.handleSearchTextChange = this.handleSearchTextChange.bind(this);
     }
 
     loadData() {
@@ -23,12 +27,12 @@ class Livestreams extends Component {
                 fetch('https://api.twitch.tv/helix/streams' +
                     '?user_login=' + channels[0].twitch +
                     '&user_login='+ channels[1].twitch +
-                    '&user_login=greazymeister' + channels[2].twitch +
-                    '&user_login=mognus1' + channels[3].twitch +
-                    '&user_login=snaski' + channels[4].twitch +
-                    '&user_login=kuxir97' + channels[5].twitch +
-                    '&user_login=speed_rl' + channels[6].twitch +
-                    '&user_login=al0t97' + channels[7].twitch +
+                    '&user_login=' + channels[2].twitch +
+                    '&user_login=' + channels[3].twitch +
+                    '&user_login=' + channels[4].twitch +
+                    '&user_login=' + channels[5].twitch +
+                    '&user_login=' + channels[6].twitch +
+                    '&user_login=' + channels[7].twitch +
                     '&user_login=' + channels[8].twitch +
                     '&user_login=' + channels[9].twitch +
                     '&user_login=' + channels[10].twitch +
@@ -97,11 +101,25 @@ class Livestreams extends Component {
         this.loadData()
             .then((data) => {
                 console.log('This happens 7th: ComponentDidMount/this.loadData');
-                this.setState({
-                    data: data,
-                    loading: 'false'
-                });
+                if (data === undefined || data.length === 0) {
+                    console.log("data empty");
+                    this.setState({
+                        data: [],
+                        loading: 'false'
+                    });
+                }
+                else {
+                    console.log("data not empty");
+                    this.setState({
+                        data: data,
+                        loading: 'false'
+                    });
+                }
             });
+    }
+
+    handleSearchTextChange(newSearchText) {
+        this.setState({searchText: newSearchText});
     }
 
 
@@ -117,53 +135,25 @@ class Livestreams extends Component {
         }
 
         this.state.data.forEach(function(object) {
-            console.log(object.user_name);
+            //console.log(object.user_name);
             return (<div>{object.user_name}</div>)
         });
 
         console.log('This happens 8th - after I get data.');
         return (
             <div>
-                <p>Got some data!</p>
-                <p>There are {this.state.data.length} player(s) live!</p>
+                <div className="filter">
+                    <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
+                </div>
+                {/*<p>Got some data!</p>
+                <p>There are {this.state.data.length} player(s) live!</p><br />*/}
                 {/*<p>{this.state.data[0].user_name}</p>
                 <p>{this.state.data[0].title}</p>*/}
 
-
-
-                <div className='livestreams'>
-                    {channels.map((channel) => {
-                        return (
-                            <div>
-                                <div className='livestream-card'>
-                                    <ReactPlayer
-                                        className="livestream-player"
-                                        key={channel.id}
-                                        url={'https://www.twitch.tv/' + channel.twitch}
-                                        width="100%"
-                                        height="22rem"
-                                        controls={true}
-                                        playing
-                                        playsinline
-                                        light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + channel.twitch + "-640x360.jpg"}
-                                    />
-                                    <div className="channel">
-                                        <img alt="cars" src={require('../resources/imgs/players/' + channel.ign + '.png')} height="250" width="250" className="channel__img"/>
-                                        <span className="channel__title">{this.state.data[2].title}</span><br />
-                                        <span className="channel__name">{channel.ign}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
+                <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} />
             </div>
         );
     }
 }
 
 export default Livestreams;
-
-/*
-
- */
