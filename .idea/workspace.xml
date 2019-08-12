@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6941f69-ba37-4282-b7c1-6aa7e1821402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/layout/_filter.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/layout/_filter.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,16 +67,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/livestreams/FilterTeam.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+            <state relative-caret-position="506">
+              <caret line="148" column="133" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="133" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
                 <element signature="e#118#168#0" expanded="true" />
                 <element signature="e#943#2118#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/livestreams/SearchBox.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sass/layout/_filter.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -210,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/sass/layout/_cardlist.scss" />
         <option value="$PROJECT_DIR$/src/sass/layout/_livestreams.js" />
         <option value="$PROJECT_DIR$/src/sass/main.scss" />
-        <option value="$PROJECT_DIR$/src/sass/layout/_filter.scss" />
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/components/Hello.js" />
         <option value="$PROJECT_DIR$/src/resources/data/channels-2.js" />
@@ -221,9 +239,10 @@
         <option value="$PROJECT_DIR$/src/components/livestreams/LivestreamCard.js" />
         <option value="$PROJECT_DIR$/src/resources/data/channels.js" />
         <option value="$PROJECT_DIR$/src/components/livestreams/LivestreamsList.js" />
-        <option value="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" />
         <option value="$PROJECT_DIR$/src/components/Livestreams.js" />
         <option value="$PROJECT_DIR$/src/components/livestreams/FilterTeam.js" />
+        <option value="$PROJECT_DIR$/src/components/livestreams/SearchBox.js" />
+        <option value="$PROJECT_DIR$/src/sass/layout/_filter.scss" />
       </list>
     </option>
   </component>
@@ -442,12 +461,12 @@
       <workItem from="1565339767022" duration="8793000" />
       <workItem from="1565448185852" duration="11674000" />
       <workItem from="1565525849699" duration="1591000" />
-      <workItem from="1565613210374" duration="14849000" />
+      <workItem from="1565613210374" duration="16156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396920000" />
+    <option name="totallyTimeSpent" value="398227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -698,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/layout/_filter.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/data/cars.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -866,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/livestreams/SearchBox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="91" column="23" lean-forward="true" selection-start-line="91" selection-start-column="23" selection-end-line="91" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/livestreams/LivestreamCard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
@@ -885,13 +890,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/livestreams/FilterTeam.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="110" column="55" selection-start-line="110" selection-start-column="55" selection-end-line="110" selection-end-column="55" />
+        <state relative-caret-position="506">
+          <caret line="148" column="133" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="133" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
             <element signature="e#118#168#0" expanded="true" />
             <element signature="e#943#2118#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/livestreams/SearchBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/layout/_filter.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
         </state>
       </provider>
     </entry>
