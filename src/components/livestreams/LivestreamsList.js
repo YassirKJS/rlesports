@@ -1,6 +1,8 @@
+/* eslint-disable no-loop-func */
 import React, { Component } from 'react';
 import '../../sass/main.scss';
 import LivestreamCard from "./LivestreamCard";
+import { teams } from "../../resources/data/teams";
 
 class LivestreamsList extends Component {
 
@@ -36,8 +38,8 @@ class LivestreamsList extends Component {
 
         // Filter by Team
         let filteredChannelsByTeam = [];
-        let selectedTeams = this.props.selectedTeam;
-        console.log(selectedTeams);
+        let selectedTeams = this.props.selectedTeam;  // Object { value: 'xxx', label: 'xxx' }
+        //console.log(selectedTeams);
         let TeamValues = [];
         for(let i = 0; i < selectedTeams.length; i++) {
             if (selectedTeams[i].value === 'All') {
@@ -61,18 +63,53 @@ class LivestreamsList extends Component {
         // no Team selected condition
         if(filteredChannelsByTeam.length === 0) filteredChannelsByTeam = filteredChannelsByIgn;
 
+
+
+        console.log(data);
+        data.forEach(function(data_) {
+
+        });
+
         return (
             <div>
                 <div className="livestreams">
                     {
                         filteredChannelsByTeam.map((channel) => {  //(channel, i)
-                            return ( <LivestreamCard key={channel.id} channel={channel} data={data}/> );
+                            return (
+                                <LivestreamCard key={channel.id} channel={channel} data={data}/>
+                            );
                         })
                     }
                 </div>
             </div>
-        );
+        )
     }
 }
 
 export default LivestreamsList;
+
+/*
+                <div className="livestreams">
+                    {
+                        filteredChannelsByTeam.map((channel) => {  //(channel, i)
+                            return (
+                                <LivestreamCard key={channel.id} channel={channel} data={data}/>
+                            );
+                        })
+                    }
+                </div>
+ */
+
+/*
+        console.log('filteredChannelsByTeam');
+        filteredChannelsByTeam.forEach(function(channel) {
+           console.log(channel);
+        });
+
+        console.log('selectedTeams');
+        selectedTeams.forEach(function(team) {
+            console.log(team);
+        });
+
+        //let dict = [];
+ */

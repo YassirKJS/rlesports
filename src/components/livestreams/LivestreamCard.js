@@ -15,6 +15,13 @@ class LivestreamCard extends Component {
         const twitch = channel.twitch;
         const avatar = require('../../resources/imgs/players/' + ign + '.png');
 
+        let title = "Channel is currently offline";
+        data.forEach(function(data_) {
+            if (data_.user_name.toLowerCase() === twitch.toLowerCase()) {
+                title = data_.title;
+            }
+        });
+
         return (
             <div className='livestream-card'>
                 <ReactPlayer
@@ -32,7 +39,7 @@ class LivestreamCard extends Component {
                     <a className="channel__img-link" href={'https://www.twitch.tv/' + twitch} target="_blank">
                         <img alt="avatar" src={avatar} height="250" width="250" className="channel__img"/>
                     </a>
-                    <span className="channel__title">{data[0].title}</span><br />
+                    <span className="channel__title">{title}</span><br />  {/* {data[0].title} */}
                     <span className="channel__name">{ign}</span>
                     <span>status: {data === null? 'OFFLINE' : 'LIVE'}</span>
                 </div>

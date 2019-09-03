@@ -235,7 +235,15 @@ function SearchBox ({ channels, searchText, onSearchTextChange }) {
         return (
             <Chip
                 tabIndex={-1}
-                label={props.children}
+                //label={props.children}
+                label={(props.children === 'All') ?
+                    props.children
+                    :
+                    <div>
+                        <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/players/' + props.children + '.png')} height="16" width="16"/>
+                        {' ' + props.children}
+                    </div>
+                }
                 className={clsx(props.selectProps.classes.chip, {
                     [props.selectProps.classes.chipFocused]: props.isFocused,
                 })}

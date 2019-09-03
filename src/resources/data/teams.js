@@ -1,0 +1,18 @@
+export const teams = [
+    {id: 1, name: 'Complexity Gaming'},
+    {id: 2, name: 'The Bricks'},
+    {id: 3, name: 'TSM'},
+    {id: 4, name: 'Dignitas'},
+    {id: 5, name: 'FC Barcelona'},
+    {id: 6, name: 'Veloce Esports'},
+    {id: 7, name: 'Frontline'},
+    {id: 8, name: 'Renault Vitality'},
+    {id: 9, name: 'Birds and the Beez'},
+    {id: 10, name: 'The Peeps'},
+    {id: 11, name: 'Spacestation Gaming"'},
+    {id: 12, name: 'Ghost Gaming'},
+    {id: 13, name: 'Rogue'},
+    {id: 14, name: 'G2 Esports"'},
+    {id: 15, name: 'Cloud9'},
+    {id: 16, name: 'NRG'},
+];

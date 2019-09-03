@@ -94,7 +94,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
     channels.forEach(function(channel) {
         // make sure the object value is unique
         if (!tempArr.some(item => item.value === channel.team)) {
-            tempArr.push({ value: channel.team, label: channel.team, icon: <img alt="avatar" src={require('../../resources/imgs/players/Rizzo.png')} height="150" width="150"/>});
+            tempArr.push({ value: channel.team, label: channel.team });
         }
     });
 
@@ -245,7 +245,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
                 label={(props.children === 'All') ?
                     props.children
                     :
-                    (props.children === 'TSM' || props.children === 'Cloud9' || props.children === 'G2 Esports' || props.children === 'NRG') ?
+                    (props.children === 'TSM' || props.children === 'Cloud9' || props.children === 'G2 Esports' || props.children === 'NRG' || props.children === 'Complexity Gaming') ?
                         <div>
                             <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '_B.png')} height="16" width="16"/>
                         </div>
