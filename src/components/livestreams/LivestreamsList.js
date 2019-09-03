@@ -72,17 +72,14 @@ class LivestreamsList extends Component {
                 if (data_.user_name.toLowerCase() === channel_.twitch.toLowerCase()) {
                     liveChannels.push(channel_);
                 }
-                else {
-                    if (!offlineChannels.includes(channel_)) {
-                        offlineChannels.push(channel_);
-                    }
-                }
             });
+            if (!offlineChannels.includes(channel_) && !liveChannels.includes(channel_)) {
+                offlineChannels.push(channel_);
+            }
         });
 
-        console.log(filteredChannelsByTeam);
+        //console.log(filteredChannelsByTeam);
         console.log(data);
-        console.log(offlineChannels);
 
         return (
             <div>
