@@ -64,17 +64,43 @@ class LivestreamsList extends Component {
         if(filteredChannelsByTeam.length === 0) filteredChannelsByTeam = filteredChannelsByIgn;
 
 
-
-        console.log(data);
-        data.forEach(function(data_) {
-
+        // Filter by Status
+        let liveChannels = [];
+        let offlineChannels = [];
+        filteredChannelsByTeam.forEach(function(channel_) {
+            data.forEach(function(data_) {
+                if (data_.user_name.toLowerCase() === channel_.twitch.toLowerCase()) {
+                    liveChannels.push(channel_);
+                }
+                else {
+                    if (!offlineChannels.includes(channel_)) {
+                        offlineChannels.push(channel_);
+                    }
+                }
+            });
         });
+
+        console.log(filteredChannelsByTeam);
+        console.log(data);
+        console.log(offlineChannels);
 
         return (
             <div>
+                <h1>LIVE</h1>
                 <div className="livestreams">
                     {
-                        filteredChannelsByTeam.map((channel) => {  //(channel, i)
+                        liveChannels.map((channel) => {  //(channel, i)
+                            return (
+                                <LivestreamCard key={channel.id} channel={channel} data={data}/>
+                            );
+                        })
+                    }
+                </div>
+
+                <h1>OFFLINE</h1>
+                <div className="livestreams">
+                    {
+                        offlineChannels.map((channel) => {  //(channel, i)
                             return (
                                 <LivestreamCard key={channel.id} channel={channel} data={data}/>
                             );
