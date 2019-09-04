@@ -42,8 +42,9 @@ class LivestreamCard extends Component {
 
                 <div className="livestream__navigation">
                     <input type="checkbox" class="livestream__navigation--checkbox"></input>
-
-                    <span class="livestream__navigation--icon">&nbsp;</span>
+                    <label for="navi-toggle" class="livestream__navigation--button">
+                        <span class="livestream__navigation--icon">&nbsp;</span>
+                    </label>
                 </div>
 
                 <div className="channel">
