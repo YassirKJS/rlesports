@@ -40,8 +40,10 @@ class LivestreamCard extends Component {
                     light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
                 />
 
-                <div className="livestream__socials">
-                    <span class="livestream__socials--icon">&nbsp;</span>
+                <div className="livestream__navigation">
+                    <input type="checkbox" class="livestream__navigation--checkbox"></input>
+
+                    <span class="livestream__navigation--icon">&nbsp;</span>
                 </div>
 
                 <div className="channel">
