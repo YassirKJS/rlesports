@@ -45,7 +45,9 @@ class LivestreamCard extends Component {
                     <label for={"navi-toggle-" + id} class="livestream__navigation--button">
                         <span class="livestream__navigation--icon">&nbsp;</span>
                     </label>
+
                     <div class="livestream__navigation--background">&nbsp;</div>
+
                 </div>
 
                 <div className="channel">
