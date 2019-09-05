@@ -82,7 +82,7 @@ class Livestreams extends Component {
                     {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
                     .then(response => response.json())
                     .then(data => {resolve(data.data) ; /*console.log(data.data)*/});
-            }, 500);
+            }, 500); //.500
         });
 
         console.log('This happens 4th: Loading data');
@@ -156,10 +156,6 @@ class Livestreams extends Component {
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
-                {/*<p>Got some data!</p>
-                <p>There are {this.state.data.length} player(s) live!</p><br />*/}
-                {/*<p>{this.state.data[0].user_name}</p>
-                <p>{this.state.data[0].title}</p>*/}
 
                 <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
             </div>

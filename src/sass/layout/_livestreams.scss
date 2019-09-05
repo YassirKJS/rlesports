@@ -93,7 +93,7 @@
       background-image: radial-gradient(rgba(var(--color-brown-light), .7), rgba(var(--color-brown-dark), .7));
       border-radius: 50%;
 
-      //z-index: 99;
+      z-index: -999;
       transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
@@ -107,6 +107,20 @@
     }
     
   }
+}
+
+.livestream__navigation--checkbox:checked + .livestream__navigation--button .livestream__navigation--icon {
+  background-color: transparent;
+}
+
+.livestream__navigation--checkbox:checked + .livestream__navigation--button .livestream__navigation--icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.livestream__navigation--checkbox:checked + .livestream__navigation--button .livestream__navigation--icon::after {
+  top: 0;
+  transform: rotate(-135deg);
 }
 
 
