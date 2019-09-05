@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 /* fontAwesome */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCar, faStar, faClock} from '@fortawesome/free-solid-svg-icons';
-import { SocialIcon } from 'react-social-icons';
+import { faTwitch, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import ReactPlayer from "react-player";
 
 
@@ -47,10 +47,10 @@ class LivestreamCard extends Component {
                     </label>
 
                     <div class="livestream__navigation--background">
-                        <a className="livestream__navigation--item--1" href={'https://www.twitch.tv/' + twitch} target="_blank">A</a>
-                        <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank">B</a>
-                        <a className="livestream__navigation--item--3" href={'https://www.twitch.tv/' + twitch} target="_blank">C</a>
-                        <a className="livestream__navigation--item--4" href={'https://www.twitch.tv/' + twitch} target="_blank">D</a>
+                        <a className="livestream__navigation--item--1" href={'https://www.instagram.com/' + twitch} target="_blank" ><FontAwesomeIcon icon={faInstagram} /></a>
+                        <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" ><FontAwesomeIcon icon={faTwitch} /></a>
+                        <a className="livestream__navigation--item--3" href={'https://youtube.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>
+                        <a className="livestream__navigation--item--4" href={'https://twitter.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faTwitter} /></a>
                     </div>
                 </div>
 
