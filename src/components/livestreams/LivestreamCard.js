@@ -46,8 +46,12 @@ class LivestreamCard extends Component {
                         <span class="livestream__navigation--icon">&nbsp;</span>
                     </label>
 
-                    <div class="livestream__navigation--background">&nbsp;</div>
-
+                    <div class="livestream__navigation--background">
+                        <a className="livestream__navigation--item--1" href={'https://www.twitch.tv/' + twitch} target="_blank">A</a>
+                        <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank">B</a>
+                        <a className="livestream__navigation--item--3" href={'https://www.twitch.tv/' + twitch} target="_blank">C</a>
+                        <a className="livestream__navigation--item--4" href={'https://www.twitch.tv/' + twitch} target="_blank">D</a>
+                    </div>
                 </div>
 
                 <div className="channel">
