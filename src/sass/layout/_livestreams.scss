@@ -206,11 +206,22 @@
         }
       }
 
-      &--1:hover,
+      &--1:hover {
+        transform: rotate(5deg);
+
+        @include respond(tab-port) {
+
+        }
+      }
+
       &--2:hover,
       &--3:hover,
       &--4:hover {
         transform: rotate(5deg);
+
+        @include respond(tab-port) {
+          transform: rotate(5deg) translateY(.1rem);
+        }
       }
     }
   }
