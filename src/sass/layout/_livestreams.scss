@@ -108,6 +108,9 @@
       display: grid;
     }
 
+    &--background:hover {
+      background-image: radial-gradient(rgba(white, .3), rgba(white, .7));
+    }
 
     &--button:hover &--icon:before {
       top: -.8rem;
@@ -134,8 +137,8 @@
         width: .45rem;
         height: .45rem;
 
-        //margin-top: .1rem;
-        transform: translateY(.1rem);
+        margin-top: .05rem;
+        //transform: translateY(.1rem);
         margin-left: .4rem;
 
         @include respond(tab-port) {
@@ -185,7 +188,8 @@
         grid-column: 1 / -1;
         justify-self: end;
 
-        transform: translateX(-.1rem);
+        //transform: translateX(-.1rem);
+        margin-right: .1rem;
 
         img {
           width: 12px;
@@ -193,13 +197,20 @@
         }
 
         @include respond(tab-port) {
-          margin-left: .4rem;
+          margin-right: 0;
           transform: translateY(.1rem);
         }
     
         @include respond(phone) {
 
         }
+      }
+
+      &--1:hover,
+      &--2:hover,
+      &--3:hover,
+      &--4:hover {
+        transform: rotate(5deg);
       }
     }
   }
