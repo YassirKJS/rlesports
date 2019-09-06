@@ -33,6 +33,7 @@ class Header extends Component {
                         <NavLink  to="/Calendar" className='link'><MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={updateActiveIndex} /></NavLink >
                         <NavLink  to="/Reddit" className='link'><MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={updateActiveIndex} /></NavLink >
                         <NavLink  to="/Livestreams" className='link'><MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={updateActiveIndex} /></NavLink >
+                        <NavLink  to="/Livetweets" className='link'><MyClickable  name="Tweets" className='header__item' index={5} isActive={ this.state.activeIndex===5 } onClick={updateActiveIndex} /></NavLink >
                     </nav>
                 </header>
             </div>

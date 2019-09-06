@@ -8,6 +8,7 @@ import './sass/main.scss';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import App from './App';
 import Livestreams from './components/Livestreams';
+import Livetweets from './components/Livetweets';
 import Players from './components/Players';
 import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
@@ -23,6 +24,7 @@ const routing = (
             <Route exact path="/" component={Home} />
             <Route exact path="/Cars" component={App} />
             <Route exact path="/Livestreams" component={Livestreams} />
+            <Route exact path="/Livetweets" component={Livetweets} />
             <Route exact path="/Players" component={Players} />
             <Route exact path="/Calendar" component={Calendar} />
             <Route exact path="/Reddit" component={Reddit} />

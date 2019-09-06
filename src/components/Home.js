@@ -6,6 +6,8 @@ import Players from "./Players";
 import Calendar from "./Calendar";
 import Reddit from "./Reddit";
 import Livestreams from "./Livestreams";
+import Livetweets from "./Livetweets";
+import notfound from "./notfound";
 
 import { updateActiveIndex } from '../actions';
 import { connect } from 'react-redux';
@@ -34,6 +36,7 @@ class Home extends Component {
                         <MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={this.handleItemClick} />
                         <MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={this.handleItemClick} />
                         <MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Livetweets" className='header__item' index={5} isActive={ this.state.activeIndex===5 } onClick={this.handleItemClick} />
                     </nav>
                 </header>
             </div>;
@@ -53,7 +56,15 @@ class Home extends Component {
                             (this.state.activeIndex===3)? (
                                 <Reddit />
                             ) : (
-                                <Livestreams />
+                                (this.state.activeIndex===4)? (
+                                    <Livestreams />
+                                ) : (
+                                    (this.state.activeIndex===5) ? (
+                                        <Livetweets />
+                                    ) : (
+                                        <notfound />
+                                    )
+                                )
                             )
                         )
                     )
