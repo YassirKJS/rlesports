@@ -7,7 +7,6 @@ export default class TimelineList extends Component {
     render() {
         return (
             <div className="timelineList centerContent">
-                <div className="selfCenter standardWidth">
                     <TwitterTimelineEmbed
                         sourceType="list"
                         ownerScreenName="RlesportsF"
@@ -18,8 +17,10 @@ export default class TimelineList extends Component {
                         noFooter
                         borderColor="#9acd32" //#734780
                     />
-                </div>
             </div>
         )
     }
 }
+
+// className="timelineList centerContent"
+// className="selfCenter standardWidth"

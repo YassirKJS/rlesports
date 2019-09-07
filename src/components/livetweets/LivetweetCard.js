@@ -12,8 +12,8 @@ class LivetweetCard extends Component {
         const avatar = require('../../resources/imgs/players/' + ign + '.png');
 
         return (
-            <div className='livestream-card'>
-                
+            <div className='livetweet-card'>
+                LivetweetCard
             </div>
         )
     }

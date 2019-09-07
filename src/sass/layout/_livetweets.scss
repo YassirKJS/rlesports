@@ -1,0 +1,23 @@
+@import "../abstracts/mixins";
+
+.livetweets {
+    display: grid;
+    grid-template-columns: minmax(10rem, .2fr) .8fr;//repeat(auto-fit, minmax(25rem, .3fr)); //repeat(auto-fit, minmax(27rem, 1fr))
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
+    //justify-content: center;
+  
+    margin: 5rem 2rem 5rem 2rem;
+}
+
+.timelineList {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    justify-self: start;
+}
+
+.livetweetsList {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    justify-self: center;
+}

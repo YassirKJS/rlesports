@@ -7,7 +7,7 @@ class LivetweetsList extends Component {
         const channels = this.props.channels;
 
         return (
-            <div>
+            <div className="livetweetsList">
                 {
                     channels.map((channel) => { 
                         return (
