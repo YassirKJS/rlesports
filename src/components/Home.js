@@ -16,7 +16,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeIndex : 0, //change (redux)
+            activeIndex : 5, //change (redux) //0
         };
 
         this.handleItemClick = this.handleItemClick.bind(this);

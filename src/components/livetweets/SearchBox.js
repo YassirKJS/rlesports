@@ -5,28 +5,19 @@ import Select from 'react-select';
 /* material ui */
 import MenuItem from '@material-ui/core/MenuItem';
 
-import { emphasize, makeStyles, useTheme } from '@material-ui/core/styles';
+import { emphasize, makeStyles, useTheme, withStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
+import Input from '@material-ui/core/Input';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props
 // https://jedwatson.github.io/react-select/
-
-/*const suggestions = [
-    { label: 'All' },
-    { label: 'Octane' },
-    { label: 'Dominus' },
-    { label: 'Plank' },
-    { label: 'Hybrid' },
-    { label: 'Breakout' },
-].map(suggestion => ({
-    value: suggestion.label,
-    label: suggestion.label,
-}));*/
+// https://codesandbox.io/s/material-demo-uq9th
+// https://codesandbox.io/s/owv305w96
 
 /**** start styling ****/
 const useStyles = makeStyles(theme => ({
@@ -34,12 +25,14 @@ const useStyles = makeStyles(theme => ({
         flexGrow: 1,
         height: 'auto',
         zIndex: '100',
+        //backgroundColor:'#e8e8e8',
     },
     input: {
         display: 'flex',
         padding: 1,
         //width: '25rem', //WIDTH
         height: 'auto',
+        color: '#e8e8e8',
     },
     valueContainer: {
         display: 'flex',
@@ -55,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     chipFocused: {
         backgroundColor: emphasize(
             theme.palette.type === 'light' ? theme.palette.grey[300] : theme.palette.grey[700],
-            0.08,
+            0.95,
         ),
     },
     noOptionsMessage: {
@@ -64,14 +57,15 @@ const useStyles = makeStyles(theme => ({
         color: '#e8e8e8',
     },
     singleValue: {
-        fontSize: 16,
+        fontSize: '1.6rem',
+        color: '#e81319'
     },
     placeholder: {
         position: 'absolute',
         left: 2,
         bottom: 6,
         fontSize: 16,
-        color: '#e8e8e8'
+        color: '#e8e8e8',
     },
     paper: {
         position: 'absolute',
@@ -79,43 +73,46 @@ const useStyles = makeStyles(theme => ({
         marginTop: theme.spacing(1),
         left: 0,
         right: 0,
-        color: 'white',
+        color: 'white', //the suggestions
     },
     divider: {
         height: theme.spacing(2),
     },
+    multilineColor:{
+        color:'red'
+    },
+    underline: {
+        borderBottom: '2px solid white',
+        '&:after': {
+            // The source seems to use this but it doesn't work
+            borderBottom: '2px solid white',
+        },
+    }
 }));
 /**** end styling ****/
 
-function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
-    // Filling the suggestions
-    let suggestions;
-    let tempArr = [];
-    channels.forEach(function(channel) {
-        // make sure the object value is unique
-        if (!tempArr.some(item => item.value === channel.team)) {
-            tempArr.push({ value: channel.team, label: channel.team });
-        }
-    });
-
-    // sorting the temp array by values
-    tempArr.sort(function (a, b) {
-        const nameA = a.value.toLowerCase(), nameB = b.value.toLowerCase();
+function SearchBox ({ channels, searchText, onSearchTextChange }) {
+    //Creating suggestions array from channels prop
+    channels.sort(function (a, b) {
+        const nameA = a.ign.toLowerCase(), nameB = b.ign.toLowerCase();
         if (nameA < nameB) //sort string ascending
             return -1;
         if (nameA > nameB)
             return 1;
         return 0; //default return value (no sorting)
     });
-    suggestions = [...tempArr];
-    suggestions.unshift({ value: 'All', label: 'All'});
+
+    let suggestions = [];
+    suggestions.push({ value: 'All', label: 'All'});
+    channels.forEach(function(channel) {
+        suggestions.push({ value: channel.ign, label: channel.ign});
+    });
 
     const [selectedOption , setSelectedOption ] = useState(null);
 
-    const handleTeamChange = selectedOption   => {
+    const handleTextChange = selectedOption   => {
         setSelectedOption(selectedOption);
-        onSelectedTeamChange(selectedOption.value);
-        console.log(selectedOption.value);
+        onSearchTextChange(selectedOption.value);
     };
 
     /**** start styling ****/
@@ -149,7 +146,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
                 {(props.children === 'All') ?
                     props.children
                     : <div>
-                        <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '.png')} height="16" width="16"/>
+                        <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/players/' + props.children + '.png')} height="16" width="16"/>
                         {'  ' + props.children}
                     </div>
                 }
@@ -201,11 +198,11 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
 
     /**** start  ****/
     function inputComponent({ inputRef, ...props }) {
-        return <div ref={inputRef} {...props} />;
+        return <div ref={inputRef} {...props}/>;
     }
     /**** end  ****/
 
-    /**** start Control (for the Team label) ****/
+    /**** start Control (for the attribute label) ****/
     function Control(props) {
         const {
             children,
@@ -216,6 +213,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
 
         return (
             <TextField
+                Style='color: white'
                 fullWidth
                 InputProps={{
                     inputComponent,
@@ -232,10 +230,6 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
     }
     /**** end Control ****/
 
-    /*const handleDelete = (props) => {
-        return props.removeProps.onClick;
-    };*/
-
     /**** start MultiValue (for multiple selects) ****/
     function MultiValue(props) {
         return (
@@ -245,14 +239,10 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
                 label={(props.children === 'All') ?
                     props.children
                     :
-                    (props.children === 'TSM' || props.children === 'Cloud9' || props.children === 'G2 Esports' || props.children === 'NRG' || props.children === 'Complexity Gaming') ?
-                        <div>
-                            <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '_B.png')} height="16" width="16"/>
-                        </div>
-                        :
-                        <div>
-                            <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/teams/' + props.children + '.png')} height="16" width="16"/>
-                        </div>
+                    <div>
+                        <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/players/' + props.children + '.png')} height="16" width="16"/>
+                        {' ' + props.children}
+                    </div>
                 }
                 className={clsx(props.selectProps.classes.chip, {
                     [props.selectProps.classes.chipFocused]: props.isFocused,
@@ -264,7 +254,7 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
     }
     /**** end MultiValue ****/
 
-    /**** start Menu ****/
+    /**** start Menu (dropdown)****/
     function Menu(props) {
         return (
             <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: #252525'>
@@ -298,37 +288,36 @@ function FilterTeam ({ channels, selectedTeam, onSelectedTeamChange }) {
 
     function handleChangeMulti(value) {
         setMulti(value);
-        //console.log(value[0].value);
-        onSelectedTeamChange(value);
+        onSearchTextChange(value);
     }
     /**** end Single/Multi ****/
 
     return (
         <div>
-                <Select
-                    classes={classes}
-                    styles={selectStyles}
-                    inputId="react-select-multiple"
-                    TextFieldProps={{
-                        label: 'Team / Group',
-                        InputLabelProps: {
-                            htmlFor: 'react-select-multiple',
-                            shrink: true,
-                            style: { color: 'greenyellow' },
-                        },
-                    }}
-                    placeholder="Select Team(s)"
-                    options={suggestions}
-                    components={components}
-                    value={multi }
-                    onChange={handleChangeMulti}
-                    isMulti
-                />
+            <Select
+                classes={classes}
+                styles={selectStyles}
+                inputId="react-select-multiple"
+                TextFieldProps={{
+                    label: 'User',
+                    InputLabelProps: {
+                        htmlFor: 'react-select-multiple',
+                        shrink: true,
+                        style: { color: 'greenyellow' },
+                    },
+                }}
+                placeholder="Search for User(s)"
+                options={suggestions}
+                components={components}
+                value={multi }
+                onChange={handleChangeMulti}
+                isMulti
+            />
         </div>
     );
 
 }
 
-export default FilterTeam;
+export default SearchBox;
 
 
