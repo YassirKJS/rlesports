@@ -82,7 +82,7 @@ class LivestreamsList extends Component {
         console.log(data);
 
         return (
-            <div>
+            <div className="livestreamsList">
                 <h1>LIVE</h1>
                 <div className="livestreams">
                     {

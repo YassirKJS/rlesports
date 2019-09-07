@@ -16,7 +16,7 @@ export default class TimelineList extends Component {
                         noHeader
                         noFooter
                         noScrollbar
-                        borderColor="#9acd32" //#734780
+                        borderColor="#734780" //#734780 #9acd32
                     />
             </div>
         )

@@ -1,11 +1,18 @@
 @import "../abstracts/mixins";
 
+.livestreamsList {
+  margin: 2rem;
+}
+
 .livestreams {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, .3fr)); //repeat(auto-fit, minmax(27rem, 1fr))
   grid-column-gap: 2rem;
   grid-row-gap: 3rem;
-  //justify-content: center;
+
+  @include respond(phone) {   
+    justify-content: center;
+  }
 
   margin: 5rem 2rem 5rem 2rem;
 }
