@@ -13,7 +13,16 @@ class LivetweetCard extends Component {
 
         return (
             <div className='livetweet-card'>
-                LivetweetCard
+                <TwitterTimelineEmbed
+                    sourceType="profile"
+                    screenName={twitter}
+                    options={{height: 450}}
+                    theme="dark"
+                    noHeader
+                    noFooter
+                    noScrollbar
+                    borderColor="#9acd32"
+                />
             </div>
         )
     }

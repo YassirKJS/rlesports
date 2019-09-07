@@ -1,7 +1,6 @@
 .filter {
   background-color: #252525;
   padding: 3rem;
-  //margin-left: 100rem;
   margin-bottom: 5rem;
   border-radius: 10px;
   box-shadow: 0 1rem 1rem rgba(black, .5);
@@ -10,11 +9,11 @@
   //justify-content: space-around;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-row-gap: 3rem;
+  grid-row-gap: 4rem;
   grid-column-gap: 5rem;
 
-  &:hover {
-
+  @include respond(phone) {   
+    margin: 2rem 2rem 4rem 2rem;
   }
 }
 
