@@ -3,6 +3,7 @@ import { channels } from '../resources/data/channels';
 import SearchBox from "./livetweets/SearchBox";
 import FilterTeam from "./livetweets/FilterTeam";
 import LivetweetsList from "./livetweets/LivetweetsList";
+import TimelineList from "./livetweets/TimelineList";
 
 /* react-twitter-embed */
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
@@ -38,6 +39,7 @@ class Livetweets extends Component {
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
 
+                <TimelineList />
                 <LivetweetsList channels={channels} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
             </div>
         );

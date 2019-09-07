@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+/* react-twitter-embed */
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
+
 class LivetweetCard extends Component {
     render() {
         const channel = this.props.channel;
