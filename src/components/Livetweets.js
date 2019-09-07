@@ -38,7 +38,7 @@ class Livetweets extends Component {
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
 
-               
+                <LivetweetsList channels={channels} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
             </div>
         );
     }

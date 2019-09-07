@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 /* fontAwesome */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCar, faStar, faClock} from '@fortawesome/free-solid-svg-icons';
-import { faTwitch, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faTwitch, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import ReactPlayer from "react-player";
 
 
