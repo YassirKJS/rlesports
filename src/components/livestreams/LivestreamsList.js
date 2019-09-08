@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import '../../sass/main.scss';
 import LivestreamCard from "./LivestreamCard";
-import { teams } from "../../resources/data/teams";
+//import { teams } from "../../resources/data/teams";
 
 class LivestreamsList extends Component {
 
