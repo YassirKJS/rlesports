@@ -8,11 +8,11 @@
 }
 
 .card {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(1, 1fr);
   grid-row-gap: 1rem;
 
-  background-color: black;
+  background-color: black !important;
   border-radius: 10px;
   transition: all .7s;
 

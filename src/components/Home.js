@@ -10,6 +10,7 @@ import Livetweets from "./Livetweets";
 import notfound from "./notfound";
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 import { updateActiveIndex } from '../actions';
