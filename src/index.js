@@ -18,6 +18,8 @@ import Home from './components/Home';
 import { Provider } from 'react-redux';
 import store from './store';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 const routing = (
     <Router>
         <Switch>

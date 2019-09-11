@@ -9,6 +9,9 @@ import Livestreams from "./Livestreams";
 import Livetweets from "./Livetweets";
 import notfound from "./notfound";
 
+//import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+
 import { updateActiveIndex } from '../actions';
 import { connect } from 'react-redux';
 
@@ -27,7 +30,7 @@ class Home extends Component {
     }
 
     render() {
-        const header =
+        const header0 =
             <div>
                 <header className="header">
                     <nav className="header__navbar">
@@ -39,6 +42,25 @@ class Home extends Component {
                         <MyClickable  name="Livetweets" className='header__item' index={5} isActive={ this.state.activeIndex===5 } onClick={this.handleItemClick} />
                     </nav>
                 </header>
+            </div>;
+
+        const header =
+            <div className="header">
+                <Navbar className="navbar"> 
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mr-auto">
+                            <Nav.Link href="#features">Features</Nav.Link>
+                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        </Nav>
+                        <Nav>
+                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Nav.Link eventKey={2} href="#memes">
+                                Dank memes
+                            </Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
             </div>;
 
         return (
@@ -95,3 +117,24 @@ export default connect(mapStateToProps, mapDispatchToProps)(Home);
  */
 
 //Q: how to keep state after refresh?
+
+
+
+
+/*
+
+        const header =
+            <div>
+                <header className="header">
+                    <nav className="header__navbar">
+                        <MyClickable  name="Cars" className='header__item' index={0} isActive={ this.state.activeIndex===0 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Players" className='header__item' index={1} isActive={ this.state.activeIndex===1 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Calendar" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Reddit" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Livestreams" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={this.handleItemClick} />
+                        <MyClickable  name="Livetweets" className='header__item' index={5} isActive={ this.state.activeIndex===5 } onClick={this.handleItemClick} />
+                    </nav>
+                </header>
+            </div>;
+
+*/

@@ -20,7 +20,7 @@ class LivetweetCard extends Component {
                     theme="dark"
                     noHeader
                     noFooter
-                    noScrollbar
+                    //noScrollbar
                     borderColor="#9acd32"
                 />
             </div>

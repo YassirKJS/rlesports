@@ -8,6 +8,7 @@
     //justify-content: center;
   
     margin: 5rem 2rem 5rem 2rem;
+    padding: 0 3rem 0 3rem;
 
     @include respond(phone) {   
         grid-template-columns: 1fr;
@@ -35,7 +36,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-row-gap: 5rem;
     justify-content: center;
 
     @include respond(phone) {  
@@ -44,8 +45,4 @@
 
         grid-template-columns: 1fr;
     }
-}
-
-.livetweet-card {
-    
 }
