@@ -8,7 +8,6 @@ import './sass/main.scss';
 /* react components */
 import CardList from './components/CardList';
 import SearchBox from './components/SearchBox';
-import Header from "./components/Header";
 import FilterHitbox from './components/FilterHitbox';
 import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';

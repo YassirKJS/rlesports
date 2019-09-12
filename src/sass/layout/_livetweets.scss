@@ -9,6 +9,7 @@
   
     margin: 5rem 2rem 5rem 2rem;
     padding: 0 3rem 0 3rem;
+    font-size: 1.4rem;
 
     @include respond(phone) {   
         grid-template-columns: 1fr;
@@ -37,7 +38,8 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 3rem;
     grid-row-gap: 5rem;
-    justify-content: center;
+    justify-content: center;    font-size: 16px !important;
+    line-height: 3px !important;
 
     @include respond(phone) {  
         grid-row: 2 / -1; 
@@ -46,3 +48,30 @@
         grid-template-columns: 1fr;
     }
 }
+
+.timeline-Tweet-text {
+
+}
+
+.root.timeline.twitter-timeline {
+    background-color: #2c3e50; }
+    .root.timeline.twitter-timeline p, .root.timeline.twitter-timeline a, .root.timeline.twitter-timeline ol, .root.timeline.twitter-timeline ul, .root.timeline.twitter-timeline li {
+      font-family: "Oxygen", "Ubuntu", "Helvetica Neue", Helvetica, arial, sans-serif; }
+  
+  .root.twitter-timeline .tweet {
+    padding: 7px 10px;
+    border-bottom: 1px solid white; }
+  .root.twitter-timeline a,
+  .root.twitter-timeline a:visited {
+    text-decoration: underline; }
+  .root.twitter-timeline .u-url,
+  .root.twitter-timeline .expand,
+  .root.twitter-timeline .hashtag,
+  .root.twitter-timeline .profile {
+    text-decoration: none; }
+    .root.twitter-timeline .u-url:hover,
+    .root.twitter-timeline .expand:hover,
+    .root.twitter-timeline .hashtag:hover,
+    .root.twitter-timeline .profile:hover {
+      text-decoration: underline;
+      color: #fff; }

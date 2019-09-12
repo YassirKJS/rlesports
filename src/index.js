@@ -24,12 +24,12 @@ const routing = (
     <Router>
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/Cars" component={App} />
-            <Route exact path="/Livestreams" component={Livestreams} />
-            <Route exact path="/Livetweets" component={Livetweets} />
-            <Route exact path="/Players" component={Players} />
-            <Route exact path="/Calendar" component={Calendar} />
-            <Route exact path="/Reddit" component={Reddit} />
+            <Route exact path="/Cars" component={Home} />
+            <Route exact path="/Livestreams" component={Home} />
+            <Route exact path="/Livetweets" component={Home} />
+            <Route exact path="/Players" component={Home} />
+            <Route exact path="/Calendar" component={Home} />
+            <Route exact path="/Reddit" component={Home} />
             <Route component={Notfound} />
         </Switch>
     </Router>
