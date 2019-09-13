@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../sass/main.scss';
+//import '../sass/main.scss';
 
 class MyClickable extends React.Component {
     handleClick = () => this.props.onClick(this.props.index);

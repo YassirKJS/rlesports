@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 
 
 class LivestreamCard extends Component {
+    
     render() {
         const channel = this.props.channel;
         const data = this.props.data;

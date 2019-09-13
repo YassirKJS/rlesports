@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* styling */
-import '../sass/main.scss';
+//import '../sass/main.scss';
 
 /* react components */
 import Header from "./Header";

@@ -12,6 +12,7 @@ import FilterHitbox from './components/FilterHitbox';
 import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
+import Header from './components/Header';
 
 class App extends Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class App extends Component {
         return (
             <div>
                 <div className="tc">
-                    {/* <Header />*/}
+                    <Header />
 
                     <div className="filter">
                         <SearchBox cars={cars} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />

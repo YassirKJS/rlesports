@@ -4,12 +4,7 @@ import SearchBox from "./livetweets/SearchBox";
 import FilterTeam from "./livetweets/FilterTeam";
 import LivetweetsList from "./livetweets/LivetweetsList";
 import TimelineList from "./livetweets/TimelineList";
-
-/* react-twitter-embed */
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
-
-/* styling */
-import '../sass/main.scss';
+import Header from './Header';
 
 class Livetweets extends Component {
     constructor(props) {
@@ -31,9 +26,10 @@ class Livetweets extends Component {
     }
 
     render() {
-
         return (
             <div>
+                <Header />
+                
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />

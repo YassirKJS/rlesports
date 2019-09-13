@@ -1,7 +1,7 @@
 /* eslint-disable no-loop-func */
 import React, { Component } from 'react';
 import Card from './Card';
-import '../sass/main.scss';
+//import '../sass/main.scss';
 
 class CardList extends Component {
 

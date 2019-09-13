@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import '../sass/main.scss';
+//import '../sass/main.scss';
 import { channels } from '../resources/data/channels';
 import SearchBox from "./livestreams/SearchBox";
 import LivestreamsList from "./livestreams/LivestreamsList";
 import FilterTeam from "./livestreams/FilterTeam";
+import Header from './Header';
 
 class Livestreams extends Component {
     constructor(props) {
@@ -82,7 +83,7 @@ class Livestreams extends Component {
                     {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
                     .then(response => response.json())
                     .then(data => {resolve(data.data) ; /*console.log(data.data)*/});
-            }, 500); //.500
+            }, .500); //.500
         });
 
         console.log('This happens 4th: Loading data');
@@ -140,7 +141,12 @@ class Livestreams extends Component {
 
         if (this.state.loading === 'true') {
             console.log('This happens 5th - when waiting for data.');
-            return <h2>Loading...</h2>;
+            return (
+                <div>
+                    <Header />
+                    <h2>Loading...</h2>;
+                </div>
+            );
         }
 
         this.state.data.forEach(function(object) {
@@ -152,6 +158,7 @@ class Livestreams extends Component {
 
         return (
             <div>
+                <Header />
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />

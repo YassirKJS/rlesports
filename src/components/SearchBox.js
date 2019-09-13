@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
 import CancelIcon from '@material-ui/icons/Cancel';
-import Input from '@material-ui/core/Input';
+//import Input from '@material-ui/core/Input';
 
 // https://github.com/JedWatson/react-select
 // https://react-select.com/props

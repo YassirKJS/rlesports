@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 /* styling */
-import '../sass/main.scss';
+//import '../sass/main.scss';
 
 /* react components */
 import Header from "./Header";
@@ -20,6 +20,7 @@ class Calendar extends Component {
         return (
             <div>
                 <div className="tc">
+                    <Header />
                     <span>Calendar here</span>
                 </div>
             </div>

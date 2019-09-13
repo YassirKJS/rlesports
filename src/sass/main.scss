@@ -1,22 +1,22 @@
-//ABSTRA§CTS
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
+//ABSTRACTS
+@import "abstracts/_functions.scss";
+@import "abstracts/_mixins.scss";
+@import "abstracts/_variables.scss";
 
 //BASE
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
+@import "base/_animations.scss";
+@import "base/_base.scss";
+@import "base/_typography.scss";
+@import "base/_utilities.scss";
 
 //COMPONENTS
 
 //LAYOUT
-@import "layout/cardlist";
-@import "layout/header";
-@import "layout/filter";
-@import "layout/livestreams";
-@import "./layout/livetweets";
+@import "layout/_cardlist.scss";
+@import "layout/_header.scss";
+@import "layout/_filter.scss";
+@import "layout/_livestreams.scss";
+@import "layout/_livetweets.scss";
 
 //PAGES
-@import "pages/home";
+@import "pages/_home.scss";
