@@ -35,49 +35,49 @@ class Header extends Component {
                 <div className='header__navbar--links'>
                     <NavLink exact to="/" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)",                            
+                            color: "var(--color-brown-dark)",                            
                         }}
                     >
                         HOMEPAGE
                     </NavLink>
                     <NavLink to="/Cars" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         CARS
                     </NavLink>
                     <NavLink to="/Players" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         PLAYERS
                     </NavLink>
                     <NavLink to="/Calendar" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         CALENDAR
                     </NavLink> 
                     <NavLink to="/Reddit" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         REDDIT
                     </NavLink> 
                     <NavLink to="/Livestreams" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         LIVESTREAMS
                     </NavLink> 
                     <NavLink to="/Livetweets" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         LIVETWEETS
@@ -87,14 +87,14 @@ class Header extends Component {
                 <div className='header__navbar--signup'>
                     <NavLink to="/Signup" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         SIGN UP
                     </NavLink> 
                     <NavLink to="/Signin" className='link' activeClassName="selected"
                         activeStyle={{
-                            color: "var(--color-gray-light-3)"
+                            color: "var(--color-brown-dark)"
                         }}
                     >
                         SIGN IN
