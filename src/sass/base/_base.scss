@@ -88,7 +88,7 @@ html {
 body {
   box-sizing: border-box;
   padding: 0 0 3rem 0;
-  background-color: var(--color-gray-dark-4) !important; //to overwrite bootstrap white background
+  background-color: var(--color-gray-dark-4); //!important to overwrite bootstrap white background
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
