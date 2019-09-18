@@ -9,8 +9,9 @@ import '../sass/layout/_header.scss';
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 //import { StickyContainer, Sticky } from 'react-sticky';
 
-// routing
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+// routing: see https://reacttraining.com/react-router/web/api/BrowserRouter
+//import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     constructor(props) {
@@ -32,18 +33,81 @@ class Header extends Component {
         return (
             <div className="header__navbar">
                 <div className='header__navbar--links'>
-                    <Link to="/" className='link'><MyClickable name="FIRSTPAGE" className='header__item' index={0} isActive={ this.state.activeIndex===0 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Cars" className='link'><MyClickable name="CARS" className='header__item' index={1} isActive={ this.state.activeIndex===1 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Players" className='link'><MyClickable name="PLAYERS" className='header__item' index={2} isActive={ this.state.activeIndex===2 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Calendar" className='link'><MyClickable name="CALENDAR" className='header__item' index={3} isActive={ this.state.activeIndex===3 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Reddit" className='link'><MyClickable name="REDDIT" className='header__item' index={4} isActive={ this.state.activeIndex===4 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Livestreams" className='link'><MyClickable name="LIVESTREAMS" className='header__item' index={5} isActive={ this.state.activeIndex===5 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Livetweets" className='link'><MyClickable name="LIVETWEETS" className='header__item' index={6} isActive={ this.state.activeIndex===6 } onClick={this.handleItemClick} /></Link>  
+                    <NavLink exact to="/" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        FIRSTPAGE
+                    </NavLink>
+                    <NavLink to="/Cars" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        CARS
+                    </NavLink>
+                    <NavLink to="/Players" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        PLAYERS
+                    </NavLink>
+                    <NavLink to="/Calendar" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        CALENDAR
+                    </NavLink> 
+                    <NavLink to="/Reddit" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        REDDIT
+                    </NavLink> 
+                    <NavLink to="/Livestreams" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        LIVESTREAMS
+                    </NavLink> 
+                    <NavLink to="/Livetweets" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        LIVETWEETS
+                    </NavLink> 
                 </div>
                 
                 <div className='header__navbar--signup'>
-                    <Link to="/Signup" className='link'><MyClickable name="SIGN UP" className='header__item' index={7} isActive={ this.state.activeIndex===7 } onClick={this.handleItemClick} /></Link>
-                    <Link to="/Signin" className='link'><MyClickable name="SIGN IN" className='header__item' index={8} isActive={ this.state.activeIndex===8 } onClick={this.handleItemClick} /></Link>    
+                    <NavLink to="/Signup" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        SIGN UP
+                    </NavLink> 
+                    <NavLink to="/Signin" className='link' activeClassName="selected"
+                        activeStyle={{
+                            fontWeight: "bold",
+                            color: "white"
+                        }}
+                    >
+                        SIGN IN
+                    </NavLink>     
                 </div>                
             </div>
         );
