@@ -147,49 +147,49 @@ class Header extends Component {
                         <div className=''>
                           <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSidebar}/>  
                         </div>
-                        <NavLink exact to="/" className='side--link' activeClassName="side--selected"
+                        <NavLink exact to="/" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)",                            
                             }}
                         >
                             HOME
                         </NavLink>
-                        <NavLink to="/Cars" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Cars" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             CARS
                         </NavLink>
-                        <NavLink to="/Players" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Players" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             PLAYERS
                         </NavLink>
-                        <NavLink to="/Calendar" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Calendar" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             CALENDAR
                         </NavLink> 
-                        <NavLink to="/Reddit" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Reddit" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             REDDIT
                         </NavLink> 
-                        <NavLink to="/Livestreams" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Livestreams" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             LIVESTREAMS
                         </NavLink> 
-                        <NavLink to="/Livetweets" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Livetweets" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
@@ -199,14 +199,14 @@ class Header extends Component {
                     </div>
                     
                     <div className='side__navbar--signup'>
-                        <NavLink to="/Signup" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Signup" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
                         >
                             SIGN UP
                         </NavLink> 
-                        <NavLink to="/Signin" className='side--link' activeClassName="side--selected"
+                        <NavLink to="/Signin" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)"
                             }}
