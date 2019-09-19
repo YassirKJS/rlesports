@@ -13,25 +13,32 @@ import '../sass/layout/_header.scss';
 import { NavLink } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faAngleRight, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            activeIndex: null
+            collapsed: true
         };
 
-        this.handleItemClick = this.handleItemClick.bind(this);
+        this.toggleSidebar = this.toggleSidebar.bind(this);
+        this.closeSidebar = this.closeSidebar.bind(this);
     }
 
-    handleItemClick(index) {
-        this.setState({ activeIndex: index });
+    toggleSidebar() {
+      this.setState({
+        collapsed: !this.state.collapsed
+      });
+    }
+  
+    closeSidebar() {
+        if (this.state.collapsed !== true) {
+          this.toggleNavbar();
+        }
     }
 
     render() {
-        //const {updateActiveIndex} = this.props;
-
         return (
             <div className='navbar'>
                 <div className="header__navbar">
@@ -103,12 +110,12 @@ class Header extends Component {
                             SIGN IN
                         </NavLink> 
                         <div className='menu-bars'>
-                            <FontAwesomeIcon icon={faBars} className='icon-bars'/>  
+                            <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar}/>  
                         </div>
                     </div>                
                 </div>
 
-                <div className='side__navbar'>
+                <div className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
                     <div className='side__navbar--links'>
                         <div className=''>
                           <FontAwesomeIcon icon={faTimes} className='icon-collapse'/>  

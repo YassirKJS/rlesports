@@ -11,7 +11,7 @@
   z-index: 5001;
 
   background-color: #101d2c;
-  width: 0rem;
+  //width: 20rem;
   height: 100vh;
   cursor: pointer;
 
@@ -32,6 +32,14 @@
   @include respond(tab-land) {
     display: grid;
   }
+}
+
+.toggled {
+  width: 25rem;
+}
+
+.collapsed {
+  width: 0rem;
 }
 
 .side__navbar--links {
