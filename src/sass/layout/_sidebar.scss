@@ -11,7 +11,8 @@
   z-index: 5001;
 
   background-color: #101d2c;
-  width: 20rem;
+  width: 0rem;
+  height: 100vh;
   cursor: pointer;
 
   //padding-top: 5rem;
@@ -77,8 +78,8 @@
 .icon-collapse {
   margin-left: 9rem;
   color: var(--color-brown-light);
-  height: 50px;
-  width: 40px !important;
+  height: 40px;
+  width: 35px !important;
   transition: transform .5s;
 
   &:hover {
