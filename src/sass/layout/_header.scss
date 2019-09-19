@@ -90,13 +90,13 @@
 }
 
 .selected {
-  border-bottom: 2px solid var(--color-brown-dark);
-  border-radius: 7px;
+  border-bottom: 3px solid var(--color-brown-light);
+  //border-radius: 7px;
 }
 
 .link:hover {
-  border-bottom: 2px solid var(--color-brown-dark);
-  border-radius: 7px;
+  //border-bottom: 2px solid var(--color-brown-dark);
+  //border-radius: 7px;
   color: var(--color-brown-dark);
 }
 
