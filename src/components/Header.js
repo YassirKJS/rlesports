@@ -24,6 +24,9 @@ class Header extends Component {
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.closeSidebar = this.closeSidebar.bind(this);
+
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
     toggleSidebar() {
@@ -36,6 +39,30 @@ class Header extends Component {
         if (this.state.collapsed !== true) {
           this.toggleSidebar();
         }
+    }
+
+    componentDidMount() {
+      document.addEventListener('mousedown', this.handleClickOutside);
+    }
+  
+    componentWillUnmount() {
+      document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    /**
+     * Set the wrapper ref
+     */
+    setWrapperRef(node) {
+      this.wrapperRef = node;
+    }
+
+    /**
+     * Alert if clicked on outside of element
+     */
+    handleClickOutside(event) {
+      if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+        this.closeSidebar();
+      }
     }
 
     render() {
@@ -115,7 +142,7 @@ class Header extends Component {
                     </div>                
                 </div>
 
-                <div className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
+                <div ref={this.setWrapperRef} className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
                     <div className='side__navbar--links'>
                         <div className=''>
                           <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSidebar}/>  
