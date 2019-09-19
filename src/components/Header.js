@@ -34,7 +34,7 @@ class Header extends Component {
   
     closeSidebar() {
         if (this.state.collapsed !== true) {
-          this.toggleNavbar();
+          this.toggleSidebar();
         }
     }
 
@@ -118,7 +118,7 @@ class Header extends Component {
                 <div className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
                     <div className='side__navbar--links'>
                         <div className=''>
-                          <FontAwesomeIcon icon={faTimes} className='icon-collapse'/>  
+                          <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSidebar}/>  
                         </div>
                         <NavLink exact to="/" className='side--link' activeClassName="side--selected"
                             activeStyle={{
