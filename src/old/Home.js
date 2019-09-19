@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import MyClickable from "./MyClickable";
 import App from "../App";
-import Players from "./Players";
-import Calendar from "./Calendar";
-import Reddit from "./Reddit";
-import Livestreams from "./Livestreams";
-import Livetweets from "./Livetweets";
-import notfound from "./notfound";
+import Players from "../components/Players";
+import Calendar from "../components/Calendar";
+import Reddit from "../components/Reddit";
+import Livestreams from "../components/Livestreams";
+import Livetweets from "../components/Livetweets";
+import notfound from "../components/notfound";
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';

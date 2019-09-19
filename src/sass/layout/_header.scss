@@ -1,3 +1,5 @@
+@import "../abstracts/mixins";
+
 .header__navbar {
   display: grid;
 
@@ -11,8 +13,16 @@
 
   margin: 0 0 30px 0;
 
-  
-  
+  @include respond(tab-land) {
+    .header__navbar--links:not(:first-child) {
+      display: none;
+    }
+
+    .header__navbar--signup:not(:last-child) {
+      display: none;
+    }
+  }
+
   & * {
     //line-height: 0;
     font-size: 17px;
@@ -20,6 +30,8 @@
     padding: 5px 0 5px 0;
     text-decoration: none;
   }
+
+
 }
 
 .header__navbar--links {
@@ -32,6 +44,12 @@
   justify-items: center;
   grid-column-gap: 2rem;
   margin-left: 2rem;
+
+  @include respond(tab-land) {
+    & *:not(:first-child) {
+      display: none;
+    }
+  }
 }
 
 .header__navbar--signup {
@@ -40,9 +58,39 @@
   justify-self: end;
 
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(3, auto);
   grid-column-gap: 2rem; 
   margin-right: 2rem;
+
+  @include respond(tab-land) {
+    & *:not(:last-child) {
+      display: none;
+    }
+  }
+}
+
+.menu-bars {
+  
+}
+
+.icon-bars {
+  visibility:hidden;
+  color: var(--color-brown-light);
+  height: 40px;
+  width: 35px !important;
+  transition: transform .5s;
+
+  position: absolute;
+  top: 3px;
+  right: 15px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @include respond(tab-land) {
+    visibility: visible;
+  }
 }
 
 .link {

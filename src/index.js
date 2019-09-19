@@ -13,7 +13,7 @@ import Players from './components/Players';
 import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
 import Notfound from './components/notfound';
-import Home from './components/Home';
+//import Home from './components/Home';
 
 import { Provider } from 'react-redux';
 import store from './store';

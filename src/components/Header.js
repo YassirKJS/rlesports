@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import MyClickable from './MyClickable';
 import { updateActiveIndex } from '../actions';
 import { connect } from 'react-redux';
 import '../sass/layout/_header.scss';
@@ -12,6 +11,9 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 // routing: see https://reacttraining.com/react-router/web/api/BrowserRouter
 //import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component {
     constructor(props) {
@@ -98,7 +100,10 @@ class Header extends Component {
                         }}
                     >
                         SIGN IN
-                    </NavLink>     
+                    </NavLink> 
+                    <div className='menu-bars'>
+                        <FontAwesomeIcon icon={faBars} className='icon-bars'/>  
+                    </div>
                 </div>                
             </div>
         );
