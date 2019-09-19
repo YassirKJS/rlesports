@@ -1,27 +1,20 @@
 @import "../abstracts/mixins";
 
-.header__navbar {
-  display: grid;
-
+.navbar {
   position: sticky;
   top: 0;
   z-index: 5000;
+  margin: 0 0 30px 0;
+}
+
+.header__navbar {
+  display: grid;
 
   background-color: #101d2c; // var(--color-theme-dark);
   height: 46px;
   cursor: pointer;
 
-  margin: 0 0 30px 0;
-
-  @include respond(tab-land) {
-    .header__navbar--links:not(:first-child) {
-      display: none;
-    }
-
-    .header__navbar--signup:not(:last-child) {
-      display: none;
-    }
-  }
+  position: relative;
 
   & * {
     //line-height: 0;
@@ -30,8 +23,6 @@
     padding: 5px 0 5px 0;
     text-decoration: none;
   }
-
-
 }
 
 .header__navbar--links {
