@@ -1,7 +1,7 @@
 @import "../abstracts/mixins";
 
 .side__navbar {
-  display: none;
+  //display: none;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
   grid-row-gap: 5rem;
@@ -19,6 +19,8 @@
   position: absolute;
   top: 0;
   right: 0;
+
+  transition: all .5s;
 
   & * {
     //line-height: 0;
@@ -42,13 +44,17 @@
   width: 0rem;
 }
 
+.collapsed * {
+  display: none;
+}
+
 .side__navbar--links {
   grid-row: 1 / 2;
   grid-column: 1 / -1;
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 25px repeat(7, 20px);
+  grid-template-rows: 25px repeat(7, 30px);
   grid-row-gap: 2rem;
   justify-items: start;
 }
@@ -59,13 +65,16 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 20px);
+  grid-template-rows: repeat(2, 30px);
   grid-row-gap: 2rem;
   justify-items: start;
 }
 
 .side--link {
   color: var(--color-brown-light); 
+  width: 80%;
+  border-bottom: 1px solid rgba(196, 162, 120, .3);
+  padding-bottom: 4rem;
 }
 
 .side--link:focus {
@@ -84,9 +93,9 @@
 }
 
 .icon-collapse {
-  margin-left: 14rem;
+  margin-left: 14.5rem;
   color: var(--color-brown-light);
-  height: 40px;
+  height: 45px;
   width: 35px !important;
   transition: transform .5s;
 
