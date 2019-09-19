@@ -70,7 +70,7 @@ class Header extends Component {
             <div className='navbar'>
                 <div className="header__navbar">
                     <div className='header__navbar--links'>
-                        <NavLink exact to="/" className='link' activeClassName="selected"
+                        <NavLink exact to="/" className='link home' activeClassName="selected"
                             activeStyle={{
                                 color: "var(--color-brown-dark)",                            
                             }}
