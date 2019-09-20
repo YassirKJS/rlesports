@@ -243,7 +243,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
     /**** start Menu (dropdown)****/
     function Menu(props) {
         return (
-            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: #252525'>
+            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: var(--color-primary)'>
                 {props.children}
             </Paper>
         );
@@ -289,7 +289,7 @@ function SearchBox ({ cars, searchText, onSearchTextChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
-                        style: { color: 'greenyellow' },
+                        style: { color: 'var(--color-brown-light)' },
                     },
                 }}
                 placeholder="Search for Car(s)"

@@ -25,21 +25,21 @@
 
   //HEADING SPAN CHANGE ON CARD HOVER
   &:hover &__heading-span {
-    background-image: linear-gradient(to right, #CB52FF, #7700B8);
+    background-image: linear-gradient(to right, var(--color-brown-light), var(--color-brown-dark));
     //background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark)); // #7700B8 #CB52FF
     padding-right: 6rem;
     font-weight: 900;
-    color: var(--color-gray-light-2);
+    color: black;
   }
 
   &:hover &__hitbox-img {
-    color : #CB52FF; //var(--color-orange-light);
+    color : var(--color-brown-dark); //var(--color-orange-light);
   }
   &:hover &__released-img {
-    color : #CB52FF; //var(--color-orange-light);
+    color : var(--color-brown-dark); //var(--color-orange-light);
   }
   &:hover &__attributes-img {
-    color : #CB52FF; //var(--color-orange-light);
+    color : var(--color-brown-dark); //var(--color-orange-light);
   }
 
   &__img-container {
@@ -80,7 +80,7 @@
       height: 2rem;
       width: 2rem;
       margin-right: 1rem;
-      color : greenyellow;
+      color : var(--color-primary-light);
     }
   }
 
@@ -93,11 +93,11 @@
     align-self: end;
     z-index: 0;
 
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
     text-align: right;
-    color: black;
+    color: var(--color-gray-light-2);
     position: absolute;
     //top: 12rem;
     right: .1rem;
@@ -105,8 +105,7 @@
     //outline: none;
 
     &-span {
-      //background-image: linear-gradient(to right, var(--color-blue-light), var(--color-blue-dark));
-      background-image: linear-gradient(to right, var(--color-green-light), greenyellow);
+      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
 

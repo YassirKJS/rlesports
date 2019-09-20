@@ -10,7 +10,7 @@
   //float: right;
   z-index: 5001;
 
-  background-color: #101d2c;
+  background-color: var(--color-primary);
   box-shadow: 0 1rem 1rem rgba(black, 1);
   //width: 20rem;
   height: 100vh;
@@ -75,8 +75,8 @@
   //color: var(--color-brown-light); 
   color: white;
   width: 80%;
-  border-bottom: 1px solid rgba(196, 162, 120, .3);
-  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 207, 84, 0.2);
+  //padding-bottom: 4rem;
 }
 
 .side--link:focus {
@@ -91,7 +91,7 @@
 
 .side--link:hover {
   color: var(--color-brown-dark); 
-  border-bottom: 2px solid rgba(196, 162, 120, .3);
+  border-bottom: 2px solid rgba(255, 207, 84, 0.2);
   //border-bottom: 2px solid var(--color-brown-dark);
 }
 
@@ -116,7 +116,7 @@
   left: 0;
   height: 100%;
   width: 3px;
-  background-color: rgba(196, 162, 120, .3);
+  background-color: rgba(255, 207, 84, 0.2);
   transform: scaleY(1);
   transition: transform .2s;
   overflow: hidden;

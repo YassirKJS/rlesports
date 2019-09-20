@@ -11,7 +11,7 @@
 .header__navbar {
   display: grid;
 
-  background-color: #101d2c; // var(--color-theme-dark);
+  background-color: var(--color-primary); // var(--color-theme-dark);
   height: 45px;
   cursor: pointer;
   overflow: hidden;//+
@@ -105,6 +105,9 @@
 }
 
 
+
+/* items effect */
+
 .link::before {
   content: "";
   position: absolute;
@@ -112,7 +115,7 @@
   left: 0;
   height: 3px;
   width: 100%;
-  background-color: rgba(120, 181, 196, 0.2);
+  background-color: rgba(255, 207, 84, 0.2);
   transform: scaleY(1) scaleX(0);
   transition: transform .2s,
               width .4s cubic-bezier(1, 0, 0, 1) .1s,
@@ -133,7 +136,7 @@
 }
 
 
-/* effect */
+/* navbar effect */
 
 .header__navbar::after {
   content: "";
@@ -142,7 +145,7 @@
   right: 0;
   height: 3px;
   width: 100%;
-  background-color: rgba(196, 162, 120, .3);
+  background-color: rgba(255, 207, 84, 0.2);
   transform: scaleX(1);
   transition: transform .2s,
               width .4s cubic-bezier(1, 0, 0, 1) .1s,

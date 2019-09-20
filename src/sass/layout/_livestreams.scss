@@ -55,7 +55,7 @@
       display: inline-block;
       text-align: center;
 
-      background-color: #252525;
+      background-color: var(--color-primary);
       height: 3.5rem;
       width: 3.5rem;
       border-radius: 50%;
@@ -75,7 +75,7 @@
       &::after {
         display: inline-block;
 
-        background-color: var(--color-gray-light-2);
+        background-color: var(--color-brown-light);
         width: 2.5rem;
         height: 2px;
       }
@@ -135,7 +135,7 @@
       &--2,
       &--3,
       &--4 {
-        color: #252525;
+        color: var(--color-primary);
       }
 
       &--1 {
@@ -297,7 +297,7 @@
 
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--color-purple-light);
+    color: var(--color-brown-light);
   }
 
   &__img {

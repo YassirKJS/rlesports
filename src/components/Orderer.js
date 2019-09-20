@@ -222,7 +222,7 @@ function Orderer ({ selectedOrder, onSelectedOrderChange }) {
     /**** start Menu ****/
     function Menu(props) {
         return (
-            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: #252525'>
+            <Paper square className={props.selectProps.classes.paper} {...props.innerProps} Style='background-color: var(--color-primary)'>
                 {props.children}
             </Paper>
         );
@@ -269,7 +269,7 @@ function Orderer ({ selectedOrder, onSelectedOrderChange }) {
                     InputLabelProps: {
                         htmlFor: 'react-select-multiple',
                         shrink: true,
-                        style: { color: 'greenyellow' },
+                        style: { color: 'var(--color-brown-light)' },
                     },
                 }}
                 placeholder="Select Order"

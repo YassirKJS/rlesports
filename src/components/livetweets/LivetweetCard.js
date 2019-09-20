@@ -34,7 +34,8 @@ class LivetweetCard extends Component {
                     theme="dark"
                     noHeader
                     noFooter
-                    borderColor="#9acd32"
+                    noScrollbar
+                    borderColor="#ffba08" // var(--color-brown-dark) 
                 />
             </div>
         )

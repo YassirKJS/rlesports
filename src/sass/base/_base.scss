@@ -2,9 +2,8 @@
 @import "../abstracts/mixins";
 
 :root {
-  --color-primary: #eb2f64;
-  --color-primary-light: #FF3366;
-  --color-primary-dark: #BA265D;
+  --color-primary: #101d2c;
+  --color-primary-light: #4781C4;
 
   --color-beige-light: #FFDEDA;
   --color-beige-dark: #FF9C91;
@@ -15,10 +14,9 @@
 
   --color-cyan-light: #39D1CF;
   --color-cyan-dark: #40807E;
-
   
-  --color-brown-light: #c4a278;
-  --color-brown-dark: #dba25c;
+  --color-brown-light: #FFCF54; //#c4a278
+  --color-brown-dark: #ffba08; //#dba25c
 
   --color-brown-2-light: #FFA7A6;
   --color-brown-2-dark: #85403F;
