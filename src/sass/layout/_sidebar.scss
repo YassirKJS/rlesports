@@ -72,7 +72,8 @@
 }
 
 .side--link {
-  color: var(--color-brown-light); 
+  //color: var(--color-brown-light); 
+  color: white;
   width: 80%;
   border-bottom: 1px solid rgba(196, 162, 120, .3);
   padding-bottom: 4rem;
@@ -125,7 +126,7 @@
   transform: scaleY(0);
 }
 
-.side__navbar::after {
+.toggled::after {
   content: "";
   position: absolute;
   bottom: 0;

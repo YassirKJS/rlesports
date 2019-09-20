@@ -70,70 +70,34 @@ class Header extends Component {
             <div className='navbar'>
                 <div className="header__navbar">
                     <div className='header__navbar--links'>
-                        <NavLink exact to="/" className='link home' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)",                            
-                            }}
-                        >
+                        <NavLink exact to="/" className='link' activeClassName="selected">
                             HOME
                         </NavLink>
-                        <NavLink to="/Cars" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Cars" className='link' activeClassName="selected">
                             CARS
                         </NavLink>
-                        <NavLink to="/Players" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Players" className='link' activeClassName="selected">
                             PLAYERS
                         </NavLink>
-                        <NavLink to="/Calendar" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Calendar" className='link' activeClassName="selected">
                             CALENDAR
                         </NavLink> 
-                        <NavLink to="/Reddit" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Reddit" className='link' activeClassName="selected">
                             REDDIT
                         </NavLink> 
-                        <NavLink to="/Livestreams" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Livestreams" className='link' activeClassName="selected">
                             LIVESTREAMS
                         </NavLink> 
-                        <NavLink to="/Livetweets" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Livetweets" className='link' activeClassName="selected">
                             LIVETWEETS
                         </NavLink> 
                     </div>
                     
                     <div className='header__navbar--signup'>
-                        <NavLink to="/Signup" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Signup" className='link' activeClassName="selected">
                             SIGN UP
                         </NavLink> 
-                        <NavLink to="/Signin" className='link' activeClassName="selected"
-                            activeStyle={{
-                                color: "var(--color-brown-dark)"
-                            }}
-                        >
+                        <NavLink to="/Signin" className='link' activeClassName="selected">
                             SIGN IN
                         </NavLink> 
                         <div className='menu-bars'>
