@@ -75,7 +75,7 @@
       &::after {
         display: inline-block;
 
-        background-color: var(--color-brown-light);
+        background-color: white; // var(--color-brown-light)
         width: 2.5rem;
         height: 2px;
       }
@@ -227,6 +227,7 @@
       &--3:hover,
       &--4:hover {
         transform: rotate(5deg);
+        //color: var(--color-brown-dark);
 
         @include respond(tab-port) {
           transform: rotate(5deg) translateY(.1rem);
@@ -297,7 +298,7 @@
 
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--color-brown-light);
+    color: var(--color-brown-dark);
   }
 
   &__img {
@@ -324,3 +325,4 @@
 }
 
 //147359
+

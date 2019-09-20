@@ -61,7 +61,7 @@ class LivetweetsList extends Component {
         if(filteredChannelsByTeam.length === 0) filteredChannelsByTeam = filteredChannelsByIgn;
 
         return (
-            <div className="livetweetsList">
+            <div className="livetweetsList" id="livetweetsList">
                 {
                     filteredChannelsByTeam.map((channel) => { 
                         return (

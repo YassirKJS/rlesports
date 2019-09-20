@@ -7,6 +7,7 @@ import ReactPlayer from "react-player";
 
 
 class LivestreamCard extends Component {
+
     
     render() {
         const channel = this.props.channel;
@@ -42,6 +43,7 @@ class LivestreamCard extends Component {
                     playsinline
                     light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
                 />
+                
 
                 <div className="livestream__navigation">
                     <input type="checkbox" class="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
