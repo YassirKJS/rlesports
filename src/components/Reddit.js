@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 /* react components */
 import Header from "./Header";
+import Marquee from "./Marquee";
 
 class Reddit extends Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class Reddit extends Component {
                 <div className="tc">
                     <Header />
                     <span>Reddit here</span>
+                    <Marquee />
                 </div>
             </div>
         );
