@@ -16,6 +16,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
+    "react-double-marquee": "^0.3.4",
     "react-facebook-loading": "^0.6.2",
     "react-loader-spinner": "^3.1.4",
     "react-loading-skeleton": "^1.1.2",
