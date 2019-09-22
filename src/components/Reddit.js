@@ -26,7 +26,7 @@ class Reddit extends Component {
             let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
             fetch(uri)
                 .then(response => response.json())
-                .then(data => {resolve(data) ; console.log('displaying data:');console.log(data.data.children[0].data.title)});
+                .then(data => {resolve(data) ; /*console.log('displaying data:');console.log(data.data.children[0].data.title)*/ });
         }, .500); //.500
     });
 
@@ -75,21 +75,20 @@ class Reddit extends Component {
         );
     }
 
-    this.state.data.forEach(function(object) {
-        //console.log(object.user_name);
-        return (
-          <div>{object.user_name}</div>
-        )
-    });
-
     console.log('This happens 8th - after I get data.');
 
     return (
-        <div>
-          <Header />
-          whatever loaded
-        </div>
-    );
+      <div>
+        <Header />
+        {
+          this.state.data.data.children.map((object) => {
+            return (
+              <div>{object.data.title}</div>
+            );
+          })
+        }
+      </div>
+    )    
   }
 }
 
@@ -99,8 +98,8 @@ export default Reddit;
 
 https://www.reddit.com/r/RocketLeagueEsports.json'  --> data
 
-object.object.array[].object.attribute
-data.data.chidren[].data.attribute
+object.object.array[i].object.attribute
+data.data.chidren[i].data.attribute
 
 ********attributes********
 
