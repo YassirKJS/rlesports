@@ -20,14 +20,14 @@ class Reddit extends Component {
 
   loadData() {
     let promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log('This happens 6th (after 2 seconds): Data loaded');
-            //resolve('This is my data.');
-            let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
-            fetch(uri)
-                .then(response => response.json())
-                .then(data => {resolve(data) ; /*console.log('displaying data:');console.log(data.data.children[0].data.title)*/ });
-        }, 0); //.500
+      setTimeout(() => {
+          console.log('This happens 6th (after 2 seconds): Data loaded');
+          //resolve('This is my data.');
+          let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
+          fetch(uri)
+              .then(response => response.json())
+              .then(data => {resolve(data) ; /*console.log('displaying data:');console.log(data.data.children[0].data.title)*/ });
+      }, 0); //.500
     });
 
     console.log('This happens 4th: Loading data');

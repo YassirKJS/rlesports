@@ -1,29 +1,105 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
-function Marquee () {
-  return (
-    <div>
+class Marquee extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log('This happens 1st: Constructor');
+
+    this.state = {
+        data: [],
+    };
+  }
+
+  componentDidMount() {
+    let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
+    fetch(uri)
+        .then(response => response.json())
+        .then(data => {this.setState({ data: data.data.children })});
+  }
+
+  formatTitle(text) {
+    if (text.endsWith('.') || text.endsWith('!')) {
+      return text;
+    }
+    else return text + '.';
+  } 
+
+  render() {
+    console.log('Got Reddit News');
+    //console.log(this.state.data.data);
+
+    return (
       <p className="marquee">
         <span>
-          yumi_cheeseman won't be casting the OCE RLCS for season 8 
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          RLCS Season 8 LAN is going to Madrid!
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          Doomsee retiring 
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          Method announce Tadpole
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;
-          The Brawl: Now with Open Qualifiers
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          TeamBeyondnet announces the ASTRONAUTS $5,000 Rocket League Pro Invitational featuring Top 4 NA RLCS Teams (Monday, September 30th)
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          Rival Esports B-Stream for RLRS S8 AND Play-Ins! 
-          &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 
-          RLCS S8 League Play schedule for North America and Europe has been released           
+          {            
+            this.state.data.map((object, index) => {
+              if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
+                if (index === 0) {
+                  return (
+                    <div>
+                      {this.formatTitle(object.data.title)}
+                    </div>
+                  );
+                }
+                else {
+                  return (
+                    <div>
+                      <FontAwesomeIcon icon={faNewspaper} className='marquee-icon'/>
+                        {this.formatTitle(object.data.title)}
+                    </div>
+                  );
+                }
+              }
+              else return;
+            })
+          }
         </span>
       </p>
-    </div>
-  )
+    )    
+  }
 }
 
 export default Marquee;
+
+/*************************REDDIT API***********************************
+
+https://www.reddit.com/r/RocketLeagueEsports.json'  --> data
+
+object.object.array[i].object.attribute
+data.data.chidren[i].data.attribute
+
+********attributes********
+
+id: "d6xtz4"
+name: "t3_d6xtz4"
+title: "RLCS LAN going to Madrid!"
+author: "simdav"
+score: 613
+ups: 613
+num_comments: 154
+
+link_flair_css_class: "psyonix"
+link_flair_text: ":Verified: Psyonix Official"
+
+saved: false
+stickied: true
+pinned: false
+permalink: "/r/RocketLeagueEsports/comments/d6xtz4/rlcs_lan_going_to_madrid/"
+url: "https://twitter.com/RLEsports/status/1175092281319182336?s=09"
+
+subreddit: "RocketLeagueEsports"
+subreddit_id: "t5_39cf6"
+subreddit_name_prefixed: "r/RocketLeagueEsports"
+subreddit_subscribers: 27695
+subreddit_type: "public"
+
+
+thumbnail: "https://b.thumbs.redditmedia.com/JFN0jUdozkmubupeNBIH3rqjtN1Wd8SCaV4Su8q-BdI.jpg"
+thumbnail_height: 78
+thumbnail_width: 140
+
+
+*/
