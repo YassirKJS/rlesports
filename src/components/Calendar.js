@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import '../sass/main.scss';
 
 /* react components */
-import Header from "./Header";
+import Layout from './Layout/Layout';
 
 class Calendar extends Component {
     constructor(props) {
@@ -18,12 +18,9 @@ class Calendar extends Component {
     render() {
 
         return (
-            <div>
-                <div className="tc">
-                    <Header />
-                    <span>Calendar here</span>
-                </div>
-            </div>
+            <Layout>
+              <span>Calendar here</span>
+            </Layout>
         );
     }
 }

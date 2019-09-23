@@ -12,8 +12,9 @@ import FilterHitbox from './components/FilterHitbox';
 import FilterAttribute from './components/FilterAttribute';
 import Sorter from './components/Sorter';
 import Orderer from './components/Orderer';
-import Header from './components/Header';
-import Marquee from "./components/Marquee";
+//import Header from './components/Header';
+//import Marquee from "./components/Marquee";
+import Layout from './components/Layout/Layout';
 
 class App extends Component {
     constructor(props) {
@@ -55,22 +56,16 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <div className="tc">
-                    <Header />
-
-                    <div className="filter">
-                        <SearchBox cars={cars} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
-                        <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
-                        <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
-                        <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />
-                        <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />
-                    </div>
-                    <CardList cars={cars} searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
-
-                    <Marquee />
-                </div>
+          <Layout>
+            <div className="filter">
+                <SearchBox cars={cars} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
+                <FilterHitbox selectedHitbox={this.state.selectedHitbox} onSelectedHitboxChange={this.handleSelectedHitboxChange} />
+                <FilterAttribute selectedAttribute={this.state.selectedAttribute} onSelectedAttributeChange={this.handleSelectedAttributeChange} />
+                <Sorter selectedSort={this.state.selectedSort} onSelectedSortChange={this.handleSelectedSortChange} />
+                <Orderer selectedOrder={this.state.selectedOrder} onSelectedOrderChange={this.handleSelectedOrderChange} />
             </div>
+            <CardList cars={cars} searchText={this.state.searchText} selectedHitbox={this.state.selectedHitbox} selectedAttribute={this.state.selectedAttribute} selectedSort={this.state.selectedSort} selectedOrder={this.state.selectedOrder}/>
+          </Layout>                    
         );
     }
 }

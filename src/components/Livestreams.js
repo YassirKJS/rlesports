@@ -4,7 +4,7 @@ import { channels } from '../resources/data/channels';
 import SearchBox from "./livestreams/SearchBox";
 import LivestreamsList from "./livestreams/LivestreamsList";
 import FilterTeam from "./livestreams/FilterTeam";
-import Header from './Header';
+import Layout from './Layout/Layout';
 
 class Livestreams extends Component {
     constructor(props) {
@@ -142,10 +142,9 @@ class Livestreams extends Component {
         if (this.state.loading === 'true') {
             console.log('This happens 5th - when waiting for data.');
             return (
-                <div>
-                    <Header />
-                    <h2>Loading...</h2>;
-                </div>
+              <Layout>
+                <h2>Loading...</h2>;
+              </Layout>                    
             );
         }
 
@@ -157,15 +156,14 @@ class Livestreams extends Component {
         console.log('This happens 8th - after I get data.');
 
         return (
-            <div>
-                <Header />
+            <Layout>
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
 
                 <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
-            </div>
+            </Layout>
         );
     }
 }

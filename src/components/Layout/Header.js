@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { updateActiveIndex } from '../actions';
+import { updateActiveIndex } from '../../actions';
 import { connect } from 'react-redux';
-import '../sass/layout/_header.scss';
+import '../../sass/layout/_header.scss';
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';

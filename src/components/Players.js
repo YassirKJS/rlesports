@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import '../sass/main.scss';
 
 /* react components */
-import Header from "./Header";
+import Header from "./Layout/Header";
 
 class Players extends Component {
     constructor(props) {

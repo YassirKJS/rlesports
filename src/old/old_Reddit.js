@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import '../sass/main.scss';
 
 /* react components */
-import Layout from './Layout/Layout';
+import Header from "./Header";
 
 class Reddit extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Reddit extends Component {
             fetch(uri)
                 .then(response => response.json())
                 .then(data => {resolve(data) ; /*console.log('displaying data:');console.log(data.data.children[0].data.title)*/ });
-        }, 0); //.500
+        }, 500); //.500
     });
 
     console.log('This happens 4th: Loading data');
@@ -68,9 +68,10 @@ class Reddit extends Component {
     if (this.state.loading === 'true') {
         console.log('This happens 5th - when waiting for data.');
         return (
-            <Layout>
+            <div>
+              <Header />
               <h2>Loading...</h2>;
-            </Layout>
+            </div>
         );
     }
 
@@ -78,7 +79,8 @@ class Reddit extends Component {
     console.log(this.state.data.data);
 
     return (
-      <Layout>
+      <div>
+        <Header />
         {
           this.state.data.data.children.map((object) => {
             if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
@@ -89,7 +91,7 @@ class Reddit extends Component {
             else return;
           })
         }
-      </Layout>
+      </div>
     )    
   }
 }

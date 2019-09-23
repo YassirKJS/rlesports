@@ -4,14 +4,13 @@ import React from 'react';
 //import '../sass/main.scss';
 
 /* react components */
-import Header from "./Header";
+import Layout from './Layout/Layout';
 
 const Notfound = () => {
     return (
-        <div>
-            <Header />
-            <h1>NOT FOUND</h1>
-        </div>
+        <Layout>
+            <h1>404 - NOT FOUND</h1>
+        </Layout>
     );
 };
 

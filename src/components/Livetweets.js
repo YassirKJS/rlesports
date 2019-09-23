@@ -4,7 +4,7 @@ import SearchBox from "./livetweets/SearchBox";
 import FilterTeam from "./livetweets/FilterTeam";
 import LivetweetsList from "./livetweets/LivetweetsList";
 import TimelineList from "./livetweets/TimelineList";
-import Header from './Header';
+import Layout from './Layout/Layout';
 
 class Livetweets extends Component {
     constructor(props) {
@@ -27,9 +27,7 @@ class Livetweets extends Component {
 
     render() {
         return (
-            <div>
-                <Header />
-                
+            <Layout>                                
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
@@ -39,7 +37,7 @@ class Livetweets extends Component {
                     <TimelineList />
                     <LivetweetsList channels={channels} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
                 </div>
-            </div>
+            </Layout>
         );
     }
 }

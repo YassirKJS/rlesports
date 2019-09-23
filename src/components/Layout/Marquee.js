@@ -3,7 +3,7 @@ import React from 'react';
 function Marquee () {
   return (
     <div>
-      <p class="marquee">
+      <p className="marquee">
         <span>
           yumi_cheeseman won't be casting the OCE RLCS for season 8 
           &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp; 

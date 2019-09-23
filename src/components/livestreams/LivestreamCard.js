@@ -22,13 +22,14 @@ class LivestreamCard extends Component {
 
 
         let title = "Channel is currently offline";
-        let status = "OFFLINE";
+        /*let status = "OFFLINE";
         data.forEach(function(data_) {
             if (data_.user_name.toLowerCase() === twitch.toLowerCase()) {
                 title = data_.title;
                 status = "LIVE";
             }
         });
+        */
 
         return (
             <div className='livestream-card'>
@@ -46,12 +47,12 @@ class LivestreamCard extends Component {
                 
 
                 <div className="livestream__navigation">
-                    <input type="checkbox" class="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
-                    <label for={"navi-toggle-" + id} class="livestream__navigation--button">
-                        <span class="livestream__navigation--icon">&nbsp;</span>
+                    <input type="checkbox" className="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
+                    <label htmlFor={"navi-toggle-" + id} className="livestream__navigation--button">
+                        <span className="livestream__navigation--icon">&nbsp;</span>
                     </label>
 
-                    <div class="livestream__navigation--background">
+                    <div className="livestream__navigation--background">
                         <a className="livestream__navigation--item--1" href={'https://www.instagram.com/' + twitch} target="_blank" > <img alt="liquipedia" src={liquipediaIcon} /></a>
                         <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" ><FontAwesomeIcon icon={faTwitch} /></a>
                         <a className="livestream__navigation--item--3" href={'https://youtube.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>
