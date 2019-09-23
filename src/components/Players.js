@@ -4,28 +4,23 @@ import React, { Component } from 'react';
 //import '../sass/main.scss';
 
 /* react components */
-import Header from "./Layout/Header";
+import Layout from './Layout/Layout';
 
 class Players extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-        };
+    };
+  }
 
-    }
-
-    render() {
-
-        return (
-            <div>
-                <div className="tc">
-                    <Header />
-                    <span>Players here</span>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <Layout>
+        <h1>Players here</h1>
+      </Layout>
+    );
+  }
 }
 
 export default Players;

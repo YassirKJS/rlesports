@@ -5,9 +5,6 @@ import { faStar, faNewspaper } from '@fortawesome/free-solid-svg-icons';
 class Marquee extends Component {
   constructor(props) {
     super(props);
-
-    console.log('This happens 1st: Constructor');
-
     this.state = {
         data: [],
     };
@@ -28,9 +25,6 @@ class Marquee extends Component {
   } 
 
   render() {
-    console.log('Got Reddit News');
-    //console.log(this.state.data.data);
-
     return (
       <p className="marquee">
         <span>

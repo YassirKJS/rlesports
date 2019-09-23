@@ -9,92 +9,24 @@ import Layout from './Layout/Layout';
 class Reddit extends Component {
   constructor(props) {
     super(props);
-
-    console.log('This happens 1st: Constructor');
-
     this.state = {
-        loading: 'initial',
-        data: [],
+
     };
   }
 
-  loadData() {
-    let promise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-          console.log('This happens 6th (after 2 seconds): Data loaded');
-          //resolve('This is my data.');
-          let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
-          fetch(uri)
-              .then(response => response.json())
-              .then(data => {resolve(data) ; /*console.log('displaying data:');console.log(data.data.children[0].data.title)*/ });
-      }, 0); //.500
-    });
-
-    console.log('This happens 4th: Loading data');
-
-    return promise;
-  }
-
-  componentDidMount() {
-    console.log('This happens 3rd: ComponentDidMount');
-
-    this.setState({ loading: 'true' });
-    this.loadData()
-        .then((data) => {
-            console.log('This happens 7th: ComponentDidMount/this.loadData');
-            if (data === undefined || data.length === 0) {
-                console.log("data empty");
-                this.setState({
-                    data: [],
-                    loading: 'false'
-                });
-            }
-            else {
-                console.log("data not empty");
-                this.setState({
-                    data: data,
-                    loading: 'false'
-                });
-            }
-        });
-  }
-
   render() {
-    if (this.state.loading === 'initial') {
-      console.log('This happens 2nd - after the class is constructed. You will not see this element because React is still computing changes to the DOM.');
-      return <h2>Intializing...</h2>;
-    }
-
-    if (this.state.loading === 'true') {
-        console.log('This happens 5th - when waiting for data.');
-        return (
-            <Layout>
-              <h2>Loading...</h2>;
-            </Layout>
-        );
-    }
-
-    console.log('This happens 8th - after I get data.');
-    console.log(this.state.data.data);
-
     return (
       <Layout>
-        {
-          this.state.data.data.children.map((object) => {
-            if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
-              return (
-              <div key={object.data.title.id}>{object.data.title}</div>
-             );
-            }
-            else return;
-          })
-        }
+        <h1>Reddit here</h1>
       </Layout>
     )    
   }
 }
 
 export default Reddit;
+
+
+
 
 /*************************REDDIT API***********************************
 

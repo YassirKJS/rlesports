@@ -8,20 +8,18 @@ import Layout from './Layout/Layout';
 
 class Calendar extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
+      super(props);
+      this.state = {
 
-        };
-
+      };
     }
 
     render() {
-
-        return (
-            <Layout>
-              <span>Calendar here</span>
-            </Layout>
-        );
+      return (
+          <Layout>
+            <h1>Calendar here</h1>
+          </Layout>
+      );
     }
 }
 
