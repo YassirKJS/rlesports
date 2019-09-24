@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 class Marquee extends Component {
   constructor(props) {
@@ -11,11 +11,11 @@ class Marquee extends Component {
   }
 
   componentDidMount() {
-    let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json';
+    let uri = 'https://www.reddit.com/r/RocketLeagueEsports.json?limit=50';
     fetch(uri)
         .then(response => response.json())
         .then(data => {this.setState({ data: data.data.children })});
-  }
+}
 
   formatTitle(text) {
     if (text.endsWith('.') || text.endsWith('!')) {
@@ -23,6 +23,13 @@ class Marquee extends Component {
     }
     else return text + '.';
   } 
+
+  testWriteJsonFile() {
+    const writeJsonFile = require('write-json-file');
+    (async () => {
+      await writeJsonFile('foo.json', {foo: true});
+    })();
+  }
 
   render() {
     return (

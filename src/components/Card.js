@@ -23,15 +23,15 @@ class Card extends Component {
                 <div className="card__heading">
                     <span className="card__heading-span">{name}</span>
                 </div>
-                <div className="card__hitbox white">
+                <div className="card__hitbox card__attribute">
                     <FontAwesomeIcon icon={faCar} className="card__hitbox-img" />
                     <p>{hitbox}</p>
                 </div>
-                <div className="card__attributes white">
+                <div className="card__attributes card__attribute">
                     <FontAwesomeIcon icon={faStar} className="card__attributes-img" />
                     <p>{attribute}</p>
                 </div>
-                <div className="card__released white">
+                <div className="card__released card__attribute">
                     <FontAwesomeIcon icon={faClock} className="card__released-img" />
                     <p>{released}</p>
                 </div>
