@@ -37,7 +37,8 @@ class Marquee extends Component {
         <span>
           {            
             this.state.data.map((object, index) => {
-              if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
+              if(object.data.link_flair_text === null) return <div>No News available Today</div>;
+              else if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
                 if (index === 0) {
                   return (
                     <div>
