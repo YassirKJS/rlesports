@@ -26,6 +26,7 @@
     "react-scripts": "3.0.1",
     "react-select": "^2.0.0-beta.7",
     "react-sticky": "^6.0.3",
+    "react-tilt": "^0.1.4",
     "react-twitch-embed-video": "^1.0.1",
     "react-twitch-stream": "^1.0.4",
     "react-twitter-embed": "^2.0.8",

@@ -15,6 +15,8 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import Logo from './Logo';
+
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -123,7 +125,7 @@ class Header extends Component {
                                 color: "var(--color-brown-dark)"
                             }}
                         >
-                            CARS
+                            HELLO
                         </NavLink>
                         <NavLink to="/Players" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{

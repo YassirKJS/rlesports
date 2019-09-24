@@ -22,14 +22,12 @@ class LivestreamCard extends Component {
 
 
         let title = "Channel is currently offline";
-        /*let status = "OFFLINE";
         data.forEach(function(data_) {
             if (data_.user_name.toLowerCase() === twitch.toLowerCase()) {
                 title = data_.title;
-                status = "LIVE";
             }
         });
-        */
+        
 
         return (
             <div className='livestream-card'>
