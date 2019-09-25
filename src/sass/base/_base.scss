@@ -110,7 +110,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(black, .4); // --primary-color
+    //background: linear-gradient(to right, var(--color-primary), var(--color-blue-light)); // --primary-color
+    background: black;
+    opacity: .1;
     height: 100%;
     width: 100%;
     z-index: -100000;
@@ -119,6 +121,10 @@ body {
   @include respond(tab-port) {
     padding: 0;
   }
+}
+
+.main-logo {
+  padding-bottom: 20px;
 }
 
 

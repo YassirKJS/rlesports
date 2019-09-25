@@ -37,7 +37,7 @@ class Marquee extends Component {
         <span>
           {            
             this.state.data.map((object, index) => {
-              if(object.data.link_flair_text === null) return <div>No News available Today</div>;
+              if(object.data.link_flair_text === null) return <div>No News currently available</div>;
               else if(object.data.link_flair_text.toLowerCase().includes('news') || object.data.link_flair_text.toLowerCase().includes('psyonix')) {
                 if (index === 0) {
                   return (
@@ -58,6 +58,9 @@ class Marquee extends Component {
               else return;
             })
           }
+          <div className='info'>
+            For discussions visit reddit.com/r/RocketLeagueEsports.
+          </div>
         </span>
       </p>
     )    

@@ -125,7 +125,7 @@ class Header extends Component {
                                 color: "var(--color-brown-dark)"
                             }}
                         >
-                            HELLO
+                            CARS
                         </NavLink>
                         <NavLink to="/Players" className='side--link' activeClassName="side--link--selected"
                             activeStyle={{
