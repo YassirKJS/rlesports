@@ -18,10 +18,11 @@ class Marquee extends Component {
 }
 
   formatTitle(text) {
-    if (text.endsWith('.') || text.endsWith('!')) {
-      return text;
+    const res = text.replace('&amp;', 'and');
+    if (res.endsWith('.') || res.endsWith('!')) {
+      return res;
     }
-    else return text + '.';
+    else return res + '.';
   } 
 
   testWriteJsonFile() {
