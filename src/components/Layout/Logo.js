@@ -2,11 +2,11 @@ import React from 'react';
 //import Tilt from 'react-tilt';
 
 export default function Logo() {
-  const avatar = require('../../resources/imgs/main-orange-ball-orange-car.png');
+  const avatar = require('../../resources/imgs/new-orange-ball-orange-car - Copie - Copie-Transparent-WHITE-2.png');
 
   return (
     <div>
-       <img alt="RLObserver" src={avatar} height="35" width="45" className="main-logo"/>
+       <img alt="RLObserver" src={avatar} height="70" width="70" className="main-logo"/>
     </div>
   )
 }

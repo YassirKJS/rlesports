@@ -6,6 +6,8 @@ import LivestreamsList from "./livestreams/LivestreamsList";
 import FilterTeam from "./livestreams/FilterTeam";
 import Layout from './Layout/Layout';
 
+import Loader from 'react-loader-spinner';
+
 class Livestreams extends Component {
     constructor(props) {
         super(props);
@@ -143,7 +145,14 @@ class Livestreams extends Component {
             console.log('This happens 5th - when waiting for data.');
             return (
               <Layout>
-                <h2>Loading...</h2>;
+                <Loader
+                  className='loader'
+                  type="ThreeDots"
+                  color="var(--color-primary)"
+                  height={100}
+                  width={100}
+                  //timeout={4000} //3 secs
+                />
               </Layout>                    
             );
         }
