@@ -11,22 +11,13 @@ class LivetweetCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loading: null,
+
         };
     }
 
-    componentWillMount(){
-        this.setState({loading: true}); //optional 
-     }
-
-    componentDidMount() {
-        this.setState({loading: false}) 
-    }
-
-
     TwitterTimeline(props) {
         return (
-            <div className='livetweet-card'>
+            <div className='livetweet-card' >
                 <TwitterTimelineEmbed
                     sourceType="profile"
                     screenName={props.screenName}
@@ -45,26 +36,12 @@ class LivetweetCard extends Component {
         const channel = this.props.channel;
         const twitter = channel.twitter;
         //const avatar = require('../../resources/imgs/players/' + ign + '.png');
-
-        if (this.state.loading === true) {
-            console.log('loading...');
-            return <Loader
-                        type="RevolvingDot"
-                        color="#9acd32"
-                        height={100}
-                        width={100}
-                        //timeout={4000} //3 secs
-                    />;
-        }
-
-        
-        if (this.state.loading === false) {
-            console.log('loaded.');
-            return (
-                <this.TwitterTimeline screenName={twitter}/>
-            )
-        }
-
+    
+        return (
+          <div>
+            <this.TwitterTimeline screenName={twitter}/>
+          </div>
+        );
     }
 }
 

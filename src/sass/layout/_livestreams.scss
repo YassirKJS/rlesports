@@ -1,13 +1,42 @@
 @import "../abstracts/mixins";
 
+.livestreams--content {
+  display: grid;
+  grid-template-columns: 1fr 28rem; // repeat(auto-fit, minmax(25rem, .3fr)); // repeat(auto-fit, minmax(27rem, 1fr))
+  grid-column-gap: 1px;
+}
+
+.timelineList-2 {
+  grid-row: 1 / -1;
+  grid-column: 2 / 3;
+  justify-self: center;
+
+  margin-right: .5rem;
+  margin-top: 4.4rem;
+
+  border: 2px solid var(--color-gray-light-4);
+  background-color: #292f33;
+  overflow: hidden;
+  outline: none;
+
+  @include respond(phone) {
+    display: none
+  }
+}
+
 .livestreamsList {
-  margin: 2rem;
+  grid-row: 1 / -1;
+  grid-column: 1 / 2;
+  //justify-self: end;
+
+  //margin: 2rem;
   padding: 0 3rem 0 3rem;
+  
 }
 
 .livestreams {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, .3fr)); //repeat(auto-fit, minmax(27rem, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(340px, .3fr)); // repeat(auto-fit, minmax(340px, .3fr)) //repeat(auto-fit, minmax(27rem, 1fr))
   grid-column-gap: 2rem;
   grid-row-gap: 3rem;
   justify-content: start;

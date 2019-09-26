@@ -10,18 +10,84 @@ class Reddit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      loading: 'initial',
+      data: [],
     };
   }
 
-  render() {
-    return (
-      <Layout>
-        <h1>Reddit here</h1>
-      </Layout>
-    )    
+  loadData() {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('This happens 6th (after 2 seconds): Data loaded');
+            let uri = 'https://api.twitter.com/1.1/statuses/home_timeline.json';
+            fetch(uri)
+                .then(response => response.json())
+                .then(data => {resolve(data.data) ; console.log(data)});
+        }, .500); //.500
+    });
+
+    console.log('This happens 4th: Loading data');
+
+    return promise;
   }
+
+  componentDidMount() {
+    console.log('This happens 3rd: ComponentDidMount');
+
+    this.setState({ loading: 'true' });
+    this.loadData()
+        .then((data) => {
+            console.log('This happens 7th: ComponentDidMount/this.loadData');
+            if (data === undefined || data.length === 0) {
+                console.log("data empty");
+                this.setState({
+                    data: [],
+                    loading: 'false'
+                });
+            }
+            else {
+                console.log("data not empty");
+                this.setState({
+                    data: data,
+                    loading: 'false'
+                });
+            }
+        });
+  }
+
+
+  render() {
+    if (this.state.loading === 'initial') {
+      console.log('This happens 2nd - after the class is constructed. You will not see this element because React is still computing changes to the DOM.');
+      return <h2>Intializing...</h2>;
+    }
+
+    if (this.state.loading === 'true') {
+        console.log('This happens 5th - when waiting for data.');
+        return (
+            <Layout>
+              <h2>Loading...</h2>;
+            </Layout>
+        );
+    }
+
+    this.state.data.forEach(function(object) {
+        //console.log(object.user_name);
+        return (
+          <div>{object.user_name}</div>
+        )
+    });
+
+    console.log('This happens 8th - after I get data.');
+
+    return (
+        <Layout>
+          whatever loaded
+        </Layout>
+    );
+  }  
 }
+
 
 export default Reddit;
 

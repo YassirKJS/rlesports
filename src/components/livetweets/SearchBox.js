@@ -143,7 +143,7 @@ function SearchBox ({ channels, searchText, onSearchTextChange }) {
                 }}
                 {...props.innerProps}
             >
-                {(props.children === 'All') ?
+                {(props.children === 'All' || props.children === 'None') ?
                     props.children
                     : <div>
                         <img className='select__search-icon' alt="avatar" src={require('../../resources/imgs/players/' + props.children + '.png')} height="16" width="16"/>

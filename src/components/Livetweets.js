@@ -43,3 +43,5 @@ class Livetweets extends Component {
 }
 
 export default Livetweets;
+
+// <LivetweetsList channels={channels} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>

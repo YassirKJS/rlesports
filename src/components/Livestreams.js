@@ -5,6 +5,7 @@ import SearchBox from "./livestreams/SearchBox";
 import LivestreamsList from "./livestreams/LivestreamsList";
 import FilterTeam from "./livestreams/FilterTeam";
 import Layout from './Layout/Layout';
+import TimelineList from "./livestreams/TimelineList";
 
 import Loader from 'react-loader-spinner';
 
@@ -171,7 +172,10 @@ class Livestreams extends Component {
                     <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
                 </div>
 
-                <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
+                <div className="livestreams--content">
+                  <TimelineList />
+                  <LivestreamsList channels={channels} data={this.state.data} searchText={this.state.searchText} selectedTeam={this.state.selectedTeam}/>
+                </div>
             </Layout>
         );
     }
