@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 /* fontAwesome */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitch, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
 import ReactPlayer from "react-player";
 
 
@@ -17,6 +19,7 @@ class LivestreamCard extends Component {
         const twitch = channel.twitch;
         const twitter = channel.twitter;
         const avatar = require('../../resources/imgs/players/' + ign + '.png');
+        let viewerCount = this.props.viewerCount;
 
         const liquipediaIcon = require('../../resources/imgs/liquipedia.png');
 
@@ -41,8 +44,18 @@ class LivestreamCard extends Component {
                     playing
                     playsinline
                     light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
-                />                
+                />      
 
+                {
+                  viewerCount === undefined ? 
+                    <div className='livestream__viewerCount'>Offline</div> 
+                    : 
+                    <div className='livestream__viewerCount'>
+                      <FontAwesomeIcon icon={faUser} className='livestream__viewerCount--icon'/>
+                      {viewerCount}
+                    </div>
+                }
+                          
                 <div className="livestream__navigation">
                     <input type="checkbox" className="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
                     <label htmlFor={"navi-toggle-" + id} className="livestream__navigation--button">
