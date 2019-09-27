@@ -13,6 +13,7 @@ import Players from './components/Players';
 import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
 import Signin from './components/Signin/Signin';
+import Register from './components/Signin/Register';
 import Notfound from './components/notfound';
 //import Home from './components/Home';
 
@@ -32,6 +33,7 @@ const routing = (
             <Route exact path="/Calendar" component={Calendar} />
             <Route exact path="/Reddit" component={Reddit} />
             <Route exact path="/Signin" component={Signin} />
+            <Route exact path="/Signup" component={Register} />
             <Route component={Notfound} />
         </Switch>
     </Router>
