@@ -14,8 +14,8 @@
   margin-right: .5rem;
   margin-top: 4.4rem;
 
-  border: 2px solid var(--color-gray-light-4);
-  background-color: #292f33;
+  //border: 2px solid var(--color-gray-light-4);
+  //background-color: #292f33;
   overflow: hidden;
   outline: none;
 
@@ -36,7 +36,7 @@
 
 .livestreams {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, .3fr)); // repeat(auto-fit, minmax(340px, .3fr)) //repeat(auto-fit, minmax(27rem, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(360px, .3fr)); // repeat(auto-fit, minmax(340px, .3fr)) //repeat(auto-fit, minmax(27rem, 1fr))
   grid-column-gap: 2rem;
   grid-row-gap: 3rem;
   justify-content: start;

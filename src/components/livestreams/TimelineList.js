@@ -11,7 +11,7 @@ export default class TimelineList extends Component {
                         sourceType="list"
                         ownerScreenName="RlesportsF"
                         slug="rlesports-feed"
-                        //options={{height: '151.7vh'}}
+                        options={{height: '151.7vh'}}
                         theme="dark"
                         noHeader
                         noFooter

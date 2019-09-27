@@ -12,6 +12,7 @@ import Livetweets from './components/Livetweets';
 import Players from './components/Players';
 import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
+import Signin from './components/Signin/Signin';
 import Notfound from './components/notfound';
 //import Home from './components/Home';
 
@@ -30,6 +31,7 @@ const routing = (
             <Route exact path="/Players" component={Players} />
             <Route exact path="/Calendar" component={Calendar} />
             <Route exact path="/Reddit" component={Reddit} />
+            <Route exact path="/Signin" component={Signin} />
             <Route component={Notfound} />
         </Switch>
     </Router>

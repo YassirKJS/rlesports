@@ -30,7 +30,7 @@ class LivestreamCard extends Component {
         
 
         return (
-            <div className='livestream-card'>
+            <div className='livestream-card' >
                 <ReactPlayer
                     className="livestream-player"
                     key={id}
@@ -41,8 +41,7 @@ class LivestreamCard extends Component {
                     playing
                     playsinline
                     light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
-                />
-                
+                />                
 
                 <div className="livestream__navigation">
                     <input type="checkbox" className="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
