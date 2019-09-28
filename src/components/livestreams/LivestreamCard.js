@@ -24,7 +24,7 @@ class LivestreamCard extends Component {
         const liquipediaIcon = require('../../resources/imgs/liquipedia.png');
 
 
-        let title = "Channel is currently offline";
+        let title = "";
         data.forEach(function(data_) {
             if (data_.user_name.toLowerCase() === twitch.toLowerCase()) {
                 title = data_.title;
@@ -74,10 +74,23 @@ class LivestreamCard extends Component {
                     <a className="channel__img-link" href={'https://www.twitch.tv/' + twitch} target="_blank">
                         <img alt="avatar" src={avatar} height="250" width="250" className="channel__img"/>
                     </a>
-                    <div className="channel__title">
-                        <span>{title}</span>
-                    </div><br />
-                    <span className="channel__name">{ign}</span>
+                    {
+                      title === ''?
+                        <div className='channel__info--offline'>
+                          <div className="channel__title--offline">
+                              <span>{title}</span>
+                            </div><br />
+                          <span className="channel__name--offline">{ign}</span>
+                        </div>
+                        :
+                        <div className='channel__info--live'>
+                          <div className="channel__title--live">
+                            <span>{title}</span>
+                          </div><br />
+                          <span className="channel__name--live">{ign}</span>
+                        </div>
+                    }
+
                 </div>
             </div>
         );

@@ -96,35 +96,35 @@ class Livestreams extends Component {
 
 
     componentDidMount() {
-        /*
-        fetch('https://api.twitch.tv/helix/streams?user_login=monstercat, {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
-            .then(response => response.json())
-            .then(data => {this.setState({ data: data })});
+      /*
+      fetch('https://api.twitch.tv/helix/streams?user_login=monstercat, {headers: {'Client-ID':'u6fhve63ljgmw1qz1dyck62x7tcpn2'}} )
+          .then(response => response.json())
+          .then(data => {this.setState({ data: data })});
 
-        console.log('componentDidMount');
-        */
+      console.log('componentDidMount');
+      */
 
-        console.log('This happens 3rd: ComponentDidMount');
+      console.log('This happens 3rd: ComponentDidMount');
 
-        this.setState({ loading: 'true' });
-        this.loadData()
-            .then((data) => {
-                console.log('This happens 7th: ComponentDidMount/this.loadData');
-                if (data === undefined || data.length === 0) {
-                    console.log("data empty");
-                    this.setState({
-                        data: [],
-                        loading: 'false'
-                    });
-                }
-                else {
-                    console.log("data not empty");
-                    this.setState({
-                        data: data,
-                        loading: 'false'
-                    });
-                }
-            });
+      this.setState({ loading: 'true' });
+      this.loadData()
+          .then((data) => {
+              console.log('This happens 7th: ComponentDidMount/this.loadData');
+              if (data === undefined || data.length === 0) {
+                  console.log("data empty");
+                  this.setState({
+                      data: [],
+                      loading: 'false'
+                  });
+              }
+              else {
+                  console.log("data not empty");
+                  this.setState({
+                      data: data,
+                      loading: 'false'
+                  });
+              }
+          });
     }
 
     handleSearchTextChange(newSearchText) {
