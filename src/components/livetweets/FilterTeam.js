@@ -70,7 +70,7 @@ const useStyles = makeStyles(theme => ({
         position: 'absolute',
         left: 2,
         bottom: 6,
-        fontSize: 16,
+        fontSize: '1.4rem',
         color: '#e8e8e8'
     },
     paper: {

@@ -8,13 +8,23 @@
   //display: flex;
   //justify-content: space-around;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, .5fr));
   grid-row-gap: 4rem;
   grid-column-gap: 5rem;
 
-  @include respond(phone) {   
-    margin: 2rem 2rem 4rem 2rem;
+  @include respond(tab-land) {
+    grid-template-columns: repeat(3, minmax(15rem, .5fr));    
   }
+
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, minmax(15rem, .5fr));    
+  }
+
+  @include respond(phone) {   
+    margin: 2rem 5rem 4rem 5rem;
+    grid-template-columns: minmax(15rem, 1fr);
+  }
+  
 }
 
 .select__search-icon {

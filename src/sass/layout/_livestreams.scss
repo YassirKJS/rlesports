@@ -11,7 +11,7 @@
   grid-column: 2 / 3;
   justify-self: center;
 
-  margin-right: .5rem;
+  margin-right: 1rem;
   margin-top: 4.4rem;
 
   //border: 2px solid var(--color-gray-light-4);
@@ -31,7 +31,11 @@
 
   //margin: 2rem;
   padding: 0 3rem 0 3rem;
-  
+
+  @include respond(phone) {   
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
 }
 
 .livestreams {
@@ -42,7 +46,9 @@
   justify-content: start;
 
   @include respond(phone) {   
+    grid-template-columns: minmax(320px, .3fr);
     justify-content: center;
+    margin: 5rem 1rem 5rem 1rem;
   }
 
   margin: 5rem 2rem 5rem 2rem;
@@ -379,6 +385,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-gray-light-3); // var(--color-brown-dark);
+
   }
 
   &__img {
