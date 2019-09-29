@@ -86,6 +86,7 @@
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
+  color: #82fbf6;
 
   &--icon {
     margin-right: 1rem;
@@ -138,7 +139,7 @@
       &::after {
         display: inline-block;
 
-        background-color: white; // var(--color-brown-light)
+        background-color: #82fbf6; // var(--color-brown-light)
         width: 2.5rem;
         height: 2px;
       }
@@ -167,7 +168,7 @@
 
       height: 1.5rem;
       width: 1.5rem;
-      background-image: radial-gradient(rgba(white, .2), rgba(white, .7));
+      background-image: radial-gradient(rgba(#82fbf6, .2), rgba(#82fbf6, .7));
       border-radius: 50%;
 
       z-index: -999;
@@ -181,7 +182,7 @@
     }
 
     &--background:hover {
-      background-image: radial-gradient(rgba(white, .3), rgba(white, .7));
+      background-image: radial-gradient(rgba(#82fbf6, .3), rgba(#82fbf6, .7));
     }
 
     &--button:hover &--icon:before {
@@ -338,7 +339,7 @@
   grid-template-columns: repeat(auto-fit, 1fr);
   grid-column-gap: 1rem;
 
-  margin-top: .8rem;
+  //margin-top: .8rem;
 
   &__info--live {
     grid-column: 2 / 3;
@@ -347,10 +348,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, 1fr);
     grid-column-gap: 1rem;
-  }
-
-  &__info--offline {
-    grid-column: 2 / 3;
   }
 
   &__title--live {
@@ -378,15 +375,6 @@
     color: var(--color-gray-light-3); // var(--color-brown-dark);
   }
 
-  &__name--offline {
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
-
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-gray-light-3); // var(--color-brown-dark);
-
-  }
 
   &__img {
     box-sizing: content-box;
@@ -411,6 +399,72 @@
     }
   }
 }
+
+.channel__banner {
+  display: grid;
+
+  &--circle {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+
+    position: relative;
+
+    &--bg {
+      height: 7rem;
+
+      transition: all 1.5s;
+    }
+  }
+
+  &--rectangle {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+
+    position: relative;
+
+    margin-left: -2.45rem;
+    margin-top: .1rem;
+    overflow:hidden;
+
+    &--bg {
+      height: 7.4rem;
+      width: 20rem;
+
+      transition: all 1.5s;
+    }
+  }
+
+  &--avatar {
+    height: 5.2rem;
+    width: 5.2rem;
+    border-radius: 50%;
+    background-color: rgba(#82fbf6, .2);
+
+    position: absolute;
+    top: 1rem;
+    left: .9rem;
+  }
+
+  &--name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #82fbf6;
+
+    position: absolute;
+    top: 2.2rem;
+    left: 3rem;
+  }
+
+  &:hover .channel__banner--circle--bg {
+    transform: rotate(180deg);
+  }
+
+  &:hover .channel__banner--rectangle--bg {
+    width: 29rem;
+  }
+}
+
+
 
 //147359
 
