@@ -403,11 +403,14 @@
 .channel__banner {
   display: grid;
 
+  // OFFLINE
+
   &--circle {
     grid-row: 1 / -1;
     grid-column: 1 / 2;
 
     position: relative;
+    z-index: 3;
 
     &--bg {
       height: 7rem;
@@ -443,6 +446,8 @@
     position: absolute;
     top: 1rem;
     left: .9rem;
+
+    z-index: 3;
   }
 
   &--name {
@@ -464,7 +469,219 @@
   }
 }
 
+.channel__banner__live {
+  display: grid;
 
+  &--circle {
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+
+    position: relative;
+    z-index: 3;
+
+    &--bg {
+      height: 7rem;
+
+      transition: all 8s;
+    }
+  }
+
+  &--rectangle {
+    grid-row: 1 / -1;
+    grid-column: 2 / 3;
+    margin-left: -3rem;
+
+    display: grid;
+  }
+
+  &--rectangle--inside {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+
+    position: relative;
+    
+    overflow: hidden;
+
+    &--bg {
+      height: 7rem;
+      width: 35rem;
+    }
+  }
+
+  &--rectangle--outside {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+
+    position: relative;
+
+    overflow: hidden;
+
+    &--bg--1 {
+      height: 7rem;
+      position: absolute;
+      right: 0;
+    }
+
+    &--bg--2 {
+      height: 7.7rem;
+      width: 35rem;
+
+      z-index: 2;
+    }
+
+    &--bg--21 {
+      height: .5rem;
+      width: 35rem;
+
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+
+    &--bg--22 {
+      height: 1.5rem;
+      width: 0;
+
+      position: absolute;
+      left: 0;
+      bottom: -.3rem;
+      z-index: 1;
+    }
+
+    &--bg--3 {
+      height: 7.7rem;
+      width: 35rem;
+
+      position: absolute;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  &--avatar {
+    height: 5.2rem;
+    width: 5.2rem;
+    border-radius: 50%;
+    background-color: rgba(#82fbf6, .2);
+
+    position: absolute;
+    top: 1rem;
+    left: .9rem;
+
+    z-index: 3;
+  }
+
+  &--title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-brown-dark);
+
+    position: absolute;
+    top: 1rem;
+    left: 3rem;
+
+    width: 26rem;
+
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+
+  &--name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #82fbf6;
+
+    position: absolute;
+    top: 3.5rem;
+    left: 3rem;
+  }
+
+  &:hover .channel__banner__live--circle--bg {
+    -webkit-animation: rotating 6s linear infinite;
+    -moz-animation: rotating 6s linear infinite;
+    -ms-animation: rotating 6s linear infinite;
+    -o-animation: rotating 6s linear infinite;
+    animation: rotating 6s linear infinite;
+  }
+
+  &:hover .channel__banner__live--title {
+    left: 5rem;
+    animation: banner-title-left 6s linear infinite;
+    overflow: visible !important;
+    text-overflow: visible !important;
+  }
+
+  &:hover .channel__banner__live--rectangle--outside--bg--21 {    
+    animation: banner-marquee-left 6s linear infinite;
+  }
+
+  &:hover .channel__banner__live--rectangle--outside--bg--22 {
+    animation: banner-marquee-right 6s linear infinite;
+    width: 35rem;
+  }
+}
+
+// ANIMATIONS
+@keyframes banner-title-left {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes banner-marquee-left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes banner-marquee-right {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
+  50% {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 //147359
 

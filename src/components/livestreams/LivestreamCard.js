@@ -19,10 +19,18 @@ class LivestreamCard extends Component {
         const twitch = channel.twitch;
         const twitter = channel.twitter;
         const avatar = require('../../resources/imgs/players/' + ign + '.png');
+        
         const banner = require('../../resources/imgs/design/name_banner.png');
         const banner_circle = require('../../resources/imgs/design/circle.png');
         const banner_rectangle = require('../../resources/imgs/design/rectangle.png');
         const banner_semi_rectangle = require('../../resources/imgs/design/semi-rectangle.png');
+        const banner_rectangle_inside = require('../../resources/imgs/design/rectangle-inside.png');
+        const banner_rectangle_outside = require('../../resources/imgs/design/rectangle-outside.png');
+        const banner_rectangle_side = require('../../resources/imgs/design/rectangle-side.png');
+        const banner_rectangle_side_2 = require('../../resources/imgs/design/rectangle-side-2.png');
+        const banner_rectangle_side_21 = require('../../resources/imgs/design/rectangle-side-2-1.png');
+        const banner_rectangle_side_22 = require('../../resources/imgs/design/rectangle-side-2-2.png');
+
         let viewerCount = this.props.viewerCount;
 
         const liquipediaIcon = require('../../resources/imgs/liquipedia.png');
@@ -83,27 +91,41 @@ class LivestreamCard extends Component {
        
                       <div className='channel__banner'>                                                 
                         <div className='channel__banner--circle'>
-                          <img alt='Banner Circle' src={banner_circle} className='channel__banner--circle--bg'/>
+                          <img alt='' src={banner_circle} className='channel__banner--circle--bg'/>
                           <a className="channel__banner--img-link" href={'https://www.twitch.tv/' + twitch} target="_blank">
                             <img alt="avatar" src={avatar} height="250" width="250" className="channel__banner--avatar"/>
                           </a> 
                         </div>
                         <div className='channel__banner--rectangle'>
-                          <img alt='Banner Rectangle' src={banner_semi_rectangle} className='channel__banner--rectangle--bg'/>
+                          <img alt='' src={banner_semi_rectangle} className='channel__banner--rectangle--bg'/>
                           <span className='channel__banner--name'>{ign}</span>
                         </div>                                                                      
                       </div>
                     
                     :
 
-                    <div className='channel__info--live'>
-                      <div className="channel__title--live">
-                        <span>{title}</span>
-                      </div><br />
-                      <span className="channel__name--live">{ign}</span>
+                    <div className='channel__banner__live'>                                                 
+                      <div className='channel__banner__live--circle'>
+                        <img alt='' src={banner_circle} className='channel__banner__live--circle--bg'/>
+                        <a className="channel__banner--img-link" href={'https://www.twitch.tv/' + twitch} target="_blank">
+                          <img alt="avatar" src={avatar} height="250" width="250" className="channel__banner__live--avatar"/>
+                        </a> 
+                      </div>
+                      <div className='channel__banner__live--rectangle'>
+                        <div className='channel__banner__live--rectangle--inside'>
+                          <img alt='' src={banner_rectangle_inside} className='channel__banner__live--rectangle--inside--bg'/>
+                          <span className='channel__banner__live--title'>{title}</span>
+                          <span className='channel__banner__live--name'>{ign}</span> 
+                        </div>
+                        <div className='channel__banner__live--rectangle--outside'>
+                          <img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>
+                          
+                          <img alt='' src={banner_rectangle_side_21} className='channel__banner__live--rectangle--outside--bg--21'/>
+                          <img alt='' src={banner_rectangle_side_22} className='channel__banner__live--rectangle--outside--bg--22'/>
+                        </div>                                                                       
+                      </div>                                                                      
                     </div>
                 }
-
             </div>
           </div>
         );
@@ -114,4 +136,10 @@ export default LivestreamCard;
 
 /*
 <img alt='Name Banner' src={banner} className='channel__banner--bg'/>
+
+<img alt='' src={banner_rectangle_outside} className='channel__banner__live--rectangle--outside--bg'/>
+
+<img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>
+<img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--2'/>
+<img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--3'/>
 */
