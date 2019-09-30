@@ -24,7 +24,11 @@ class LivestreamCard extends Component {
       const banner_rectangle_side = require('../../resources/imgs/design/rectangle-side.png');
       const banner_rectangle_side_21 = require('../../resources/imgs/design/rectangle-side-2-1.png');
       const banner_rectangle_side_22 = require('../../resources/imgs/design/rectangle-side-2-2.png');
-      //const banner_rectangle_sideless = require('../../resources/imgs/design/rectangle-sideless.png');
+      const frame_top = require('../../resources/imgs/design/frame-top.png');
+      const frame_right = require('../../resources/imgs/design/frame-right.png');
+      const frame_bottom = require('../../resources/imgs/design/frame-bottom.png');
+      const frame_left = require('../../resources/imgs/design/frame-left.png');
+      const frame = require('../../resources/imgs/design/TV.png');
 
       let viewerCount = this.props.viewerCount;
 
@@ -39,18 +43,22 @@ class LivestreamCard extends Component {
       
       return (
         <div className='livestream-card' >
-          <ReactPlayer
-              className="livestream-player"
-              key={id}
-              url={'https://www.twitch.tv/' + twitch}
-              width="100%"
-              height="23rem"
-              controls={true}
-              playing
-              playsinline
-              light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
-          />      
+          <div className="livestream-player">
+            <ReactPlayer   
+                className='react-player'           
+                key={id}
+                url={'https://www.twitch.tv/' + twitch}
+                width="94%"
+                height="21.5rem"
+                controls={true}
+                playing
+                playsinline
+                light={"https://static-cdn.jtvnw.net/previews-ttv/live_user_" + twitch + "-640x360.jpg"}
+            /> 
 
+            <img alt='' src={frame} className='livestream__frame'/>
+          </div>
+     
           {
             viewerCount === undefined ? 
               <div className='livestream__viewerCount'>Offline</div> 
@@ -109,13 +117,12 @@ class LivestreamCard extends Component {
                         <span className='channel__banner__live--name'>{ign}</span> 
                       </div>
                       <div className='channel__banner__live--rectangle--outside'>
-                        <img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>
-                        
+                        <img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>                        
                         <img alt='' src={banner_rectangle_side_21} className='channel__banner__live--rectangle--outside--bg--21'/>
-                        <img alt='' src={banner_rectangle_side_22} className='channel__banner__live--rectangle--outside--bg--22'/>
+                        <img alt='' src={banner_rectangle_side_22} className='channel__banner__live--rectangle--outside--bg--22'/> 
                       </div>                                                                       
-                    </div>                                                                      
-                  </div>
+                    </div>                                                                  
+                  </div>                  
               }
           </div>
         </div>

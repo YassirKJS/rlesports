@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from './Logo';
+const banner_rectangle_sideless = require('../../resources/imgs/design/rectangle-sideless.png');
 
 class Header extends Component {
     constructor(props) {
@@ -71,41 +72,42 @@ class Header extends Component {
         return (
             <div className='navbar'>
                 <div className="header__navbar">
-                    <div className='header__navbar--links'>
-                        <NavLink exact to="/" className='link' activeClassName="selected">
-                            HOME
-                        </NavLink>
-                        <NavLink to="/Cars" className='link' activeClassName="selected">
-                            CARS
-                        </NavLink>
-                        <NavLink to="/Players" className='link' activeClassName="selected">
-                            PLAYERS
-                        </NavLink>
-                        <NavLink to="/Calendar" className='link' activeClassName="selected">
-                            CALENDAR
-                        </NavLink> 
-                        <NavLink to="/Reddit" className='link' activeClassName="selected">
-                            REDDIT
-                        </NavLink> 
-                        <NavLink to="/Livestreams" className='link' activeClassName="selected">
-                            LIVESTREAMS
-                        </NavLink> 
-                        <NavLink to="/Livetweets" className='link' activeClassName="selected">
-                            LIVETWEETS
-                        </NavLink> 
-                    </div>
+                  <img alt='' src={banner_rectangle_sideless} className='header__navbar--bg'/> 
+                  <div className='header__navbar--links'>
+                      <NavLink exact to="/" className='link' activeClassName="selected">
+                          HOME
+                      </NavLink>
+                      <NavLink to="/Cars" className='link' activeClassName="selected">
+                          CARS
+                      </NavLink>
+                      <NavLink to="/Players" className='link' activeClassName="selected">
+                          PLAYERS
+                      </NavLink>
+                      <NavLink to="/Calendar" className='link' activeClassName="selected">
+                          CALENDAR
+                      </NavLink> 
+                      <NavLink to="/Reddit" className='link' activeClassName="selected">
+                          REDDIT
+                      </NavLink> 
+                      <NavLink to="/Livestreams" className='link' activeClassName="selected">
+                          LIVESTREAMS
+                      </NavLink> 
+                      <NavLink to="/Livetweets" className='link' activeClassName="selected">
+                          LIVETWEETS
+                      </NavLink> 
+                  </div>
                     
-                    <div className='header__navbar--signup'>
-                        <NavLink to="/Signup" className='link' activeClassName="selected">
-                            SIGN UP
-                        </NavLink> 
-                        <NavLink to="/Signin" className='link' activeClassName="selected">
-                            SIGN IN
-                        </NavLink> 
-                        <div className='menu-bars'>
-                            <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar}/>  
-                        </div>
-                    </div>                
+                  <div className='header__navbar--signup'>
+                      <NavLink to="/Signup" className='link' activeClassName="selected">
+                          SIGN UP
+                      </NavLink> 
+                      <NavLink to="/Signin" className='link' activeClassName="selected">
+                          SIGN IN
+                      </NavLink> 
+                      <div className='menu-bars'>
+                          <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar}/>  
+                      </div>
+                  </div>                
                 </div>
 
                 <div ref={this.setWrapperRef} className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>

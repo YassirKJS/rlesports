@@ -66,9 +66,65 @@
 .livestream-player {
   grid-row: 1 / 2;
   grid-column: 1 / -1;
-  justify-self: center;
+  //justify-self: center;
 
-  box-shadow: 0 1rem 1rem rgba(black, .9);
+  //box-shadow: 0 1rem 1rem rgba(black, .9);
+  //border-bottom: 1px solid rgba(#82fbf6, .3);
+  //border-left: 1px solid rgba(#82fbf6, .3);
+
+  position: relative;
+
+  .react-player {
+    z-index: 1;
+    margin-top: 1rem;
+    margin-left: .8rem;
+
+    border-radius: 50%;
+  }
+
+  .livestream__frame {
+    position: absolute;
+    top: -.1rem;
+    left: 0;
+    
+    height: 23rem;
+    width: 45rem;
+
+    pointer-events: none; // enable click over the overlay (higher z-index)
+
+    &--top {
+      z-index: 2;
+      position: absolute;
+      top: -5.3px;
+      right: 2.28px;
+
+      width: 45rem;
+
+    }
+    &--right {
+      z-index: 2;
+      position: absolute;
+      bottom: 1.7rem;      
+      right: .22rem;
+
+      height: 20rem;
+      width: 1.6rem;
+    }
+    &--bottom {
+      z-index: 3;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 45rem;
+    }
+    &--left {
+      z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
 .livestream__viewerCount {
@@ -107,7 +163,7 @@
 
     display: grid;
   
-    margin: 1rem;
+    margin: 1rem 2rem 1rem 1rem;
     z-index: 0;
     cursor: pointer;
   
@@ -121,6 +177,8 @@
       background-color: var(--color-primary);
       height: 4.2rem;
       width: 4.2rem;
+      margin-top: .5rem;
+      margin-right: .3rem;
       border-radius: 50%;
       box-shadow: 0 1rem 1rem rgba(black, .1);
       cursor: pointer;
@@ -181,7 +239,7 @@
 
       height: 1.5rem;
       width: 1.5rem;
-      background-image: radial-gradient(rgba(#82fbf6, .2), rgba(#82fbf6, .7));
+      background-image: radial-gradient(rgba(white, .2), rgba(#82fbf6, .7));
       border-radius: 50%;
 
       z-index: -999;
@@ -629,4 +687,3 @@
 }
 
 //147359
-

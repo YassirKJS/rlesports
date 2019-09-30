@@ -148,8 +148,8 @@ class Livestreams extends Component {
               <Layout>
                 <Loader
                   className='loader'
-                  type="ThreeDots"
-                  color="var(--color-primary)"
+                  type="Oval"
+                  color="white"
                   height={100}
                   width={100}
                   //timeout={4000} //3 secs

@@ -12,6 +12,9 @@ const particleOptions = {
         enable: true,
         value_area: 800
       }
+    },
+    "color": {
+      "value": "#734780"
     }
   }
 }

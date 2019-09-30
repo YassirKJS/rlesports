@@ -4,6 +4,7 @@
 :root {
   --color-primary: #101d2c;
   --color-primary-light: #4781C4;
+  --color-neon-blue: #82fbf6;
 
   --color-beige-light: #FFDEDA;
   --color-beige-dark: #FF9C91;
@@ -92,7 +93,7 @@ body {
   box-sizing: border-box;
   padding: 0 0 3rem 0;
   //background-color: var(--color-gray-dark-4); //!important to overwrite bootstrap white background
-  background-image: url('resources/bg-1.jpg');//linear-gradient(to right bottom, var(--color-purple-light), var(--color-purple-dark));
+  background-image: url('resources/bg-takumi.jpg'); // linear-gradient(to right bottom, var(--color-purple-light), var(--color-purple-dark));
   background-repeat: no-repeat;
   background-size:100% 100%;
 
@@ -111,7 +112,7 @@ body {
     right: 0;
     bottom: 0;
     //background: linear-gradient(to right, var(--color-primary), var(--color-blue-light)); // --primary-color
-    background: black;
+    background: white;
     opacity: .1;
     height: 100%;
     width: 100%;
