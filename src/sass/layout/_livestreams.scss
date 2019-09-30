@@ -56,7 +56,7 @@
 
 .livestream-card {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, .5fr);
   grid-row-gap: 1.5rem;
 
   border-radius: 10px;
@@ -325,6 +325,8 @@
   grid-row: 2 / 3;
   grid-column: 1 / -1;
   justify-self: start;
+
+  margin-right: 1rem;
 }
 
 .channel__banner {
@@ -433,7 +435,7 @@
 
     &--bg {
       height: 7rem;
-      width: 35rem;
+      width: 45rem;
     }
   }
 
@@ -453,14 +455,14 @@
 
     &--bg--2 {
       height: 7.7rem;
-      width: 35rem;
+      width: 45rem;
 
       z-index: 2;
     }
 
     &--bg--21 {
       height: .5rem;
-      width: 35rem;
+      width: 45rem;
 
       position: absolute;
       right: 0;
@@ -479,7 +481,7 @@
 
     &--bg--3 {
       height: 7.7rem;
-      width: 35rem;
+      width: 45rem;
 
       position: absolute;
       left: 0;
@@ -509,7 +511,7 @@
     top: 1rem;
     left: 3.5rem;
 
-    width: 26rem;
+    width: 25.5rem;
 
     white-space: nowrap;
     overflow: hidden !important;
@@ -525,29 +527,26 @@
     top: 3.5rem;
     left: 3.5rem;
   }
+}
 
-  &:hover .channel__banner__live--circle--bg {
-    -webkit-animation: rotating 7s linear infinite;
-    -moz-animation: rotating 7s linear infinite;
-    -ms-animation: rotating 7s linear infinite;
-    -o-animation: rotating 7s linear infinite;
-    animation: rotating 7s linear infinite;
-  }
-
-  &:hover .channel__banner__live--title {
-    animation: banner-title-left 7s linear infinite;
-    overflow: visible !important;
-    text-overflow: visible !important;
-  }
-
-  &:hover .channel__banner__live--rectangle--outside--bg--21 {    
-    animation: banner-top-left 7s linear infinite;
-  }
-
-  &:hover .channel__banner__live--rectangle--outside--bg--22 {
-    animation: banner-bottom-right 7s linear infinite;
-    width: 35rem;
-  }
+.livestream-card:hover .channel__banner__live--circle--bg {
+  -webkit-animation: rotating 7s linear infinite;
+  -moz-animation: rotating 7s linear infinite;
+  -ms-animation: rotating 7s linear infinite;
+  -o-animation: rotating 7s linear infinite;
+  animation: rotating 7s linear infinite;
+}
+.livestream-card:hover .channel__banner__live--title {
+  animation: banner-title-left 7s linear infinite;
+  overflow: visible !important;
+  text-overflow: visible !important;
+}
+.livestream-card:hover .channel__banner__live--rectangle--outside--bg--21 {    
+  animation: banner-top-left 7s linear infinite;
+}
+.livestream-card:hover .channel__banner__live--rectangle--outside--bg--22 {
+  animation: banner-bottom-right 7s linear infinite;
+  width: 35rem;
 }
 
 // ANIMATIONS
