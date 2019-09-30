@@ -24,6 +24,7 @@ class LivestreamCard extends Component {
       const banner_rectangle_side = require('../../resources/imgs/design/rectangle-side.png');
       const banner_rectangle_side_21 = require('../../resources/imgs/design/rectangle-side-2-1.png');
       const banner_rectangle_side_22 = require('../../resources/imgs/design/rectangle-side-2-2.png');
+      //const banner_rectangle_sideless = require('../../resources/imgs/design/rectangle-sideless.png');
 
       let viewerCount = this.props.viewerCount;
 
@@ -56,7 +57,7 @@ class LivestreamCard extends Component {
               : 
               <div className='livestream__viewerCount'>
                 <FontAwesomeIcon icon={faUser} className='livestream__viewerCount--icon'/>
-                {viewerCount}
+                <span>{viewerCount}</span>
               </div>
           }
                         
@@ -64,6 +65,7 @@ class LivestreamCard extends Component {
               <input type="checkbox" className="livestream__navigation--checkbox" id={"navi-toggle-" + id}></input>
               <label htmlFor={"navi-toggle-" + id} className="livestream__navigation--button">
                   <span className="livestream__navigation--icon">&nbsp;</span>
+                  <img alt='' src={banner_circle} className='livestream__navigation--bg'/>
               </label>
 
               <div className="livestream__navigation--background">

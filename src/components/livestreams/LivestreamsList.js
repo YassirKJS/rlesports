@@ -86,7 +86,7 @@ class LivestreamsList extends Component {
       });
 
       //console.log(filteredChannelsByTeam);
-      //console.log(data);
+      console.log(data);
       //console.log(liveChannels);
 
       const getViewerCount = (data, twitch) => {

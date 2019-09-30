@@ -76,7 +76,7 @@
   grid-column: 1 / -1;
   justify-self: start;
 
-  background-color: rgba(#101d2c, .7);  // var(--color-primary)
+  background-color: rgba(#101d2c, .4);  // var(--color-primary)
   margin: 1rem;
   padding: 0 10px 0 10px;
 
@@ -119,11 +119,13 @@
       text-align: center;
 
       background-color: var(--color-primary);
-      height: 3.5rem;
-      width: 3.5rem;
+      height: 4.2rem;
+      width: 4.2rem;
       border-radius: 50%;
       box-shadow: 0 1rem 1rem rgba(black, .1);
       cursor: pointer;
+
+      position: relative;
     }
 
     &--checkbox {
@@ -133,6 +135,8 @@
     &--icon {
       position: relative;
       margin-top: 1.6rem;
+      z-index: 2;
+      top: .2rem;
 
       &,
       &::before,
@@ -140,7 +144,7 @@
         display: inline-block;
 
         background-color: #82fbf6; // var(--color-brown-light)
-        width: 2.5rem;
+        width: 2.3rem;
         height: 2px;
       }
 
@@ -155,6 +159,15 @@
 
       &::before { top: -.6rem; }
       &::after { top: .6rem; }
+    }
+
+    // circle bg
+    &--bg {
+      position: absolute;
+      left: .05rem;
+      top: 0;
+      width: 5.5rem;
+      transition: all .3s;
     }
 
     //BACKGROUND
@@ -314,6 +327,9 @@
   top: 0;
   transform: rotate(-135deg);
 }
+.livestream__navigation--checkbox:checked + .livestream__navigation--button .livestream__navigation--bg {
+  transform: rotate(135deg);
+}
 
 //FUNCTIONALITY
 .livestream__navigation--checkbox:checked ~ .livestream__navigation--background {
@@ -386,18 +402,16 @@
     top: 2.2rem;
     left: 3rem;
   }
+}
 
-  &:hover .channel__banner--circle--bg {
-    transform: rotate(180deg);
-  }
-
-  &:hover .channel__banner--rectangle--bg {
-    width: 29rem;
-  }
-
-  &:hover &--name {
-    text-shadow: 0 0 10px #82fbf6,
-  }
+.livestream-card:hover .channel__banner--circle--bg {
+  transform: rotate(180deg);
+}
+.livestream-card:hover .channel__banner--rectangle--bg {
+  width: 29rem;
+}
+.livestream-card:hover .channel__banner--name {
+  text-shadow: 0 0 10px #82fbf6,
 }
 
 .channel__banner__live {
@@ -511,7 +525,7 @@
     top: 1rem;
     left: 3.5rem;
 
-    width: 25.5rem;
+    width: 25rem;
 
     white-space: nowrap;
     overflow: hidden !important;
