@@ -99,27 +99,29 @@
   grid-column: 1 / -1;
   justify-self: start;
 
-  background-color: rgba(#101d2c, .4);  // var(--color-primary)
-  margin: 1rem;
+  background-color: rgba(black, .6);  // var(--color-primary)
+  margin-top: 2rem;
+  margin-left: 1.5rem;
   padding: 0 10px 0 10px;
 
   font-size: 1.5rem;
   height: 2.5rem;
-  width: auto;
+  width: 6rem;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
   color: #82fbf6;
 
-  &--icon {
-    margin-right: 1rem;
-  }
+  z-index: 2;
+  display: flex;
+  outline: none;
+  overflow: hidden;
 
-  &:hover {
-    font-weight: 600;
-    box-shadow: 0 5px 5px rgba(black, .1);
+  &--icon {
+    margin-right: .4rem;
   }
 }
+
 
 .livestream {
 

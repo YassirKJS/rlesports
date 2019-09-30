@@ -64,8 +64,8 @@ class LivestreamCard extends Component {
               <div className='livestream__viewerCount'>Offline</div> 
               : 
               <div className='livestream__viewerCount'>
-                <FontAwesomeIcon icon={faUser} className='livestream__viewerCount--icon'/>
-                <span>{viewerCount}</span>
+                <div className='livestream__viewerCount--icon'><FontAwesomeIcon icon={faUser}/></div>
+                <div className='livestream__viewerCount--number'>{viewerCount}</div>
               </div>
           }
                         
