@@ -91,39 +91,6 @@
     width: 45rem;
 
     pointer-events: none; // enable click over the overlay (higher z-index)
-
-    &--top {
-      z-index: 2;
-      position: absolute;
-      top: -5.3px;
-      right: 2.28px;
-
-      width: 45rem;
-
-    }
-    &--right {
-      z-index: 2;
-      position: absolute;
-      bottom: 1.7rem;      
-      right: .22rem;
-
-      height: 20rem;
-      width: 1.6rem;
-    }
-    &--bottom {
-      z-index: 3;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-
-      width: 45rem;
-    }
-    &--left {
-      z-index: 2;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
   }
 }
 
