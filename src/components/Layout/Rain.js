@@ -27,30 +27,39 @@ class Rain extends Component {
   }
  
   onChangeEnd = () => {
-    console.log(this.state.numDrops);
+    console.log(''+ this.state.numDrops);
     this.setState({ numDrops: this.state.knobValue });
+  }
+
+  pad = n => {
+    if (n < 10 ) return ("00" + n);
+    if ( n >= 10 && n < 100) return ("0" + n);
+    if ( n >= 100) return n;
   }
  
   render() {
+    //const roundedValue = this.pad(Math.round(this.state.knobValue));
+
     return (
       <div className='rain'>
         <div className='reactrain'>
           <ReactRain numDrops={ this.state.numDrops }/>
         </div>
         
- 
-        <Knob 
-          className="knob" 
-          min={0} 
-          max={500}
-          style={knobstyle} 
-          skin={skins.s12}
-          unlockDistance={50}
+        <div className='rain__knob'>
+          <Knob 
+            className="knob" 
+            min={0} 
+            max={400}
+            style={knobstyle} 
+            skin={skins.s12}
+            unlockDistance={20}
 
-          onChange={ this.handleChange }
-          onEnd={ this.onChangeEnd }
-          value={ this.state.knobValue }
-        /> 
+            onChange={ this.handleChange }
+            onEnd={ this.onChangeEnd }
+            value={ this.state.knobValue }
+          />  
+        </div>
       </div>
     );
   }

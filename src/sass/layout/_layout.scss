@@ -12,19 +12,23 @@
 
 .rain {
   position: fixed;
+  margin-left: 7vw;
+  height: 87vh;
+  width: 100vw;
+  z-index: 0;
   
-  .reactrain {
-    margin-left: 10rem;
-    z-index: -100000;
-  }
-
-  .knob {
-    top: 82vh;
+  .rain__knob {
+    margin-left: -7vw;
+    position: absolute;
+    bottom: 0;
     left: 0;
-    opacity: .7;
 
-    &:hover {
-      opacity: 1;
+    .knob {
+      opacity: .6;
+  
+      &:hover {
+        opacity: 1;
+      }    
     }
   }
 }
