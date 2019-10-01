@@ -2,8 +2,24 @@ import React from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
-import Particles from 'react-particles-js';
+import Rain from './Rain';
 
+const Layout = (props) => {
+  return (
+    <div>
+      <Header />
+      <Rain />      
+      {props.children}
+      <Footer />
+    </div>
+  )
+}
+
+export default Layout;
+
+
+
+/* 
 const particleOptions = {
   particles: {
     number: {
@@ -19,39 +35,6 @@ const particleOptions = {
   }
 }
 
-const Layout = (props) => {
-  return (
-    <div>
-      <Header />
-      <Particles params={particleOptions} className='particles' />
-      {props.children}
-      <Footer />
-    </div>
-  )
-}
-
-export default Layout;
+<Particles params={particleOptions} className='particles' /> */
 
 
-
-
-
-
-
-
-
-/*
-
-const particleOptions = {
-  particles: {
-    line_linked: {
-      shadow: {
-        enable: true,
-        color: "#3CA9D1",
-        blur: 5
-      }
-    }
-  }
-}
-
-*/

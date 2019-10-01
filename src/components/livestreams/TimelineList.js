@@ -25,5 +25,7 @@ export default class TimelineList extends Component {
   }
 }
 
+// see: https://developer.twitter.com/en/docs/twitter-for-websites/timelines/overview
+
 // className="timelineList centerContent"
 // className="selfCenter standardWidth"

@@ -9,3 +9,22 @@
   z-index: -9999;
   color: blue;
 }
+
+.rain {
+  position: fixed;
+  
+  .reactrain {
+    margin-left: 10rem;
+    z-index: -100000;
+  }
+
+  .knob {
+    top: 82vh;
+    left: 0;
+    opacity: .7;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
