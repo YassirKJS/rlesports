@@ -137,6 +137,10 @@ class Livestreams extends Component {
 
 
     render() {
+        const rectangle_empty = require('../resources/imgs/design/rectangle-empty.png');
+        const banner_rectangle_side_211 = require('../resources/imgs/design/rectangle-side-2-1.png');
+        const banner_rectangle_side_212 = require('../resources/imgs/design/rectangle-side-2-1-2.png');
+
         if (this.state.loading === 'initial') {
             console.log('This happens 2nd - after the class is constructed. You will not see this element because React is still computing changes to the DOM.');
             return <h2>Intializing...</h2>;
@@ -169,7 +173,9 @@ class Livestreams extends Component {
             <Layout>
                 <div className="filter">
                     <SearchBox channels={channels} searchText={this.state.searchText} onSearchTextChange={this.handleSearchTextChange} />
-                    <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />
+                    <FilterTeam channels={channels} selectedTeam={this.state.selectedTeam} onSelectedTeamChange={this.handleSelectedTeamChange} />     
+                    <img alt='' src={banner_rectangle_side_212} className='filter--bg-212'/>
+                    <img alt='' src={banner_rectangle_side_211} className='filter--bg-211'/>               
                 </div>
 
                 <div className="livestreams--content">

@@ -235,7 +235,6 @@
       transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
       //transition: width 2s;
       //transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
-
       //font-size: .3rem; // will be scaled x10
 
       position: relative;
@@ -427,24 +426,12 @@
         }
       }
 
-      /*&--1:hover {
-        transform: rotate(1deg);
-
-        @include respond(tab-port) {
-
-        }
-      }
-
+      &--1:hover,
       &--2:hover,
       &--3:hover,
       &--4:hover {
-        transform: rotate(1deg);
-        //color: var(--color-brown-dark);
-
-        @include respond(tab-port) {
-          transform: rotate(1deg) translateY(.1rem);
-        }
-      }*/
+        transform: rotate(5deg);
+      }
     }
   }
 }

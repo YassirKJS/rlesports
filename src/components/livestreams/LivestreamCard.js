@@ -134,18 +134,3 @@ class LivestreamCard extends Component {
 }
 
 export default LivestreamCard;
-
-/*
-<img alt='Name Banner' src={banner} className='channel__banner--bg'/>
-
-<img alt='' src={banner_rectangle_outside} className='channel__banner__live--rectangle--outside--bg'/>
-
-<img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>
-<img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--2'/>
-<img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--3'/>
-
-
-<a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" ><FontAwesomeIcon icon={faTwitch} /></a>
-<a className="livestream__navigation--item--3" href={'https://youtube.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>
-<a className="livestream__navigation--item--4" href={'https://twitter.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faTwitter} /></a>
-*/
