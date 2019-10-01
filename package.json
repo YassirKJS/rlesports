@@ -13,6 +13,7 @@
     "clsx": "^1.0.4",
     "cross-env": "^5.2.0",
     "cross-fetch": "^3.0.4",
+    "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-content-loader": "^4.3.0",

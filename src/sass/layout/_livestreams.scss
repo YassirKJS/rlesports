@@ -106,7 +106,7 @@
 
   font-size: 1.5rem;
   height: 2.5rem;
-  width: 6rem;
+  width: auto;
   text-align: center;
   border-radius: 10px;
   cursor: pointer;
@@ -144,8 +144,8 @@
       text-align: center;
 
       background-color: var(--color-primary);
-      height: 4.2rem;
-      width: 4.2rem;
+      height: 40px;
+      width: 40px;
       margin-top: .5rem;
       margin-right: .3rem;
       border-radius: 50%;
@@ -153,6 +153,11 @@
       cursor: pointer;
 
       position: relative;
+
+      @include respond(big-desktop) {
+        height: 46px;
+        width: 46px;
+      }
     }
 
     &--checkbox {
@@ -171,7 +176,7 @@
         display: inline-block;
 
         background-color: #82fbf6; // var(--color-brown-light)
-        width: 2.3rem;
+        width: 2.1rem;
         height: 2px;
       }
 
@@ -204,10 +209,10 @@
       justify-self: center;
 
       visibility: hidden;
-      margin-top: .8rem;
+      margin-top: 16px;
 
-      height: 1.5rem;
-      width: 1.5rem;
+      height: 14px;
+      width: 14px;
       background-image: radial-gradient(rgba(white, .2), rgba(#82fbf6, .7));
       border-radius: 50%;
 
@@ -216,9 +221,31 @@
       //transition: width 2s;
       //transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
 
-      font-size: .3rem; // will be scaled x10
+      //font-size: .3rem; // will be scaled x10
 
-      display: grid;
+      //display: grid;
+      position: relative;
+
+      @include respond(big-desktop) {
+        margin-top: 18px;
+
+        height: 15px;
+        width: 15px;
+      }
+
+      @include respond(tab-port) {
+        margin-top: 14px;
+
+        height: 13px;
+        width: 13px;
+      }
+  
+      @include respond(phone) {
+        margin-top: 13px;
+
+        height: 12px;
+        width: 12px;
+      }
     }
 
     &--background:hover {
@@ -240,6 +267,19 @@
       &--3,
       &--4 {
         color: var(--color-primary);
+        position: absolute;
+
+        font-size: 0px;
+
+        @include respond(big-desktop) {
+          font-size: 0px;
+        }
+        @include respond(tab-port) {
+          font-size: 0px;
+        }
+        @include respond(phone) {
+          font-size: 0px;
+        }
       }
 
       &--1 {
@@ -247,79 +287,138 @@
         grid-column: 1 / -1;
         justify-self: end;
 
-        width: .45rem;
-        height: .45rem;
+        height: 4.5px;
+        width: 4.5px;
 
-        margin-top: .05rem;
-        //transform: translateY(.1rem);
-        margin-left: .4rem;
+        top: 1px;
+        left: 4.7px;
+
+        @include respond(big-desktop) {
+          height: 4.5px;
+          width: 4.5px;
+  
+          top: 1px;
+          left: 5px;
+        }
 
         @include respond(tab-port) {
-          margin-top: .1rem;
-          transform: translateY(0);
+          height: 4.5px;
+          width: 4.5px;
+  
+          top: 1px;
+          left: 4px;
         }
     
         @include respond(phone) {
-
+          height: 4px;
+          width: 4px;
+  
+          top: 1px;
+          left: 4px;
         }
       }
 
       &--2 {
-        grid-row: 2 / 3;
-        grid-column: 1 / 2;
-        justify-self: center;
+        height: 2.5px;
+        width: 3px;
 
-        margin-right: .4rem;
+        left: 1px;
+        top: 6px;  
+
+        @include respond(big-desktop) {
+          height: 2.5px;
+          width: 3px;
+  
+          left: 1px;
+          top: 6px;  
+        }
 
         @include respond(tab-port) {
-
+          height: 2.5px;
+          width: 2.5px;
+  
+          left: 1px;
+          top: 5px;  
         }
     
         @include respond(phone) {
-
-        }
-      }
-
-      &--3 {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        justify-self: center;
-
-        margin-left: .1rem;
-
-        @include respond(tab-port) {
-
-        }
-    
-        @include respond(phone) {
-
+          height: 2px;
+          width: 2px;
+  
+          left: 1px;
+          top: 5px;  
         }
       }
 
       &--4 {
+        height: 3.2px;
+        width: 3.2px;
+
+        left: 10px;
+        top: 6px;
+
+        @include respond(big-desktop) {
+          height: 3.2px;
+          width: 3.2px;
+  
+          left: 11px;
+          top: 6px;
+        }
+
+        @include respond(tab-port) {
+          height: 3.5px;
+          width: 3.5px;
+  
+          left: 8.5px;
+          top: 5px;
+        }
+    
+        @include respond(phone) {
+          height: 2.5px;
+          width: 2.5px;
+  
+          left: 8.5px;
+          top: 5px;
+        }
+      }
+
+      &--3 {
         grid-row: 3 / 4;
         grid-column: 1 / -1;
         justify-self: end;
 
-        //transform: translateX(-.1rem);
-        margin-right: .1rem;
+        height: 3px;
+        width: 3px;
 
-        img {
-          width: 12px;
-          height: 12px;
+        top: 10px;
+        left: 5.4px;
+
+        @include respond(big-desktop) {
+          height: 3px;
+          width: 3px;
+  
+          top: 11px;
+          left: 5.7px;
         }
 
         @include respond(tab-port) {
-          margin-right: 0;
-          transform: translateY(.1rem);
+          height: 3px;
+          width: 3px;
+  
+          top: 9px;
+          left: 5px;
         }
     
         @include respond(phone) {
-
+          height: 2px;
+          width: 2px;
+  
+          top: 9px;
+          left: 4.7px;  
         }
       }
 
-      &--1:hover {
+      /*&--1:hover {
         transform: rotate(1deg);
 
         @include respond(tab-port) {
@@ -330,13 +429,13 @@
       &--2:hover,
       &--3:hover,
       &--4:hover {
-        transform: rotate(5deg);
+        transform: rotate(1deg);
         //color: var(--color-brown-dark);
 
         @include respond(tab-port) {
-          transform: rotate(5deg) translateY(.1rem);
+          transform: rotate(1deg) translateY(.1rem);
         }
-      }
+      }*/
     }
   }
 }

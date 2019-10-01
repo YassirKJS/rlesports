@@ -24,15 +24,18 @@ class LivestreamCard extends Component {
       const banner_rectangle_side = require('../../resources/imgs/design/rectangle-side.png');
       const banner_rectangle_side_21 = require('../../resources/imgs/design/rectangle-side-2-1.png');
       const banner_rectangle_side_22 = require('../../resources/imgs/design/rectangle-side-2-2.png');
-      const frame_top = require('../../resources/imgs/design/frame-top.png');
+      /*const frame_top = require('../../resources/imgs/design/frame-top.png');
       const frame_right = require('../../resources/imgs/design/frame-right.png');
       const frame_bottom = require('../../resources/imgs/design/frame-bottom.png');
-      const frame_left = require('../../resources/imgs/design/frame-left.png');
+      const frame_left = require('../../resources/imgs/design/frame-left.png');*/
       const frame = require('../../resources/imgs/design/TV.png');
 
       let viewerCount = this.props.viewerCount;
 
       const liquipediaIcon = require('../../resources/imgs/liquipedia.png');
+      const youtubeIcon = require('../../resources/imgs/youtube.png');
+      const twitchIcon = require('../../resources/imgs/twitch.png');
+      const twitterIcon = require('../../resources/imgs/twitter.png');
 
       let title = "";
       data.forEach(function(data_) {
@@ -77,10 +80,10 @@ class LivestreamCard extends Component {
               </label>
 
               <div className="livestream__navigation--background">
-                  <a className="livestream__navigation--item--1" href={'https://www.instagram.com/' + twitch} target="_blank" > <img alt="liquipedia" src={liquipediaIcon} /></a>
-                  <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" ><FontAwesomeIcon icon={faTwitch} /></a>
-                  <a className="livestream__navigation--item--3" href={'https://youtube.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>
-                  <a className="livestream__navigation--item--4" href={'https://twitter.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faTwitter} /></a>
+                  <a className="livestream__navigation--item--1" href={'https://www.liquipedia.com/' + twitch} target="_blank" > <img alt="liquipedia" src={liquipediaIcon} /></a>
+                  <a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" > <img alt="twitch" src={twitchIcon} /></a>
+                  <a className="livestream__navigation--item--3" href={'https://www.youtube.com/' + twitch} target="_blank" > <img alt="youtube" src={youtubeIcon} /></a>
+                  <a className="livestream__navigation--item--4" href={'https://www.twitter.com/' + twitter} target="_blank" > <img alt="twitter" src={twitterIcon} /></a>
               </div>
           </div>
 
@@ -140,4 +143,9 @@ export default LivestreamCard;
 <img alt='' src={banner_rectangle_side} className='channel__banner__live--rectangle--outside--bg--1'/>
 <img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--2'/>
 <img alt='' src={banner_rectangle_side_2} className='channel__banner__live--rectangle--outside--bg--3'/>
+
+
+<a className="livestream__navigation--item--2" href={'https://www.twitch.tv/' + twitch} target="_blank" ><FontAwesomeIcon icon={faTwitch} /></a>
+<a className="livestream__navigation--item--3" href={'https://youtube.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faYoutube} /></a>
+<a className="livestream__navigation--item--4" href={'https://twitter.com/' + twitter} target="_blank" ><FontAwesomeIcon icon={faTwitter} /></a>
 */

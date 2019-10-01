@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 import 'tachyons';
 import './sass/main.scss';
+import 'normalize.css';
 
 // routing : https://codeburst.io/getting-started-with-react-router-5c978f70df91
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
