@@ -137,7 +137,6 @@ class Livestreams extends Component {
 
 
     render() {
-        const rectangle_empty = require('../resources/imgs/design/rectangle-empty.png');
         const banner_rectangle_side_211 = require('../resources/imgs/design/rectangle-side-2-1.png');
         const banner_rectangle_side_212 = require('../resources/imgs/design/rectangle-side-2-1-2.png');
 

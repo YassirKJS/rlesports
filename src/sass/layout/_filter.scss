@@ -3,7 +3,7 @@
   padding: 3rem;
   margin: 0 3rem 5rem 3rem;
   //border-radius: 10px;
-  box-shadow: 0 1rem 1rem rgba(#82fbf6, .15);
+  box-shadow: 0 4rem 4rem rgba(#82fbf6, .2);
 
   //display: flex;
   //justify-content: space-around;
@@ -31,7 +31,7 @@
   &--bg {
     &-212 {
       position: absolute;
-      top: 0;
+      top: -1rem;
       left: 0;
       width: 100vw;
       height: 2rem;
