@@ -13,7 +13,7 @@ class Card extends Component {
         const hitbox = car.hitbox;
         const released = car.released;
         const attribute = car.attribute;
-        const icons = require('../resources/imgs/cars/' + name + '_body_icon.webp');
+        const icons = require('../../resources/imgs/cars/' + name + '_body_icon.webp');
 
         return (
             <div className="card"> {/*tc bg-black dib br3 pa3 ma2 grow bw2 shadow-5*/}

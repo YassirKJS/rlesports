@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 //import '../sass/main.scss';
 import { channels } from '../resources/data/channels';
-import SearchBox from "./livestreams/SearchBox";
-import LivestreamsList from "./livestreams/LivestreamsList";
-import FilterTeam from "./livestreams/FilterTeam";
+import SearchBox from "./Livestreams/SearchBox";
+import LivestreamsList from "./Livestreams/LivestreamsList";
+import FilterTeam from "./Livestreams/FilterTeam";
 import Layout from './Layout/Layout';
-import TimelineList from "./livestreams/TimelineList";
+import TimelineList from "./Livestreams/TimelineList";
 
 import Loader from 'react-loader-spinner';
 

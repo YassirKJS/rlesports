@@ -15,7 +15,7 @@ import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
 import Signin from './components/Signin/Signin';
 import Register from './components/Signin/Register';
-import Notfound from './components/notfound';
+import Notfound from './components/Notfound';
 //import Home from './components/Home';
 
 import { Provider } from 'react-redux';
