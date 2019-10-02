@@ -24,6 +24,8 @@
     grid-row: 1 / -1;
     grid-column: 1 / 2;
     justify-self: start;
+
+    z-index: 2;
     
     @include respond(phone) {   
         grid-row: 1 / 2;
@@ -41,6 +43,8 @@
     grid-row-gap: 5rem;
     justify-content: center;    font-size: 16px !important;
     line-height: 3px !important;
+
+    z-index: 2;
 
     @include respond(phone) {  
         grid-row: 2 / -1; 
