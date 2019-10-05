@@ -26,6 +26,24 @@ const useStyles = makeStyles(theme => ({
         height: 'auto',
         zIndex: '100',
         //backgroundColor:'#e8e8e8',
+
+        '& label.Mui-focused': {
+          color: 'white',
+        },
+        '& .MuiInput-underline:after': {
+          borderBottomColor: 'yellow',
+        },
+        '& .MuiOutlinedInput-root': {
+         '& fieldset': {
+          borderColor: 'white',
+          },
+          '&:hover fieldset': {
+            borderColor: 'white',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'yellow',
+          },
+        },
     },
     input: {
         display: 'flex',
@@ -86,7 +104,13 @@ const useStyles = makeStyles(theme => ({
         '&:after': {
             // The source seems to use this but it doesn't work
             borderBottom: '2px solid white',
+            backgroundColor:'white'
         },
+        '&:before': {
+          // The source seems to use this but it doesn't work
+          borderBottom: '2px solid white',
+          backgroundColor:'white'
+      },
     }
 }));
 /**** end styling ****/
@@ -224,6 +248,9 @@ function SearchBox ({ channels, searchText, onSearchTextChange }) {
                         ...innerProps,
                     },
                 }}
+                input={<Input className={{
+                  underline: classes.underline,
+                }}/>}
                 {...TextFieldProps}
             />
         );
@@ -293,27 +320,27 @@ function SearchBox ({ channels, searchText, onSearchTextChange }) {
     /**** end Single/Multi ****/
 
     return (
-        <div>
-            <Select
-                classes={classes}
-                styles={selectStyles}
-                inputId="react-select-multiple"
-                TextFieldProps={{
-                    label: 'Channel',
-                    InputLabelProps: {
-                        htmlFor: 'react-select-multiple',
-                        shrink: true,
-                        style: { color: '#82fbf6' },
-                    },
-                }}
-                placeholder="Search for Channel(s)"
-                options={suggestions}
-                components={components}
-                value={multi }
-                onChange={handleChangeMulti}
-                isMulti
-            />
-        </div>
+      <div>
+        <Select
+          classes={classes}
+          styles={selectStyles}
+          inputId="react-select-multiple"
+          TextFieldProps={{
+              label: 'Channel',
+              InputLabelProps: {
+                  htmlFor: 'react-select-multiple',
+                  shrink: true,
+                  style: { color: '#82fbf6' },
+              },
+          }}
+          placeholder="Search for Channel(s)"
+          options={suggestions}
+          components={components}
+          value={multi }
+          onChange={handleChangeMulti}
+          isMulti
+        />
+      </div>
     );
 
 }

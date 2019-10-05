@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../Layout/Layout';
 
+
 class Signin extends React.Component {
   constructor(props) {
     super(props);
@@ -40,46 +41,55 @@ class Signin extends React.Component {
     const { onRouteChange } = this.props;
     return (
       <Layout>
-        <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
-          <main className="pa4 black-80">
-            <div className="measure">
-              <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-                <legend className="f1 fw6 ph0 mh0">Sign In</legend>
-                <div className="mt3">
-                  <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                  <input
-                    className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                    type="email"
-                    name="email-address"
-                    id="email-address"
-                    onChange={this.onEmailChange}
-                  />
-                </div>
-                <div className="mv3">
-                  <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                  <input
-                    className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
-                    type="password"
-                    name="password"
-                    id="password"
-                    onChange={this.onPasswordChange}
-                  />
-                </div>
-              </fieldset>
-              <div className="">
-                <input
-                  onClick={this.onSubmitSignIn}
-                  className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-                  type="submit"
-                  value="Sign in"
-                />
-              </div>
-              <div className="lh-copy mt3">
-                <p  onClick={() => onRouteChange('register')} className="f6 link dim black db pointer">Register</p>
-              </div>
+        <div className='signin'>
+          <div className='signin__header'>Sign In</div>
+
+          <div className='signin__form'>            
+            <div className='signin__email'>
+              <label className='signin__email--label'>Email</label><br/>
+              <input 
+                className='signin__email--input'
+                type='email'
+                name="email-address"
+                id="email-address"
+              />
             </div>
-          </main>
-        </article>
+
+            <div className='signin__password'>
+              <label className='signin__password--label'>Password</label><br/>
+              <input 
+                className='signin__password--input'
+                type='password'
+                name="password"
+                id="password"
+              />
+            </div>
+
+            <div className='signin__remember'>
+              <label>
+                <input 
+                  className='signin__remember--input'
+                  type='checkbox'
+                />
+                <span className='signin__remember--span'> Remember me </span>
+              </label>
+            </div>
+
+            <div className='signin__submit'>
+              <input 
+                className='signin__submit--input btn btn--cyan btn--animated'
+                type="submit"
+                value="Sign in"
+              />
+            </div>
+          </div>
+
+          <div className='signin__footer'>
+            <div className='signin__footer--signup'>Sign up</div>
+            <div className='signin__footer--forgot'>Forgot your password?</div>
+          </div>
+
+        </div>
       </Layout>
     );
   }

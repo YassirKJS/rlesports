@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: inline-block;
+    //border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(#9ce0f3, .2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(black, .2);
+  }
+
+  &--cyan {
+    background-color: var(--color-neon-blue-dark);
+    color: var(--color-primary);
+
+    &::after {
+      background-color: var(--color-neon-blue-dark);
+    }
+  } 
+}

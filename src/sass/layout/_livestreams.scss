@@ -2,7 +2,7 @@
 
 .livestreams--content {
   display: grid;
-  grid-template-columns: 1fr 28rem; // repeat(auto-fit, minmax(25rem, .3fr)); // repeat(auto-fit, minmax(27rem, 1fr))
+  grid-template-columns: 1fr 26rem; // repeat(auto-fit, minmax(25rem, .3fr)); // repeat(auto-fit, minmax(27rem, 1fr))
   grid-column-gap: 1px;
 }
 
