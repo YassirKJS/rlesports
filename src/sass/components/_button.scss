@@ -6,9 +6,8 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     display: inline-block;
-    //border-radius: 10rem;
     transition: all .2s;
     position: relative;
 
@@ -17,12 +16,8 @@
   }
 
   &:hover {
-    box-shadow: 0 4px 8px rgba(#9ce0f3, .2);
-
-    &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
+    transform: translateY(-2px);
+    box-shadow: 0 8px 8px rgba(#9ce0f3, .2);
   }
 
   &:active,
@@ -35,9 +30,6 @@
   &--cyan {
     background-color: var(--color-neon-blue-dark);
     color: var(--color-primary);
-
-    &::after {
-      background-color: var(--color-neon-blue-dark);
-    }
   } 
 }
+
