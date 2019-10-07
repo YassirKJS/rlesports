@@ -200,21 +200,13 @@ class Header extends Component {
               </div>
               
               <div className='side__navbar--signup'>
-                <NavLink to="/Signup" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
+                <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup}>
                     SIGN UP
-                </NavLink> 
-                <NavLink to="/Signin" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
+                  </div> 
+                  <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin}>
                     SIGN IN
-                </NavLink> 
-              </div>     
+                  </div> 
+                </div>     
             </div>
 
             <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'}>
@@ -244,10 +236,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-/*
-
-
-
-
-            */

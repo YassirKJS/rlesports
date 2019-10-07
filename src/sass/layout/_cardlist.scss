@@ -21,12 +21,12 @@
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 1rem 1rem rgba(black, .9);
+    box-shadow: 0 5px 5px var(--color-neon-blue);
   }
 
   //HEADING SPAN CHANGE ON CARD HOVER
   &:hover &__heading-span {
-    background-image: linear-gradient(to right, var(--color-brown-light), var(--color-brown-dark));
+    background-image: linear-gradient(to right, var(--color-neon-blue), var(--color-neon-blue-dark));
     //background-image: linear-gradient(to right, var(--color-orange-light), var(--color-orange-dark)); // #7700B8 #CB52FF
     padding-right: 6rem;
     font-weight: 900;
@@ -34,13 +34,13 @@
   }
 
   &:hover &__hitbox-img {
-    color : var(--color-brown-dark); //var(--color-orange-light);
+    color : var(--color-neon-blue); //var(--color-orange-light);
   }
   &:hover &__released-img {
-    color : var(--color-brown-dark); //var(--color-orange-light);
+    color : var(--color-neon-blue); //var(--color-orange-light);
   }
   &:hover &__attributes-img {
-    color : var(--color-brown-dark); //var(--color-orange-light);
+    color : var(--color-neon-blue); //var(--color-orange-light);
   }
 
   &__img-container {
@@ -108,7 +108,7 @@
     //outline: none;
 
     &-span {
-      background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
+      background-image: linear-gradient(to right, var(--color-blue-light), var(--color-primary));
       -webkit-box-decoration-break: clone;
       box-decoration-break: clone;
 

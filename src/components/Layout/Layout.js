@@ -3,8 +3,6 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Rain from './Rain';
-import Signin from '../Signin/Signin';
-import Signup from '../Signin/Signup';
 
 const Layout = (props) => {
   return (
