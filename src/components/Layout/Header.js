@@ -77,6 +77,17 @@ class Header extends Component {
       }
     }
 
+    // when user clicks signin in signup form
+    handleSignin () {
+      this.closeSignup();
+
+    }
+
+    // when suer clicks signup in signin form
+    handleSignup() {
+
+    }
+
     componentDidMount() {
       document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -131,10 +142,10 @@ class Header extends Component {
               </div>
                 
               <div className='header__navbar--signup'>
-                <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup}>
+                <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup} >
                   SIGN UP
                 </div> 
-                <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin}>
+                <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin} >
                   SIGN IN
                 </div> 
                 <div className='menu-bars'>
@@ -200,10 +211,10 @@ class Header extends Component {
               </div>
               
               <div className='side__navbar--signup'>
-                <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup}>
+                <div className='side--link signup-link' activeClassName="side--link--selected" onClick={this.toggleSignup}>
                     SIGN UP
                   </div> 
-                  <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin}>
+                  <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
                     SIGN IN
                   </div> 
                 </div>     
@@ -211,12 +222,12 @@ class Header extends Component {
 
             <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'}>
               <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.closeSignin}/>  
-              <Signin />
+              <Signin handleSignup={this.toggleSignup} />
             </div>
 
             <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'}>
               <FontAwesomeIcon icon={faTimes} className='icon-signupCollapse' onClick={this.closeSignup}/>  
-              <Signup />
+              <Signup handleSignin={this.toggleSignin} />
             </div>            
           </div>
         );

@@ -90,7 +90,7 @@ class Signin extends React.Component {
         </div>
 
         <div className='signin__footer'>
-          <div className='signin__footer--signup'>Sign up</div>
+          <div className='signin__footer--signup' onClick={this.props.handleSignup}>Sign up</div>
           <div className='signin__footer--forgot'>Restore your password</div>
         </div>
       </div>
