@@ -20,7 +20,7 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
+    fetch('http://localhost:3000/Signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -44,8 +44,8 @@ class Signin extends React.Component {
         <div className='signin'>
           <div className='signin__header'>SIGN IN</div>
 
-          <div className='signin__form form__group'>            
-            <div className='signin__email'>
+          <div className='signin__form'>            
+            <div className='signin__email form__group'>
               <input 
                 className='signin__email--input form__input'
                 type='email'
@@ -91,10 +91,9 @@ class Signin extends React.Component {
           </div>
 
           <div className='signin__footer'>
-            <div className='signin__footer--signup'>Sign up !</div>
-            <div className='signin__footer--forgot'>Forgot your password ?</div>
+            <div className='signin__footer--signup'>Sign up</div>
+            <div className='signin__footer--forgot'>Restore your password</div>
           </div>
-
         </div>
       </Layout>
     );

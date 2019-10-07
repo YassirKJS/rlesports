@@ -50,7 +50,7 @@ class Rain extends Component {
           <Knob 
             className="knob" 
             min={0} 
-            max={400}
+            max={800}
             style={knobstyle} 
             skin={skins.s12}
             unlockDistance={20}
