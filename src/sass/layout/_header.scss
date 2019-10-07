@@ -6,6 +6,7 @@
   z-index: 5000;
   margin: 0 0 30px 0;
   box-shadow: 0 1rem 1rem rgba(black, .5);
+  overflow: visible;
 }
 
 .header__navbar {
@@ -82,7 +83,7 @@
 
 .icon-bars {
   visibility:hidden;
-  color: var(--color-brown-light);
+  color: var(--color-neon-blue);
   height: 40px;
   width: 35px !important;
   transition: transform .5s;
