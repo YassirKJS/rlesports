@@ -1,21 +1,7 @@
 @import "../abstracts/mixins";
 
 .signup {
-  background-image: linear-gradient(105deg,
-      rgba(#010623, .9) 0%,
-      rgba(#010623, .9) 55%,
-      transparent 50%),
-      url('resources/signup.jpg');
-  background-size: cover;
   border-radius: 35px;
-  box-shadow: 0 .5rem 2rem var(--color-neon-blue-dark);
-  transition: all .3s;
-
-  width: 50%;
-  position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
-  transition: all .5s;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -25,29 +11,6 @@
   padding: 4rem;
 
   font-size: 1.5rem;
-
-  &:hover {
-    transform: translate(-50%, -3px);
-    box-shadow: 0 1rem 3rem var(--color-neon-blue-dark);
-  }
-
-  @include respond(tab-land) {
-    background-image: linear-gradient(105deg,
-        rgba(#010623, .9) 0%,
-        rgba(#010623, .9) 65%,
-        transparent 65%),
-        url('resources/signin-3.jpg');
-    width: 65%;
-  }
-
-  @include respond(tab-port) {
-    background-image: linear-gradient(to right,
-        rgba(#010623, .9) 0%,
-        rgba(#010623, .9) 100%),
-        url('resources/signin-3.jpg');
-    width: 85%;
-  }
-
 
   &__header {
     font-size: 3rem;
@@ -107,5 +70,67 @@
       text-decoration: underline;
       }
     }
+  }
+}
+
+
+.signup-collapsed * {
+  display: none;
+}
+
+
+.signup-toggled {
+  background-image: linear-gradient(105deg,
+      rgba(#010623, .9) 0%,
+      rgba(#010623, .9) 50%,
+      transparent 50%),
+      url('resources/signin-3.jpg');
+  background-size: cover;
+  margin-top: 10rem;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: all .5s;
+  border-radius: 35px;
+  box-shadow: 0 .5rem 2rem var(--color-neon-blue-dark);
+
+  position: absolute;
+
+  &:hover {
+    transform: translate(-50%, -3px);
+    box-shadow: 0 1rem 3rem var(--color-neon-blue-dark);
+  }
+
+  @include respond(tab-land) {
+    background-image: linear-gradient(105deg,
+            rgba(#010623, .9) 0%,
+            rgba(#010623, .9) 65%,
+            transparent 65%),
+            url('resources/signup.jpg');
+    width: 65%;
+  }
+  @include respond(tab-port) {
+    background-image: linear-gradient(to right,
+            rgba(#010623, .9) 0%,
+            rgba(#010623, .9) 100%),
+            url('resources/signup.jpg');
+    width: 85%;
+  }
+}
+
+.icon-signupCollapse {
+  margin-left: 14.5rem;
+  color: var(--color-neon-blue-dark);
+  height: 45px;
+  width: 35px !important;
+  transition: transform .5s;
+  cursor: pointer;
+
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+  &:hover {
+    transform: scale(1.1);
   }
 }

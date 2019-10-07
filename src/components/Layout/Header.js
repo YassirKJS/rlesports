@@ -54,6 +54,7 @@ class Header extends Component {
     }
 
     toggleSignin() {
+      this.closeSignup();
       this.setState({
         signin_collapsed: !this.state.signin_collapsed
       });
@@ -65,6 +66,7 @@ class Header extends Component {
     }
 
     toggleSignup() {
+      this.closeSignin();
       this.setState({
         signup_collapsed: !this.state.signup_collapsed
       });
@@ -218,7 +220,12 @@ class Header extends Component {
             <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'}>
               <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.closeSignin}/>  
               <Signin />
-            </div>           
+            </div>
+
+            <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'}>
+              <FontAwesomeIcon icon={faTimes} className='icon-signupCollapse' onClick={this.closeSignup}/>  
+              <Signup />
+            </div>            
           </div>
         );
     }
@@ -241,9 +248,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(Header);
 /*
 
 
-            <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'}>
-              <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSignup}/>  
-              <Signup />
-            </div> 
+
 
             */

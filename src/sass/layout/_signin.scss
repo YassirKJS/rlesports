@@ -135,10 +135,11 @@
 
 .icon-signinCollapse {
   margin-left: 14.5rem;
-  color: var(--color-neon-blue);
+  color: var(--color-neon-blue-dark);
   height: 45px;
   width: 35px !important;
   transition: transform .5s;
+  cursor: pointer;
 
   position: absolute;
   top: 2rem;
