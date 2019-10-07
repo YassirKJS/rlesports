@@ -1,6 +1,4 @@
 import React from 'react';
-import Layout from '../Layout/Layout';
-
 
 class Signin extends React.Component {
   constructor(props) {
@@ -91,7 +89,7 @@ class Signin extends React.Component {
 
         <div className='signin__footer'>
           <div className='signin__footer--signup' onClick={this.props.handleSignup}>Sign up</div>
-          <div className='signin__footer--forgot'>Restore your password</div>
+          <div className='signin__footer--forgot' onClick={this.props.handleRestore}>Restore your password</div>
         </div>
       </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../Layout/Layout';
 
 class Signup extends React.Component {
   constructor(props) {

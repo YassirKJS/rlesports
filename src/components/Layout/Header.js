@@ -18,6 +18,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 //import Logo from './Logo';
 import Signin from '../Signin/Signin';
 import Signup from '../Signin/Signup';
+import Restore from '../Signin/Restore';
 const banner_rectangle_sideless = require('../../resources/imgs/design/rectangle-sideless.png');
 
 class Header extends Component {
@@ -26,7 +27,8 @@ class Header extends Component {
         this.state = {
             collapsed: true,
             signin_collapsed: true,
-            signup_collapsed: true
+            signup_collapsed: true,
+            restore_collapsed: true
         };
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
@@ -37,6 +39,9 @@ class Header extends Component {
         
         this.toggleSignup = this.toggleSignup.bind(this);
         this.closeSignup = this.closeSignup.bind(this); 
+
+        this.toggleRestore = this.toggleRestore.bind(this);
+        this.closeRestore = this.closeRestore.bind(this); 
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -55,6 +60,7 @@ class Header extends Component {
 
     toggleSignin() {
       this.closeSignup();
+      this.closeRestore();
       this.setState({
         signin_collapsed: !this.state.signin_collapsed
       });
@@ -67,6 +73,7 @@ class Header extends Component {
 
     toggleSignup() {
       this.closeSignin();
+      this.closeRestore();
       this.setState({
         signup_collapsed: !this.state.signup_collapsed
       });
@@ -77,15 +84,16 @@ class Header extends Component {
       }
     }
 
-    // when user clicks signin in signup form
-    handleSignin () {
-      this.closeSignup();
-
+    toggleRestore() {
+      this.closeSignin();
+      this.setState({
+        restore_collapsed: !this.state.restore_collapsed
+      });
     }
-
-    // when suer clicks signup in signin form
-    handleSignup() {
-
+    closeRestore() {
+      if (this.state.restore_collapsed !== true) {
+        this.toggleRestore();
+      }
     }
 
     componentDidMount() {
@@ -222,13 +230,18 @@ class Header extends Component {
 
             <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'}>
               <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.closeSignin}/>  
-              <Signin handleSignup={this.toggleSignup} />
+              <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore}/>
             </div>
 
             <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'}>
               <FontAwesomeIcon icon={faTimes} className='icon-signupCollapse' onClick={this.closeSignup}/>  
               <Signup handleSignin={this.toggleSignin} />
-            </div>            
+            </div>        
+
+            <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'}>
+              <FontAwesomeIcon icon={faTimes} className='icon-restoreCollapse' onClick={this.closeRestore}/>  
+              <Restore handleSignin={this.toggleSignin} />
+            </div>     
           </div>
         );
     }
