@@ -15,6 +15,7 @@ import Calendar from './components/Calendar';
 import Reddit from './components/Reddit';
 import Signin from './components/Signin/Signin';
 import Signup from './components/Signin/Signup';
+import Homepage from './components/Homepage';
 import Notfound from './components/Notfound';
 //import Home from './components/Home';
 
@@ -26,7 +27,7 @@ import store from './store';
 const routing = (
     <Router>
         <Switch>
-            <Route exact path="/" component={Livestreams} />
+            <Route exact path="/" component={Homepage} />
             <Route exact path="/Cars" component={App} />
             <Route exact path="/Livestreams" component={Livestreams} />
             <Route exact path="/Livetweets" component={Livetweets} />

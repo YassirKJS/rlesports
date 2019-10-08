@@ -76,6 +76,11 @@
     cursor: pointer;
     position: relative;
     padding-left: 4rem;
+
+    &:hover {
+      text-shadow: 0 0 10px var(--color-neon-blue-dark);
+      text-decoration: underline;
+    }
   }
 
   &__checkbox-button {
