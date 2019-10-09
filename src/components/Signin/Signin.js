@@ -4,6 +4,8 @@ import { Redirect } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
+// react-router redirect: https://stackoverflow.com/questions/29244731/react-router-how-to-manually-invoke-link
+
 
 class Signin extends React.Component {
   constructor(props) {
@@ -23,25 +25,31 @@ class Signin extends React.Component {
     this.setState({signInPassword: event.target.value})
   }
 
-  onSubmitSignIn = () => {
-    this.setState({redirect: true});
-    /*
+  onSubmitSignIn = () => {  
     fetch('http://localhost:3010/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
+      body: JSON.stringify({ // stringify the object
         email: this.state.signInEmail,
         password: this.state.signInPassword
       })
     })
-      .then(response => response.json())
-      .then(user => {
-        if (user.id) {
-          this.props.loadUser(user)
-          this.props.onRouteChange('home');
+      .then(response => response.json()) // data: success or error logging in   (F12/Network/signin)
+      .then(data => {
+        if (data === 'success') {
+          this.props.onCloseSignin();
+          // this.setState({redirect: true});
         }
       })
-      */
+
+      /*.then(user => {
+        if (user.id) {
+          this.props.loadUser(user)
+          this.props.onCloseSignin();
+          // this.setState({redirect: true});
+        }
+      })*/
+      
   }
 
   render() {    
@@ -61,9 +69,10 @@ class Signin extends React.Component {
               <input 
                 className='signin__email--input form__input'
                 type='email'
-                name="email-address"
-                id="email-address"
+                name="email"
+                id="email"
                 placeholder="Email Address"
+                onChange={this.onEmailChange}
                 required
               />
               <label for='email-address' className='signin__email--label form__label'>Email Address</label>
@@ -76,6 +85,7 @@ class Signin extends React.Component {
                 name="password"
                 id="password"
                 placeholder="Password"
+                onChange={this.onPasswordChange}
                 required
               />
               <label for='password' className='signin__password--label form__label'>Password</label>
