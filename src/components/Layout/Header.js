@@ -228,19 +228,16 @@ class Header extends Component {
                 </div>     
             </div>
 
-            <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'}>
-              <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.closeSignin}/>  
-              <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore}/>
+            <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
+              <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} />
             </div>
 
-            <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'}>
-              <FontAwesomeIcon icon={faTimes} className='icon-signupCollapse' onClick={this.closeSignup}/>  
-              <Signup handleSignin={this.toggleSignin} />
+            <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               
+              <Signup handleSignin={this.toggleSignin} onCloseSignup={this.closeSignup} />
             </div>        
 
-            <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'}>
-              <FontAwesomeIcon icon={faTimes} className='icon-restoreCollapse' onClick={this.closeRestore}/>  
-              <Restore handleSignin={this.toggleSignin} />
+            <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'} >                
+              <Restore handleSignin={this.toggleSignin} onCloseRestore={this.closeRestore} />
             </div>     
           </div>
         );

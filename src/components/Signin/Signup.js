@@ -1,5 +1,9 @@
 import React from 'react';
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -43,57 +47,61 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className='signup'>
-        <div className='signup__header'>SIGN UP</div>
+      <div>
+        <FontAwesomeIcon icon={faTimes} className='icon-signupCollapse' onClick={this.props.onCloseSignup} /> 
 
-        <div className='signup__form'>
-          <div className='signup__username form__group'>
-            <input 
-              className='signup__username--input form__input'
-              type='username'
-              name="username"
-              id="username"
-              placeholder="Username"
-              required
-            />
-            <label for='username' className='signup__username--label form__label'>Username</label>
-          </div>         
+        <div className='signup'>
+          <div className='signup__header'>SIGN UP</div>
 
-          <div className='signup__email form__group'>
-            <input 
-              className='signup__email--input form__input'
-              type='email'
-              name="email-address"
-              id="email-address"
-              placeholder="Email Address"
-              required
-            />
-            <label for='email-address' className='signup__email--label form__label'>Email Address</label>
+          <div className='signup__form'>
+            <div className='signup__username form__group'>
+              <input 
+                className='signup__username--input form__input'
+                type='username'
+                name="username"
+                id="username"
+                placeholder="Username"
+                required
+              />
+              <label for='username' className='signup__username--label form__label'>Username</label>
+            </div>         
+
+            <div className='signup__email form__group'>
+              <input 
+                className='signup__email--input form__input'
+                type='email'
+                name="email-address"
+                id="email-address"
+                placeholder="Email Address"
+                required
+              />
+              <label for='email-address' className='signup__email--label form__label'>Email Address</label>
+            </div>
+
+            <div className='signup__password form__group'>              
+              <input 
+                className='signup__password--input form__input'
+                type='password'
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <label for='password' className='signup__password--label form__label'>Password</label>
+            </div>
+
+            <div className='signup__submit'>
+              <input 
+                className='signup__submit--input btn btn--cyan btn--animated'
+                type="submit"
+                value="Sign up"
+              />
+            </div>
           </div>
 
-          <div className='signup__password form__group'>              
-            <input 
-              className='signup__password--input form__input'
-              type='password'
-              name="password"
-              id="password"
-              placeholder="Password"
-              required
-            />
-            <label for='password' className='signup__password--label form__label'>Password</label>
+          <div className='signup__footer'>
+            <div className='signup__footer--signin' onClick={this.props.handleSignin}>Sign in</div>
           </div>
-
-          <div className='signup__submit'>
-            <input 
-              className='signup__submit--input btn btn--cyan btn--animated'
-              type="submit"
-              value="Sign up"
-            />
-          </div>
-        </div>
-
-        <div className='signup__footer'>
-          <div className='signup__footer--signin' onClick={this.props.handleSignin}>Sign in</div>
         </div>
       </div>
     );

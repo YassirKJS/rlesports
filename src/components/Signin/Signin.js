@@ -1,11 +1,17 @@
 import React from 'react';
+import { Redirect } from 'react-router';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 class Signin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       signInEmail: '',
-      signInPassword: ''
+      signInPassword: '',
+      redirect: false,
     }
   }
 
@@ -18,7 +24,9 @@ class Signin extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/Signin', {
+    this.setState({redirect: true});
+    /*
+    fetch('http://localhost:3010/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -33,63 +41,72 @@ class Signin extends React.Component {
           this.props.onRouteChange('home');
         }
       })
+      */
   }
 
-  render() {
-    const { onRouteChange } = this.props;
+  render() {    
+    if (this.state.redirect) {
+      return <Redirect push to="/" />;
+    }
+
     return (
-      <div className='signin'>
-        <div className='signin__header'>SIGN IN</div>
+      <div>
+        <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.props.onCloseSignin} />  
 
-        <div className='signin__form'>            
-          <div className='signin__email form__group'>
-            <input 
-              className='signin__email--input form__input'
-              type='email'
-              name="email-address"
-              id="email-address"
-              placeholder="Email Address"
-              required
-            />
-            <label for='email-address' className='signin__email--label form__label'>Email Address</label>
-          </div>
+        <div className='signin'>
+          <div className='signin__header'>SIGN IN</div>
 
-          <div className='signin__password form__group'>              
-            <input 
-              className='signin__password--input form__input'
-              type='password'
-              name="password"
-              id="password"
-              placeholder="Password"
-              required
-            />
-            <label for='password' className='signin__password--label form__label'>Password</label>
-          </div>
-
-          <div className='signin__remember form__checkbox-group'>
+          <div className='signin__form'>            
+            <div className='signin__email form__group'>
               <input 
-                className='signin__remember--input form__checkbox-input'
-                type='checkbox'
-                id="remember"
+                className='signin__email--input form__input'
+                type='email'
+                name="email-address"
+                id="email-address"
+                placeholder="Email Address"
+                required
               />
-              <label for="remember" class="form__checkbox-label">
-                  <span className="form__checkbox-button"></span>
-                  Remember me
-              </label>
+              <label for='email-address' className='signin__email--label form__label'>Email Address</label>
+            </div>
+
+            <div className='signin__password form__group'>              
+              <input 
+                className='signin__password--input form__input'
+                type='password'
+                name="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
+              <label for='password' className='signin__password--label form__label'>Password</label>
+            </div>
+
+            <div className='signin__remember form__checkbox-group'>
+                <input 
+                  className='signin__remember--input form__checkbox-input'
+                  type='checkbox'
+                  id="remember"
+                />
+                <label for="remember" class="form__checkbox-label">
+                    <span className="form__checkbox-button"></span>
+                    Remember me
+                </label>
+            </div>
+
+            <div className='signin__submit'>
+              <input 
+                className='signin__submit--input btn btn--cyan btn--animated'
+                type="submit"
+                value="Sign in"
+                onClick={this.onSubmitSignIn}
+              />
+            </div>
           </div>
 
-          <div className='signin__submit'>
-            <input 
-              className='signin__submit--input btn btn--cyan btn--animated'
-              type="submit"
-              value="Sign in"
-            />
+          <div className='signin__footer'>
+            <div className='signin__footer--signup' onClick={this.props.handleSignup}>Sign up</div>
+            <div className='signin__footer--forgot' onClick={this.props.handleRestore}>Restore your password</div>
           </div>
-        </div>
-
-        <div className='signin__footer'>
-          <div className='signin__footer--signup' onClick={this.props.handleSignup}>Sign up</div>
-          <div className='signin__footer--forgot' onClick={this.props.handleRestore}>Restore your password</div>
         </div>
       </div>
     );
