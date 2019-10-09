@@ -9,6 +9,12 @@ export default class Homepage extends Component {
     }
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3010')
+      .then(response => response.json())
+      .then(console.log)
+  }
+
   render() {
     return (
       <Layout>
