@@ -10,11 +10,11 @@ class Signup extends React.Component {
     this.state = {
       email: '',
       password: '',
-      name: ''
+      username: ''
     }
   }
 
-  onNameChange = (event) => {
+  onUsernameChange = (event) => {
     this.setState({name: event.target.value})
   }
 
@@ -26,18 +26,18 @@ class Signup extends React.Component {
     this.setState({password: event.target.value})
   }
 
-  onSubmitsignup = () => {
+  onSubmitSignup = () => {
     fetch('http://localhost:3000/Signup', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         email: this.state.email,
         password: this.state.password,
-        name: this.state.name
+        username: this.state.name
       })
     })
-      .then(response => response.json())
-      .then(user => {
+      .then(response => response.json())  
+      .then(user => {  // if we get a user back
         if (user) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
@@ -61,6 +61,7 @@ class Signup extends React.Component {
                 name="username"
                 id="username"
                 placeholder="Username"
+                onChange={this.onUsernameChange}
                 required
               />
               <label for='username' className='signup__username--label form__label'>Username</label>
@@ -70,12 +71,13 @@ class Signup extends React.Component {
               <input 
                 className='signup__email--input form__input'
                 type='email'
-                name="email-address"
-                id="email-address"
+                name="email"
+                id="email"
                 placeholder="Email Address"
+                onChange={this.onEmailChange}
                 required
               />
-              <label for='email-address' className='signup__email--label form__label'>Email Address</label>
+              <label for='email' className='signup__email--label form__label'>Email Address</label>
             </div>
 
             <div className='signup__password form__group'>              
@@ -85,6 +87,7 @@ class Signup extends React.Component {
                 name="password"
                 id="password"
                 placeholder="Password"
+                onChange={this.onPasswordChange}
                 required
               />
               <label for='password' className='signup__password--label form__label'>Password</label>
@@ -95,6 +98,7 @@ class Signup extends React.Component {
                 className='signup__submit--input btn btn--cyan btn--animated'
                 type="submit"
                 value="Sign up"
+                onClick={this.onSubmitSignup}
               />
             </div>
           </div>

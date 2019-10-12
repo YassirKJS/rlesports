@@ -4,6 +4,9 @@ import { Redirect } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import { connect } from 'react-redux';
+import { userLogin } from '../../actions';
+
 // react-router redirect: https://stackoverflow.com/questions/29244731/react-router-how-to-manually-invoke-link
 
 
@@ -25,7 +28,7 @@ class Signin extends React.Component {
     this.setState({signInPassword: event.target.value})
   }
 
-  onSubmitSignIn = () => {  
+  onSubmitSignin = () => {  
     fetch('http://localhost:3010/signin', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
@@ -38,6 +41,7 @@ class Signin extends React.Component {
       .then(data => {
         if (data === 'success') {
           this.props.onCloseSignin();
+          this.props.dispatch(userLogin(this.state.signInEmail));
           // this.setState({redirect: true});
         }
       })
@@ -108,7 +112,7 @@ class Signin extends React.Component {
                 className='signin__submit--input btn btn--cyan btn--animated'
                 type="submit"
                 value="Sign in"
-                onClick={this.onSubmitSignIn}
+                onClick={this.onSubmitSignin}
               />
             </div>
           </div>
@@ -123,6 +127,6 @@ class Signin extends React.Component {
   }
 }
 
-export default Signin;
+export default connect()(Signin);
 
 //&rarr;
