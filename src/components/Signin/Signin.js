@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: 0 */
 import React from 'react';
 import { Redirect } from 'react-router';
 
@@ -42,7 +43,7 @@ class Signin extends React.Component {
         if (data === 'success') {
           this.props.onCloseSignin();
           this.props.dispatch(userLogin(this.state.signInEmail));
-          // this.setState({redirect: true});
+          this.setState({redirect: true});
         }
       })
 
@@ -58,7 +59,7 @@ class Signin extends React.Component {
 
   render() {    
     if (this.state.redirect) {
-      return <Redirect push to="/" />;
+      return <Redirect push to={location.pathname} />;
     }
 
     return (

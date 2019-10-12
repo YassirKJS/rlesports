@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import { updateActiveIndex } from '../../actions';
-import { connect } from 'react-redux';
-import '../../sass/layout/_header.scss';
+import store from '../../store';
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';
@@ -121,131 +119,133 @@ class Header extends Component {
     }
 
     render() {
-        return (
-          <div className='navbar'>
-            <div className="header__navbar">
-              <img alt='' src={banner_rectangle_sideless} className='header__navbar--bg'/> 
-              <div className='header__navbar--links'>
-                <NavLink exact to="/" className='link' activeClassName="selected">
-                  HOME
-                </NavLink>
-                <NavLink to="/Cars" className='link' activeClassName="selected">
-                  CARS
-                </NavLink>
-                <NavLink to="/Players" className='link' activeClassName="selected">
-                  PLAYERS
-                </NavLink>
-                <NavLink to="/Calendar" className='link' activeClassName="selected">
-                  CALENDAR
-                </NavLink> 
-                <NavLink to="/Reddit" className='link' activeClassName="selected">
-                  REDDIT
-                </NavLink> 
-                <NavLink to="/Livestreams" className='link' activeClassName="selected">
-                  LIVESTREAMS
-                </NavLink> 
-                <NavLink to="/Livetweets" className='link' activeClassName="selected">
-                  LIVETWEETS
-                </NavLink> 
+      console.log('userLoggedIn: ', store.getState().login.userLoggedIn); // state in rootReducer
+      return (
+        <div className='navbar'>
+          <div className="header__navbar">
+            <img alt='' src={banner_rectangle_sideless} className='header__navbar--bg'/> 
+            <div className='header__navbar--links'>
+              <NavLink exact to="/" className='link' activeClassName="selected">
+                HOME
+              </NavLink>
+              <NavLink to="/Cars" className='link' activeClassName="selected">
+                CARS
+              </NavLink>
+              <NavLink to="/Players" className='link' activeClassName="selected">
+                PLAYERS
+              </NavLink>
+              <NavLink to="/Calendar" className='link' activeClassName="selected">
+                CALENDAR
+              </NavLink> 
+              <NavLink to="/Reddit" className='link' activeClassName="selected">
+                REDDIT
+              </NavLink> 
+              <NavLink to="/Livestreams" className='link' activeClassName="selected">
+                LIVESTREAMS
+              </NavLink> 
+              <NavLink to="/Livetweets" className='link' activeClassName="selected">
+                LIVETWEETS
+              </NavLink> 
+            </div>
+              
+            <div className='header__navbar--signup'>
+              <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup} >
+                SIGN UP
+              </div> 
+              <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin} >
+                SIGN IN
+              </div> 
+              <div className='menu-bars'>
+                  <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
               </div>
-                
-              <div className='header__navbar--signup'>
-                <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup} >
+            </div>                
+          </div>
+
+          <div ref={this.setWrapperRef} className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
+            <div className='side__navbar--links'>
+              <div className=''>
+                <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSidebar}/>  
+              </div>
+              <NavLink exact to="/" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue",                            
+                  }}
+              >
+                HOME
+              </NavLink>
+              <NavLink to="/Cars" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                CARS
+              </NavLink>
+              <NavLink to="/Players" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                PLAYERS
+              </NavLink>
+              <NavLink to="/Calendar" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                CALENDAR
+              </NavLink> 
+              <NavLink to="/Reddit" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                REDDIT
+              </NavLink> 
+              <NavLink to="/Livestreams" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                LIVESTREAMS
+              </NavLink> 
+              <NavLink to="/Livetweets" className='side--link' activeClassName="side--link--selected"
+                  activeStyle={{
+                      color: "var(--color-neon-blue"
+                  }}
+              >
+                LIVETWEETS
+              </NavLink> 
+            </div>
+            
+            <div className='side__navbar--signup'>
+              <div className='side--link signup-link' activeClassName="side--link--selected" onClick={this.toggleSignup}>
                   SIGN UP
                 </div> 
-                <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin} >
+                <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
                   SIGN IN
                 </div> 
-                <div className='menu-bars'>
-                    <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
-                </div>
-              </div>                
-            </div>
-
-            <div ref={this.setWrapperRef} className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
-              <div className='side__navbar--links'>
-                <div className=''>
-                  <FontAwesomeIcon icon={faTimes} className='icon-collapse' onClick={this.closeSidebar}/>  
-                </div>
-                <NavLink exact to="/" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue",                            
-                    }}
-                >
-                  HOME
-                </NavLink>
-                <NavLink to="/Cars" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  CARS
-                </NavLink>
-                <NavLink to="/Players" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  PLAYERS
-                </NavLink>
-                <NavLink to="/Calendar" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  CALENDAR
-                </NavLink> 
-                <NavLink to="/Reddit" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  REDDIT
-                </NavLink> 
-                <NavLink to="/Livestreams" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  LIVESTREAMS
-                </NavLink> 
-                <NavLink to="/Livetweets" className='side--link' activeClassName="side--link--selected"
-                    activeStyle={{
-                        color: "var(--color-neon-blue"
-                    }}
-                >
-                  LIVETWEETS
-                </NavLink> 
-              </div>
-              
-              <div className='side__navbar--signup'>
-                <div className='side--link signup-link' activeClassName="side--link--selected" onClick={this.toggleSignup}>
-                    SIGN UP
-                  </div> 
-                  <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
-                    SIGN IN
-                  </div> 
-                </div>     
-            </div>
-
-            <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
-              <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} />
-            </div>
-
-            <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               
-              <Signup handleSignin={this.toggleSignin} onCloseSignup={this.closeSignup} />
-            </div>        
-
-            <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'} >                
-              <Restore handleSignin={this.toggleSignin} onCloseRestore={this.closeRestore} />
-            </div>     
+              </div>     
           </div>
-        );
+
+          <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
+            <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} />
+          </div>
+
+          <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               
+            <Signup handleSignin={this.toggleSignin} onCloseSignup={this.closeSignup} />
+          </div>        
+
+          <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'} >                
+            <Restore handleSignin={this.toggleSignin} onCloseRestore={this.closeRestore} />
+          </div>     
+        </div>
+      );
     }
 }
 
-//export default Header;
+export default Header;
 
+/*
 const mapDispatchToProps = (dispatch) => {
     return {
         updateActiveIndex: (index) => dispatch(updateActiveIndex(index)),
@@ -256,4 +256,5 @@ const mapStateToProps = state => ({
     activeIndex: state.activeIndex
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+//export default connect(mapStateToProps, mapDispatchToProps)(Header);
+*/

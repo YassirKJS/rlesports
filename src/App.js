@@ -6,7 +6,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          isSignedIn: false,
+          
         };
     }
 
@@ -19,7 +19,7 @@ class App extends Component {
     render() {
       console.log(location.pathname);
       return (
-        <Layout isSignedIn={this.state.isSignedIn}>
+        <Layout>
           <h1>This is the App Homepage</h1>
         </Layout>
       );
