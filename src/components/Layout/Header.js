@@ -290,7 +290,7 @@ class Header extends Component {
           </div>
 
           <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
-            <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} onClickRedirect={this.setRedirect} />
+            <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} onClickRedirect={this.setRedirect} onClickLoadUser={this.loadUser}/>
           </div>
 
           <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               

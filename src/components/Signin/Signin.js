@@ -39,23 +39,15 @@ class Signin extends React.Component {
       })
     })
       .then(response => response.json()) // data: success or error logging in   (F12/Network/signin)
-      .then(data => {
-        if (data === 'success') {
+      .then(user => {
+        if (user.id) {
           this.props.onCloseSignin();          
           this.props.dispatch(userLogin(this.state.signInEmail));
+          this.props.onClickLoadUser(user);
           this.props.onClickRedirect();
           //this.setState({redirect: true});
         }
-      })
-
-      /*.then(user => {
-        if (user.id) {
-          this.props.loadUser(user)
-          this.props.onCloseSignin();
-          // this.setState({redirect: true});
-        }
-      })*/
-      
+      })  
   }
 
   render() {    
