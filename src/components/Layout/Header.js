@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import store from '../../store';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
+import { userLogout } from '../../actions';
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';
@@ -49,6 +49,7 @@ class Header extends Component {
         this.handleClickOutside = this.handleClickOutside.bind(this);
 
         this.setRedirect = this.setRedirect.bind(this);
+        this.handleSignoff = this.handleSignoff.bind(this);
     }
 
     toggleSidebar() {
@@ -102,6 +103,11 @@ class Header extends Component {
 
     setRedirect() {
       this.setState({ redirect: true });
+    }
+
+    handleSignoff() {
+      this.props.dispatch(userLogout());
+      this.setRedirect();
     }
 
     componentDidMount() {
@@ -173,7 +179,7 @@ class Header extends Component {
                 </div> 
               :
                 <div className='header__navbar--signup'>
-                  <div className='link signin-link' activeClassName="selected">
+                  <div className='link signin-link' activeClassName="selected" onClick={this.handleSignoff} >
                     SIGN OFF
                   </div> 
                   <div className='menu-bars'>
@@ -255,7 +261,7 @@ class Header extends Component {
                 </div> 
               :
                 <div className='side__navbar--signup'>
-                  <div className='side--link signin-link' activeClassName="side--link--selected">
+                  <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.handleSignoff} >
                     SIGN OFF
                   </div> 
                   <div className='menu-bars'>
