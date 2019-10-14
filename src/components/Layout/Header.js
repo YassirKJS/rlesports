@@ -240,14 +240,30 @@ class Header extends Component {
               </NavLink> 
             </div>
             
-            <div className='side__navbar--signup'>
-              <div className='side--link signup-link' activeClassName="side--link--selected" onClick={this.toggleSignup}>
-                  SIGN UP
+            {
+              !store.getState().login.userLoggedIn ?
+                <div className='side__navbar--signup'>
+                  <div className='side--link signup-link' activeClassName="side--link--selected" onClick={this.toggleSignup}>
+                    SIGN UP
+                  </div> 
+                  <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
+                    SIGN IN
+                  </div> 
+                  <div className='menu-bars'>
+                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
+                  </div>
                 </div> 
-                <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
-                  SIGN IN
+              :
+                <div className='side__navbar--signup'>
+                  <div className='side--link signin-link' activeClassName="side--link--selected">
+                    SIGN OFF
+                  </div> 
+                  <div className='menu-bars'>
+                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
+                  </div>
                 </div> 
-              </div>     
+            }  
+   
           </div>
 
           <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
