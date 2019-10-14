@@ -17,7 +17,7 @@ class Signin extends React.Component {
     this.state = {
       signInEmail: '',
       signInPassword: '',
-      redirect: false,
+      //redirect: false,
     }
   }
 
@@ -41,9 +41,10 @@ class Signin extends React.Component {
       .then(response => response.json()) // data: success or error logging in   (F12/Network/signin)
       .then(data => {
         if (data === 'success') {
-          this.props.onCloseSignin();
+          this.props.onCloseSignin();          
           this.props.dispatch(userLogin(this.state.signInEmail));
-          this.setState({redirect: true});
+          this.props.onClickRedirect();
+          //this.setState({redirect: true});
         }
       })
 
@@ -58,10 +59,10 @@ class Signin extends React.Component {
   }
 
   render() {    
-    if (this.state.redirect) {
+    /*if (this.state.redirect) {
       return <Redirect push to={location.pathname} />;
-    }
-
+    }*/
+    
     return (
       <div>
         <FontAwesomeIcon icon={faTimes} className='icon-signinCollapse' onClick={this.props.onCloseSignin} />  

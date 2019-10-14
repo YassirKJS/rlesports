@@ -12,6 +12,12 @@ export default function(state = initialState, action) {
         userLoggedIn: true,
         email: action.email
       };
+    case "USER_LOGGED_OUT":
+        console.log('loginReducer: USER_LOGGED_OUT..');
+      return {
+        ...state,
+        userLoggedIn: false,
+      }
     default:
       return state;
   }

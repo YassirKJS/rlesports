@@ -1,5 +1,8 @@
+/* eslint no-restricted-globals: 0 */
 import React, {Component} from 'react';
 import store from '../../store';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 //import {Navbar, Nav, NavDropdown} from '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //import 'bootstrap/dist/css/bootstrap.css';
@@ -26,7 +29,8 @@ class Header extends Component {
             collapsed: true,
             signin_collapsed: true,
             signup_collapsed: true,
-            restore_collapsed: true
+            restore_collapsed: true,
+            redirect: false
         };
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
@@ -43,6 +47,8 @@ class Header extends Component {
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
+
+        this.setRedirect = this.setRedirect.bind(this);
     }
 
     toggleSidebar() {
@@ -94,6 +100,10 @@ class Header extends Component {
       }
     }
 
+    setRedirect() {
+      this.setState({ redirect: true });
+    }
+
     componentDidMount() {
       document.addEventListener('mousedown', this.handleClickOutside);
     }
@@ -119,7 +129,7 @@ class Header extends Component {
     }
 
     render() {
-      console.log('userLoggedIn: ', store.getState().login.userLoggedIn); // state in rootReducer
+      console.log('Header userLoggedIn: ', store.getState().login.userLoggedIn); // state in rootReducer
       return (
         <div className='navbar'>
           <div className="header__navbar">
@@ -148,17 +158,30 @@ class Header extends Component {
               </NavLink> 
             </div>
               
-            <div className='header__navbar--signup'>
-              <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup} >
-                SIGN UP
-              </div> 
-              <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin} >
-                SIGN IN
-              </div> 
-              <div className='menu-bars'>
-                  <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
-              </div>
-            </div>                
+            {
+              !store.getState().login.userLoggedIn ?
+                <div className='header__navbar--signup'>
+                  <div className='link signup-link' activeClassName="selected" onClick={this.toggleSignup} >
+                    SIGN UP
+                  </div> 
+                  <div className='link signin-link' activeClassName="selected" onClick={this.toggleSignin} >
+                    SIGN IN
+                  </div> 
+                  <div className='menu-bars'>
+                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
+                  </div>
+                </div> 
+              :
+                <div className='header__navbar--signup'>
+                  <div className='link signin-link' activeClassName="selected">
+                    SIGN OFF
+                  </div> 
+                  <div className='menu-bars'>
+                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
+                  </div>
+                </div> 
+            }    
+             
           </div>
 
           <div ref={this.setWrapperRef} className= {this.state.collapsed? 'side__navbar collapsed' : 'side__navbar toggled'}>
@@ -228,7 +251,7 @@ class Header extends Component {
           </div>
 
           <div className= {this.state.signin_collapsed? 'signin-collapsed' : 'signin-toggled'} >              
-            <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} />
+            <Signin handleSignup={this.toggleSignup} handleRestore={this.toggleRestore} onCloseSignin={this.closeSignin} onClickRedirect={this.setRedirect} />
           </div>
 
           <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               
@@ -243,7 +266,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+export default connect()(Header);
+//export default Header;
 
 /*
 const mapDispatchToProps = (dispatch) => {
@@ -257,4 +281,14 @@ const mapStateToProps = state => ({
 });
 
 //export default connect(mapStateToProps, mapDispatchToProps)(Header);
+*/
+
+
+
+
+/*
+
+FIX OF THE STORE NOT UPDATING STRAIGHT AWAY
+I kept the redirect after signin in state, except I removed the if condition in the render() method
+
 */

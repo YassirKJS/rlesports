@@ -21,7 +21,7 @@ import Notfound from './components/Notfound';
 import { Provider } from 'react-redux';
 import store from './store';
 
-//console.log(store.getState().login.userLoggedIn); // state in rootReducer
+// console.log(store.getState().login.userLoggedIn); // state in rootReducer
 
 const routing = (
     <Router>

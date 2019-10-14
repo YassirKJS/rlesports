@@ -9,3 +9,9 @@ export const userLogin = email => {
     email
   };
 };
+
+export const userLogout = () => {
+  return {
+    type: "USER_LOGGED_OUT",    
+  };
+}
