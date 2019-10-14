@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { userLogin } from '../../actions';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -27,7 +28,7 @@ class Signup extends React.Component {
   }
 
   onSubmitSignup = () => {
-    fetch('http://localhost:3000/Signup', {
+    fetch('http://localhost:3010/signup', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -39,8 +40,10 @@ class Signup extends React.Component {
       .then(response => response.json())  
       .then(user => {  // if we get a user back
         if (user) {
-          this.props.loadUser(user)
-          this.props.onRouteChange('home');
+          this.props.onCloseSignup();
+          this.props.onClickLoadUser(user);
+          this.props.dispatch(userLogin(this.state.email));
+          this.props.onClickRedirect();
         }
       })
   }
@@ -112,4 +115,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default connect()(Signup);

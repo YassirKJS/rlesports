@@ -30,8 +30,17 @@ class Header extends Component {
             signin_collapsed: true,
             signup_collapsed: true,
             restore_collapsed: true,
-            redirect: false
+            redirect: false,
+            user: {
+              id: '',
+              username: '',
+              email: '',
+              joined: ''
+            }
         };
+
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
 
         this.toggleSidebar = this.toggleSidebar.bind(this);
         this.closeSidebar = this.closeSidebar.bind(this);
@@ -45,11 +54,10 @@ class Header extends Component {
         this.toggleRestore = this.toggleRestore.bind(this);
         this.closeRestore = this.closeRestore.bind(this); 
 
-        this.setWrapperRef = this.setWrapperRef.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
-
         this.setRedirect = this.setRedirect.bind(this);
         this.handleSignoff = this.handleSignoff.bind(this);
+
+        this.loadUser = this.loadUser.bind(this);
     }
 
     toggleSidebar() {
@@ -108,6 +116,15 @@ class Header extends Component {
     handleSignoff() {
       this.props.dispatch(userLogout());
       this.setRedirect();
+    }
+
+    loadUser(userData) {
+      this.setState({ user: {
+        id: userData.id,
+        username: userData.username,
+        email: userData.email,
+        joined: userData.joined
+      }})
     }
 
     componentDidMount() {
@@ -277,7 +294,7 @@ class Header extends Component {
           </div>
 
           <div className= {this.state.signup_collapsed? 'signup-collapsed' : 'signup-toggled'} >               
-            <Signup handleSignin={this.toggleSignin} onCloseSignup={this.closeSignup} />
+            <Signup handleSignin={this.toggleSignin} onCloseSignup={this.closeSignup} onClickLoadUser={this.loadUser} onClickRedirect={this.setRedirect} />
           </div>        
 
           <div className= {this.state.restore_collapsed? 'restore-collapsed' : 'restore-toggled'} >                

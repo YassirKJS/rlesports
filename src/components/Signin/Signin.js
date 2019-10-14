@@ -1,6 +1,6 @@
 /* eslint no-restricted-globals: 0 */
 import React from 'react';
-import { Redirect } from 'react-router';
+//import { Redirect } from 'react-router';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
