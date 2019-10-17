@@ -196,6 +196,9 @@ class Header extends Component {
                 </div> 
               :
                 <div className='header__navbar--signup'>
+                  <div className='link signup-link' activeClassName="selected">
+                    {this.state.user.username}
+                  </div> 
                   <div className='link signin-link' activeClassName="selected" onClick={this.handleSignoff} >
                     SIGN OFF
                   </div> 
