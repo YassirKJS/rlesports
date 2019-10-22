@@ -197,7 +197,7 @@ class Header extends Component {
               :
                 <div className='header__navbar--signup'>
                   <div className='link signup-link' activeClassName="selected">
-                    {this.state.user.username}
+                    {this.state.user.username.toUpperCase()}
                   </div> 
                   <div className='link signin-link' activeClassName="selected" onClick={this.handleSignoff} >
                     SIGN OFF
@@ -275,18 +275,12 @@ class Header extends Component {
                   <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.toggleSignin}>
                     SIGN IN
                   </div> 
-                  <div className='menu-bars'>
-                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
-                  </div>
                 </div> 
               :
                 <div className='side__navbar--signup'>
                   <div className='side--link signin-link' activeClassName="side--link--selected" onClick={this.handleSignoff} >
                     SIGN OFF
                   </div> 
-                  <div className='menu-bars'>
-                      <FontAwesomeIcon icon={faBars} className='icon-bars' onClick={this.toggleSidebar} />  
-                  </div>
                 </div> 
             }  
    
